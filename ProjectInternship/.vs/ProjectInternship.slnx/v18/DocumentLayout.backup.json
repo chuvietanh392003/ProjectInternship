@@ -1,0 +1,219 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\yoteidenpyotouroku\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\yoteidenpyotouroku\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\esydenpyo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\esydenpyo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\yoteidenpyotourokucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\yoteidenpyotourokucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\esydenpyocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\esydenpyocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\models\\esydenpyosearchvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:models\\esydenpyosearchvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\data\\ydenpyocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:data\\ydenpyocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\projectinternship.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:projectinternship.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\YoteiDenpyoTouroku\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\YoteiDenpyoTouroku\\Index.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\YoteiDenpyoTouroku\\Index.cshtml",
+              "RelativeToolTip": "Views\\YoteiDenpyoTouroku\\Index.cshtml",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAuwGsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-12T06:29:05.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "YoteiDenpyoTourokuController.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\YoteiDenpyoTourokuController.cs",
+              "RelativeDocumentMoniker": "Controllers\\YoteiDenpyoTourokuController.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\YoteiDenpyoTourokuController.cs",
+              "RelativeToolTip": "Controllers\\YoteiDenpyoTourokuController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T06:18:31.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EsYdenpyoSearchVM.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\EsYdenpyoSearchVM.cs",
+              "RelativeDocumentMoniker": "Models\\EsYdenpyoSearchVM.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\EsYdenpyoSearchVM.cs",
+              "RelativeToolTip": "Models\\EsYdenpyoSearchVM.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA9wBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T04:22:00.811Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAswCQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-12T04:18:14.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "YdenpyoContext.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Data\\YdenpyoContext.cs",
+              "RelativeDocumentMoniker": "Data\\YdenpyoContext.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Data\\YdenpyoContext.cs",
+              "RelativeToolTip": "Data\\YdenpyoContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T04:11:56.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\EsYdenpyo\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\EsYdenpyo\\Index.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\EsYdenpyo\\Index.cshtml",
+              "RelativeToolTip": "Views\\EsYdenpyo\\Index.cshtml",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAuwIEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-12T04:11:18.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-12T03:55:47.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProjectInternship.csproj",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ProjectInternship.csproj",
+              "RelativeDocumentMoniker": "ProjectInternship.csproj",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ProjectInternship.csproj",
+              "RelativeToolTip": "ProjectInternship.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-12T03:06:59.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-02-12T03:36:46.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-12T02:59:38.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EsYdenpyoController.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\EsYdenpyoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EsYdenpyoController.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\EsYdenpyoController.cs",
+              "RelativeToolTip": "Controllers\\EsYdenpyoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T02:56:58.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T02:56:13.82Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

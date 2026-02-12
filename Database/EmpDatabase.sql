@@ -25,7 +25,6 @@ start with 1
 increment by 1
 nocache;
 
-
 create or replace trigger UPDATE_ES_ID
 before insert on ES_YDENPYO
 for each row
@@ -61,3 +60,21 @@ create table BUMOM (
 BUMONCD	varchar2(30),									
 BUMONNM	varchar2(30)
 );		
+
+INSERT INTO ES_YDENPYO VALUES (
+    1002, 2024, '2024-04-03', '2024-04-03',
+    'B002', '会議出席', '振込', '2024-04-15',
+    80000,
+    'user01', 'AWCYO26001', '00000', '2024-04-03 09:00:00',
+    'user01', 'AWCYO26001', '00000', '2024-04-03 09:00:00'
+);
+
+INSERT INTO ES_YDENPYO VALUES (
+    1003, 2024, '2024-04-05', '2024-04-05',
+    'B003', '研修参加', '振込', '2024-04-20',
+    120000,
+    'user02', 'AWCYO26001', '00000', '2024-04-05 14:30:00',
+    'user02', 'AWCYO26001', '00000', '2024-04-05 14:30:00'
+);
+
+select * from ES_YDENPYO

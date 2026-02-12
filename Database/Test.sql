@@ -1,0 +1,3 @@
+SELECT * FROM BUMON
+
+select * from ES_YDENPYO

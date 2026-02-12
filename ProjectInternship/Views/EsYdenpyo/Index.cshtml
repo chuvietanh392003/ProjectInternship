@@ -1,0 +1,129 @@
+﻿@model EsYdenpyoSearchVM
+@{
+    ViewData["Title"] = "予定伝票一覧";
+}
+@{
+    var i = 1;
+}
+<h2 class="text-center align-content-around mb-5">予定伝票一覧</h2>
+<form asp-controller="EsYdenpyo" asp-action="Index" method="get">
+    <div class="col">
+        <div class="row mb-3">
+            <label class="col-4 col-form-label">年度</label>
+            <div class="col-3">
+                <input type="number" name="kaikeind" asp-for="Kaikeind" class="form-control" placeholder="xxxx年度">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-4 col-form-label">伝票番号</label>
+            <div class="col-3">
+                <input type="number" name="denpyonoFrom" asp-for="DenpyonoFrom" class="form-control" placeholder="">
+            </div>
+            -
+            <div class="col-3">
+                <input type="number" name="denpyonoTo" asp-for="DenpyonoTo" class="form-control" placeholder="">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-4 col-form-label">伝墓日付</label>
+            <div class="col-3">
+                <input type="date" name="denpyodtFrom" asp-for="DenpyodtFrom" class="form-control" placeholder="">
+            </div>
+            -
+            <div class="col-3">
+                <input type="date" name="denpyodtTo" asp-for="DenpyodtTo" class="form-control" placeholder="">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-4 col-form-label">申請日</label>
+            <div class="col-3">
+                <input type="date" name="uketukedtFrom" asp-for="UketukedtFrom" class="form-control" placeholder="">
+            </div>
+            -
+            <div class="col-3">
+                <input type="date" name="uketukedtTo" asp-for="UketukedtTo" class="form-control" placeholder="">
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label class="col-4 col-form-label">出納方法</label>
+            <div class="col-2">
+                <div class="form-check mt-2">
+                    <input class="form-check-input" name="suitofuri" aspfor="Suitofuri" type="checkbox" id="suitofuri">
+                    <label class="form-check-label" for="suitofuri">振込</label>
+                </div>
+            </div>
+
+            <div class="col-2">
+                <div class="form-check mt-2">
+                    <input class="form-check-input" name="genkin" aspfor="Genkin" type="checkbox" id="genkin">
+                    <label class="form-check-label" for="genkin">現金</label>
+                </div>
+            </div>
+
+            <div class="col-2 text-end">
+                <input type="submit" class="btn btn-primary" value="探索" />
+            </div>
+            <div class="col-2 text-center">
+                <a asp-controller="YoteiDenpyoTouroku" asp-action="Index" class="btn-primary">登録</a>
+            </div>
+
+        </div>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                行
+            </th>
+            <th>
+                伝票番号
+            </th>
+            <th>
+                起票部門
+            </th>
+            <th>
+                伝票日付
+            </th>
+            <th>
+                申請日
+            </th>
+            <th>
+                出納方法
+            </th>
+            <th>
+                出張目的
+            </th>
+            <th>
+                金額
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.Results)
+        {
+            <tr>
+                <td>@i</td>
+                <td> @item.Denpyono</td>
+                <td> @item.Bumon?.BumonName</td>
+                <td> @item.Denpyodt</td>
+                <td> @item.Uketukedt</td>
+                <td> @item.Suitokb</td>
+                <td> @item.Biko</td>
+                <td> @item.Kingaku</td>
+            </tr>
+            i++;
+        }
+    </tbody>
+</table>
+<div class="row mb-3">
+    <label class="col-form-label col-10 text-center fw-bold">交通費計</label>
+    <label class="col-form-label col-2  text-center fw-bold">@Model.TotalKingaku</label>
+</div>
+
+
