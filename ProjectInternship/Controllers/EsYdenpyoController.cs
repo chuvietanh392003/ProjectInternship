@@ -51,33 +51,5 @@ namespace ProjectInternship.Controllers
             model.TotalKingaku = model.Results.Where(x => x.Kingaku.HasValue).Sum(x => x.Kingaku.Value);
             return View(model);
         }
-        public IActionResult InsertTest()
-        {
-            var entity = new EsYdenpyo
-            {
-                Denpyono = 9112,   // PK phải không trùng
-                Kaikeind = 20224,
-
-                Denpyodt = new DateTime(2024, 1, 1),
-                Uketukedt = new DateTime(2024, 1, 2),
-                Shiharaidt = new DateTime(2024, 1, 5),
-
-                Kingaku = 123425.67m,
-                Biko = "TEST INSERT FROM EF",
-
-                InsertOpeId = "TEST",
-                InsertPgmId = "EF",
-                InsertPgmPrm = "MANUAL",
-                InsertDate = DateTime.Now
-            };
-
-            _context.EsYdenpyos.Add(entity);
-            _context.SaveChanges();
-
-            return Content("INSERT OK");
-        }
-
-
-
     }
 }

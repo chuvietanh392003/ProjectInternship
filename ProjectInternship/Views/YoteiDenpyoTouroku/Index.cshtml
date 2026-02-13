@@ -1,98 +1,132 @@
-﻿@model EsYdenpyoSearchVM
+﻿@model YoteiDenpyoTourokuVM
 @{
     ViewData["Title"] = "予定伝票入力";
 }
 
-<h2 class="text-center align-content-around mb-5">予定伝票入力</h2>
+<h2 class="text-center mb-5">予定伝票入力</h2>
 
-<form asp-controller="EsYdenpyo" asp-action="Index" method="get">
-    <div class="col">
+<form asp-controller="YoteiDenpyoTouroku"
+      asp-action="Index"
+      method="post">
 
-        <div class="row mb-3">
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+
+        <!-- ===== 伝票番号 + Buttons ===== -->
+        <div class="row mb-3 align-items-center">
+
             <label class="col-2 col-form-label">伝票番号</label>
-            <div class="col-2 text-end">
-                <input type="number" readonly class="form-control" placeholder="">
-            </div>
-            <div class="col-8 text-end">
-                <form asp-action="Event" method="post" class="d-inline">
-
-                    <button type="submit" name="actionType" value="register" class="btn btn-primary">
-                        登録
-                    </button>
-
-                    <button type="submit" name="actionType" value="delete" class="btn btn-danger">
-                        削除
-                    </button>
-
-                    <button type="submit" name="actionType" value="exit" class="btn btn-secondary">
-                        終了
-                    </button>
-
-                </form>
-            </div>
-
-
-            @* <div class="col-2">
-                <input type="submit" class="btn btn-primary" value="登録">
-            </div>
 
             <div class="col-2">
-                <input type="submit" class="btn btn-primary" value="削除">
-            </div> *@
+                <input asp-for="Denpyono"
+                       type="number"
+                       readonly
+                       class="form-control">
+            </div>
 
+            <div class="col-8 text-end">
 
+                <button type="submit"
+                        name="actionType"
+                        value="register"
+                        class="btn btn-primary me-2">
+                    登録
+                </button>
+
+                <button type="submit"
+                        name="actionType"
+                        value="delete"
+                        class="btn btn-danger me-2"
+                        @(Model.isCreated ? "" : "disabled")>
+                    削除
+                </button>
+
+                <button type="submit"
+                        name="actionType"
+                        value="exit"
+                        class="btn btn-secondary">
+                    終了
+                </button>
+
+            </div>
         </div>
 
-        <div class="row mb-3">
-            <label class="col-2 col-form-label">伝墓日付</label>
+        <!-- ===== 伝票日付 ===== -->
+        <div class="row mb-3 align-items-center">
+
+            <label class="col-2 col-form-label">伝票日付</label>
+
             <div class="col-2">
-                <input type="date" readonly  class="form-control" placeholder="">
+                <input asp-for="Denpyodt"
+                       type="date"
+                       readonly
+                       class="form-control">
             </div>
 
             <label class="col-2 col-form-label text-center">出納方法</label>
+
             <div class="col-2">
-                <select  class="form-select">
-                    <option value="" hidden selected>-- Select option --</option>
-                    <option value="Genkin">現金</option>
-                    <option value="Suitofuri">振込</option>
+                <select asp-for="Suitokb" class="form-select">
+                    <option value="" hidden>-- Select option --</option>
+                    <option value="現金">現金</option>
+                    <option value="振込">振込</option>
                 </select>
             </div>
 
             <label class="col-2 col-form-label text-center">支払予定日</label>
+
             <div class="col-2">
-                <input type="date" asp-for="UketukedtFrom" class="form-control">
+                <input asp-for="Shiharaidt"
+                       type="date"
+                       class="form-control">
             </div>
+
         </div>
 
-        <div class="row mb-3">
+        <!-- ===== 年度 ===== -->
+        <div class="row mb-3 align-items-center">
             <label class="col-2 col-form-label">年度</label>
             <div class="col-2">
-                <input type="number" asp-for="Kaikeind" class="form-control" placeholder="xxxx年度">
+                <input asp-for="Kaikeind"
+                       type="number"
+                       class="form-control"
+                       placeholder="xxxx年度">
             </div>
         </div>
 
-        <div class="row mb-3">
+        <!-- ===== 申請日 ===== -->
+        <div class="row mb-3 align-items-center">
             <label class="col-2 col-form-label">申請日</label>
             <div class="col-2">
-                <input type="date" asp-for="UketukedtFrom" class="form-control">
+                <input asp-for="Uketukedt"
+                       type="date"
+                       class="form-control">
             </div>
         </div>
 
-        <div class="row mb-3">
+        <!-- ===== 起票部門 ===== -->
+        <div class="row mb-3 align-items-center">
             <label class="col-2 col-form-label">起票部門</label>
             <div class="col-2">
-                <input type="text"  class="form-control">
+                <input asp-for="BumoncdYkanr"
+                       type="text"
+                       class="form-control">
             </div>
         </div>
 
-        <div class="row mb-3">
+        <!-- ===== 出張目的 ===== -->
+        <div class="row mb-3 align-items-center">
             <label class="col-2 col-form-label">出張目的</label>
             <div class="col-2">
-                <input type="text"  class="form-control">
+                <textarea asp-for="Biko" type="text" class="form-control">
+                    出張目的   
+                </textarea>
             </div>
         </div>
 
-        <div class="row mb-3">
+        <!-- ===== 備考 ===== -->
+        <div class="row mb-3 align-items-center">
             <label class="col-2 col-form-label">（備考）</label>
         </div>
 

@@ -29,7 +29,7 @@
         <div class="row mb-3">
             <label class="col-4 col-form-label">伝墓日付</label>
             <div class="col-3">
-                <input type="date" name="denpyodtFrom" asp-for="DenpyodtFrom" class="form-control" placeholder="">
+                <input type="text" name="denpyodtFrom"  asp-for="DenpyodtFrom" class="form-control" placeholder="">
             </div>
             -
             <div class="col-3">
@@ -68,7 +68,7 @@
                 <input type="submit" class="btn btn-primary" value="探索" />
             </div>
             <div class="col-2 text-center">
-                <a asp-controller="YoteiDenpyoTouroku" asp-action="Index" class="btn-primary">登録</a>
+                <a asp-controller="YoteiDenpyoTouroku" asp-action="Index" class="btn btn-primary">登録</a>
             </div>
 
         </div>
@@ -107,7 +107,19 @@
     <tbody>
         @foreach (var item in Model.Results)
         {
-            <tr>
+            <tr style="cursor:pointer" 
+            onclick="location.href='@Url.Action("Index", "YoteiDenpyoTouroku", 
+            new {   
+                Kaikeind = item.Kaikeind, 
+                Denpyono = item.Denpyono, 
+                Denpyodt = item.Denpyodt?.ToString("yyyy-MM-dd"),
+                Suitokb = item.Suitokb,
+                Shiharaidt = item.Shiharaidt?.ToString("yyyy-MM-dd"),
+                Uketukedt = item.Uketukedt?.ToString("yyyy-MM-dd"),
+                BumoncdYkanr = item.BumoncdYkanr,
+                BumoncdName = item.Bumon?.BumonName,
+                Biko = item.Biko,
+                isCreated = true })'" >
                 <td>@i</td>
                 <td> @item.Denpyono</td>
                 <td> @item.Bumon?.BumonName</td>
