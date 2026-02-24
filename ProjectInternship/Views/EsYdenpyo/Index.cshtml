@@ -1,4 +1,4 @@
-﻿@model EsYdenpyoSearchVM
+﻿@model ProjectInternship.ViewModels.EsYdenpyoSearchVM
 @{
     ViewData["Title"] = "予定伝票一覧";
 }
@@ -105,33 +105,34 @@
     </thead>
 
     <tbody>
-        @foreach (var item in Model.Results)
-        {
-            <tr style="cursor:pointer" 
-            onclick="location.href='@Url.Action("Index", "YoteiDenpyoTouroku", 
-            new {   
-                Kaikeind = item.Kaikeind, 
-                Denpyono = item.Denpyono, 
-                Denpyodt = item.Denpyodt?.ToString("yyyy-MM-dd"),
+    @foreach (var item in Model.Results)
+    {
+        <tr style="cursor:pointer"
+            onclick="location.href='@Url.Action("Index", "YoteiDenpyoTouroku", new { 
+                Kaikeind = item.Kaikeind,
+                Denpyono = item.Denpyono,
+                Denpyodt = item.Denpyodt.HasValue ? item.Denpyodt.Value.ToString("yyyy-MM-dd") : null,
                 Suitokb = item.Suitokb,
-                Shiharaidt = item.Shiharaidt?.ToString("yyyy-MM-dd"),
-                Uketukedt = item.Uketukedt?.ToString("yyyy-MM-dd"),
+                Shiharaidt = item.Shiharaidt.HasValue ? item.Shiharaidt.Value.ToString("yyyy-MM-dd") : null,
+                Uketukedt = item.Uketukedt.HasValue ? item.Uketukedt.Value.ToString("yyyy-MM-dd") : null,
                 BumoncdYkanr = item.BumoncdYkanr,
-                BumoncdName = item.Bumon?.BumonName,
+                BumoncdName = item.Bumon != null ? item.Bumon.BumonName : null,
                 Biko = item.Biko,
-                isCreated = true })'" >
-                <td>@i</td>
-                <td> @item.Denpyono</td>
-                <td> @item.Bumon?.BumonName</td>
-                <td> @item.Denpyodt</td>
-                <td> @item.Uketukedt</td>
-                <td> @item.Suitokb</td>
-                <td> @item.Biko</td>
-                <td> @item.Kingaku</td>
-            </tr>
-            i++;
-        }
-    </tbody>
+                isCreated = true
+            })'">
+
+            <td>@i</td>
+            <td>@item.Denpyono</td>
+            <td>@item.Bumon?.BumonName</td>
+            <td>@item.Denpyodt?.ToString("yyyy-MM-dd")</td>
+            <td>@item.Uketukedt?.ToString("yyyy-MM-dd")</td>
+            <td>@item.Suitokb</td>
+            <td>@item.Biko</td>
+            <td>@item.Kingaku</td>
+    </tr>
+    i++;
+}
+</tbody>
 </table>
 <div class="row mb-3">
     <label class="col-form-label col-10 text-center fw-bold">交通費計</label>

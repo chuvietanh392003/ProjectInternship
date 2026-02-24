@@ -1,4 +1,5 @@
-﻿namespace ProjectInternship.Models
+﻿using ProjectInternship.Models;
+namespace ProjectInternship.ViewModels
 {
     public class EsYdenpyoSearchVM
     {

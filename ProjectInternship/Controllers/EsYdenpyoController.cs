@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ProjectInternship.Data;
 using ProjectInternship.Models;
+using ProjectInternship.ViewModels;
 
 namespace ProjectInternship.Controllers
 {

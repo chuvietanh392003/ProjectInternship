@@ -1,7 +1,76 @@
-﻿@model YoteiDenpyoTourokuVM
+﻿@model ProjectInternship.ViewModels.YoteiDenpyoTourokuVM
 @{
     ViewData["Title"] = "予定伝票入力";
 }
+
+@if (TempData["Success"] != null)
+{
+    <script>
+        alert('@TempData["Success"]');
+        window.location.href = '@Url.Action("Index", "EsYdenpyo")';
+    </script>
+}
+
+@if (TempData["DeleteSuccessful"] != null)
+{
+    <script>
+        alert('@TempData["DeleteSuccessful"]');
+        window.location.href = '@Url.Action("Index", "EsYdenpyo")';
+    </script>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById("openBumonModal").addEventListener("click", function () {
+
+            fetch('@Url.Action("Index", "Bumon")')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("bumonModalBody").innerHTML = data;
+
+                    var modal = new bootstrap.Modal(document.getElementById('bumonModal'));
+                    modal.show();
+                });
+        });
+    </script>
+}
+
+<script>
+        function selectBumon() {
+        const selected = document.querySelector('input[name="selectedBumon"]:checked');
+
+        if (!selected) {
+            alert("部門を選択してください");
+            return;
+        }
+
+        const code = selected.value;
+
+        document.getElementById("BumoncdYkanr").value = code;
+
+        const modalEl = document.getElementById('bumonModal');
+        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+        modal.hide();
+    }
+
+        function closeModel(){
+        const modalEl = document.getElementById('bumonModal');
+        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
+        modal.hide();
+    }
+
+        function searchBumon(e) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+        fetch('/Bumon/Index?' + new URLSearchParams(formData))
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("bumonModalBody").innerHTML = data;
+            });
+    }
+</script>
 
 <h2 class="text-center mb-5">予定伝票入力</h2>
 
@@ -24,6 +93,7 @@
                        readonly
                        class="form-control">
             </div>
+          
 
             <div class="col-8 text-end">
 
@@ -38,7 +108,8 @@
                         name="actionType"
                         value="delete"
                         class="btn btn-danger me-2"
-                        @(Model.isCreated ? "" : "disabled")>
+                        @(Model.isCreated ? "" : "disabled")
+                        onclick="return confirm('Delete this record?')">
                     削除
                 </button>
 
@@ -72,6 +143,7 @@
                     <option value="現金">現金</option>
                     <option value="振込">振込</option>
                 </select>
+                <span asp-validation-for="Suitokb" class="text-danger"></span>
             </div>
 
             <label class="col-2 col-form-label text-center">支払予定日</label>
@@ -80,6 +152,7 @@
                 <input asp-for="Shiharaidt"
                        type="date"
                        class="form-control">
+                <span asp-validation-for="Shiharaidt" class="text-danger"></span>
             </div>
 
         </div>
@@ -92,6 +165,7 @@
                        type="number"
                        class="form-control"
                        placeholder="xxxx年度">
+                <span asp-validation-for="Kaikeind" class="text-danger"></span>
             </div>
         </div>
 
@@ -102,6 +176,7 @@
                 <input asp-for="Uketukedt"
                        type="date"
                        class="form-control">
+                <span asp-validation-for="Uketukedt" class="text-danger"></span>
             </div>
         </div>
 
@@ -111,7 +186,12 @@
             <div class="col-2">
                 <input asp-for="BumoncdYkanr"
                        type="text"
+                       id="BumoncdYkanr"
                        class="form-control">
+                <span asp-validation-for="BumoncdYkanr" class="text-danger"></span>
+            </div>
+            <div class="col-2 text-start">
+                <button type="button" class="btn btn-primary" id="openBumonModal">が</button>
             </div>
         </div>
 
@@ -122,6 +202,7 @@
                 <textarea asp-for="Biko" type="text" class="form-control">
                     出張目的   
                 </textarea>
+                <span asp-validation-for="Biko" class="text-danger"></span>
             </div>
         </div>
 
@@ -132,3 +213,16 @@
 
     </div>
 </form>
+
+<div class="modal fade" id="bumonModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">部門一覧</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="bumonModalBody">
+            </div>
+        </div>
+    </div>
+</div>

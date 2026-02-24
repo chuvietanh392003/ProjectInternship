@@ -1,6 +1,81 @@
-﻿@model EsYdenpyoSearchVM
+﻿@model BumonVM
 @{
-    ViewData["Title"] = "";
+    Layout = null;
 }
 
 <h2 class="text-center align-content-around mb-5">部門</h2>
+<div class="container">
+    <form asp-controller="Bumon" asp-action="Index" onsubmit="searchBumon(event)" method="get" id="bumonSearchForm">
+        <div class="row mb-3 align-items-center">
+            <div class="col-3">
+                <label class="col-form-label">部門コード</label>
+            </div>
+            <div class="col-3">
+                <input asp-for="BumonCode" class="form-control" name="BumonCode" />
+            </div>
+        </div>
+        <div class="row mb-3 align-items-center">
+            <div class="col-3">
+                <label class="col-form-label">部門名</label>
+            </div>
+            <div class="col-6">
+                <input asp-for="BumonName" class="form-control" name="BumonName" />
+            </div>
+        </div>
+        <div class="row mb-3 align-items-center">
+            <div class="col-3">
+            </div>
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary">検索</button>
+            </div>
+        </div>
+    </form>
+    
+    <table class="table table-bordered table-hover table-striped align-middle">
+        <thead class="table-light text-center">
+            <tr>
+                <th style="width: 80px;">選択</th>
+                <th style="width: 150px;">部門コード</th>
+                <th>部門名</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @if (Model.Results != null && Model.Results.Any())
+            {
+                foreach (var item in Model.Results)
+                {
+                    <tr>
+                        
+                        <td class="text-center">
+                            <input type="radio"
+                                    class="btn btn-primary"
+                                    value="@item.BumonCode"
+                                    data-name="@item.BumonName"
+                                    name="selectedBumon">
+                        </td>
+                        <td class="text-center">@item.BumonCode</td>
+                        <td>@item.BumonName</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center text-muted">
+                        データがありません。
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="row mb-3 align-items-center">
+        <div class="col-3">
+            <button type="button" class="btn btn-primary"
+            onclick=  "selectBumon()">選択</button>
+        </div>
+        <div class="col-3">
+            <button type="button" onclick="closeModel()" class="btn btn-dark">戻る</button>
+        </div>
+    </div>
+</div>

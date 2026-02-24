@@ -8,10 +8,10 @@ namespace ProjectInternship.Models
     {
         [Key]
         [Column("DENPYONO")]
-        public long Denpyono { get; set; }
+        public long? Denpyono { get; set; }
 
         [Column("KAIKEIND")]
-        public long Kaikeind { get; set; }
+        public long? Kaikeind { get; set; }
 
         [Column("UKETUKEDT")]
         public DateTime? Uketukedt { get; set; }
