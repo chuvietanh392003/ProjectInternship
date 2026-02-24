@@ -30,6 +30,16 @@ namespace ProjectInternship.ViewModels
 
         public Boolean isCreated { get; set; }
 
+        public DateTime UketukeDT { get; set; }
+
+        public String? ShuppatsuPLC{ get; set;}
+
+        public String? MokutekiPLC { get; set; }
+
+        public  String? Keiro { get; set; }
+
+        public long? Kingaku { get; set; }
+
         public List<YoteiDenpyoTourokuVM>? Results { get; set; }
     }
 

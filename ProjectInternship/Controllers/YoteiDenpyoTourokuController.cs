@@ -74,7 +74,7 @@ namespace ProjectInternship.Controllers
                 case "exit":
                     return RedirectToAction("Index", "EsYdenpyo");
             }
-
+            model.Results = _context.EsYdenpyos
             return View(model);
         }
     }

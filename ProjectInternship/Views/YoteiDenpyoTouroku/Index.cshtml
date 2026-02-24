@@ -1,6 +1,9 @@
-﻿@model ProjectInternship.ViewModels.YoteiDenpyoTourokuVM
+﻿@model YoteiDenpyoTourokuVM
 @{
     ViewData["Title"] = "予定伝票入力";
+}
+@{
+    var i = 1;
 }
 
 @if (TempData["Success"] != null)
@@ -209,7 +212,52 @@
         <!-- ===== 備考 ===== -->
         <div class="row mb-3 align-items-center">
             <label class="col-2 col-form-label">（備考）</label>
+            <div class="col-9 text-end">
+                <a class="btn btn-primary" href="/PlannedTransactionDetail">明細追加</a>
+            </div>  
         </div>
+<table class="table">
+    <thead>
+        <tr>
+            <th colspan="6" class="text-center">交通費</th>
+        </tr>
+        <tr>
+            <th>
+                行
+            </th>
+            <th>
+                年月日
+            </th>
+            <th>
+                出発地
+            </th>
+            <th>
+                目的地
+            </th>
+            <th>
+                経路
+            </th>
+            <th>
+                金額
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+    @foreach (var item in Model.Results)
+    {
+        <tr>
+            <td>@i</td>
+            <td>@i</td>
+            <td>@i</td>
+            <td>@i</td>
+            <td>@i</td>
+            <td>@i</td>
+        </tr>
+    i++;
+    }
+</tbody>
+</table>
 
     </div>
 </form>
