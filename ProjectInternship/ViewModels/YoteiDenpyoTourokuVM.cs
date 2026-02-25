@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProjectInternship.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjectInternship.ViewModels
@@ -40,7 +41,9 @@ namespace ProjectInternship.ViewModels
 
         public long? Kingaku { get; set; }
 
-        public List<YoteiDenpyoTourokuVM>? Results { get; set; }
+        public decimal? TotalKingaku { get; set; }
+
+        public List<TransactionDetail>? Results { get; set; }
     }
 
 }

@@ -248,19 +248,43 @@
     {
         <tr>
             <td>@i</td>
-            <td>@i</td>
-            <td>@i</td>
-            <td>@i</td>
-            <td>@i</td>
-            <td>@i</td>
+            <td>@item.Idodt</td>
+            <td>@item.ShuppatsuPlc</td>
+            <td>@item.MokutekiPlc</td>
+            <td>@item.Keiro</td>
+            <td>@item.Kingaku</td>
         </tr>
+
     i++;
     }
 </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                        
+                    </th>
+                    <th>
+                       
+                    </th>
+                    <th>
+                        
+                    </th>
+                    <th>
+                       
+                    </th>
+                    <th>
+                        交通費計
+                    </th>
+                    <th>
+                        @Model.TotalKingaku
+                    </th>
+                </tr>
+            </tfoot>
 </table>
 
     </div>
 </form>
+
 
 <div class="modal fade" id="bumonModal" tabindex="-1">
     <div class="modal-dialog modal-lg">

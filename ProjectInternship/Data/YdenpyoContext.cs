@@ -16,6 +16,8 @@ namespace ProjectInternship.Data
         }
 
         public DbSet<ProjectInternship.Models.EsYdenpyo> EsYdenpyos { get; set; }
+        public DbSet<ProjectInternship.Models.TransactionDetail> TransactionDetails { get; set; }
+
         public DbSet<ProjectInternship.Models.Bumon> Bumons { get; set; }
     }
 }
