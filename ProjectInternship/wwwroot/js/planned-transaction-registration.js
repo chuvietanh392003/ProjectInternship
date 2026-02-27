@@ -131,6 +131,7 @@ function updateDetailTableFromLocalStorage() {
             row.children[5].innerText =
                 data.Kingaku;
             if (data.isCheckedToDelete) {
+                console.log(1)
                 row.classList.add("bg-dark", "text-white");
             }
             else {
