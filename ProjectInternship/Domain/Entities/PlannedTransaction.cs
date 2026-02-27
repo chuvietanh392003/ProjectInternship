@@ -1,17 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProjectInternship.Models
+namespace ProjectInternship.Domain.Entities
 {
     [Table("ES_YDENPYO", Schema = "SYSTEM")]
-    public class EsYdenpyo
+    public class PlannedTransaction
     {
         [Key]
         [Column("DENPYONO")]
-        public long? Denpyono { get; set; }
+        public decimal? Denpyono { get; set; }
 
         [Column("KAIKEIND")]
-        public long? Kaikeind { get; set; }
+        public decimal? Kaikeind { get; set; }
 
         [Column("UKETUKEDT")]
         public DateTime? Uketukedt { get; set; }
@@ -23,7 +23,7 @@ namespace ProjectInternship.Models
         public string? BumoncdYkanr { get; set; }
 
         [ForeignKey("BumoncdYkanr")]
-        public Bumon? Bumon { get; set; }
+        public Department? Bumon { get; set; }
 
 
         [Column("BIKO")]

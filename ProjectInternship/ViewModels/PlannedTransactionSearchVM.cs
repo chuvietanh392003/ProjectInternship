@@ -1,7 +1,8 @@
-﻿using ProjectInternship.Models;
+﻿using ProjectInternship.Domain.Entities;
+
 namespace ProjectInternship.ViewModels
 {
-    public class EsYdenpyoSearchVM
+    public class PlannedTransactionSearchVM
     {
         public long? Kaikeind { get; set; }
         public long? DenpyonoFrom { get; set; }
@@ -17,7 +18,7 @@ namespace ProjectInternship.ViewModels
         public String? Genkin { get; set; }
        
         public decimal? TotalKingaku { get; set; }
-        public List<EsYdenpyo>? Results { get; set; }
+        public List<PlannedTransaction>? Results { get; set; }
     }
 
 }

@@ -1,9 +1,9 @@
-﻿using ProjectInternship.Models;
+﻿using ProjectInternship.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjectInternship.ViewModels
 {
-    public class BumonVM
+    public class DepartmentVM
     {
         [Required]
         public string? BumonCode { get; set; }
@@ -11,6 +11,6 @@ namespace ProjectInternship.ViewModels
         [Required]
         public string? BumonName { get; set; }
 
-        public List<BumonVM>? Results { get; set; }
+        public List<DepartmentVM>? Results { get; set; }
     }
 }

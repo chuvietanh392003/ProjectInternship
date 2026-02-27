@@ -1,18 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 using Oracle.EntityFrameworkCore;
 using ProjectInternship.Data;
+using ProjectInternship.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<YdenpyoContext>(options =>
+builder.Services.AddDbContext<PlannedTransactionDbContext>(options =>
     options.UseOracle(
         builder.Configuration.GetConnectionString("OracleDb")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<DepartmentService>();
+builder.Services.AddScoped<PlannedTransactionService>();
+builder.Services.AddScoped<PlannedTransactionRegistrationService>();
+
 
 var app = builder.Build();
-
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

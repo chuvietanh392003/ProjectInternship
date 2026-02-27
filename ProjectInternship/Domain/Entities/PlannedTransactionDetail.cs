@@ -1,25 +1,24 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ProjectInternship.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ProjectInternship.Models;
+namespace ProjectInternship.Domain.Entities;
 
 [Table("KOTSUHI_MEISAI")]
 
 [PrimaryKey(nameof(Denpyono), nameof(Gyono))]
-public class TransactionDetail
+public class PlannedTransactionDetail
 {
     [Column("DENPYONO")]
-    public decimal Denpyono { get; set; }
+    public decimal? Denpyono { get; set; }
 
     [Column("GYONO")]
-    public decimal Gyono { get; set; }
+    public decimal? Gyono { get; set; }
 
     [Column("IDODT")]
     [StringLength(8)]
-    public string? Idodt { get; set; } 
+    public DateTime? Idodt { get; set; } 
 
     [Column("SHUPPATSUPLC")]
     [StringLength(100)]

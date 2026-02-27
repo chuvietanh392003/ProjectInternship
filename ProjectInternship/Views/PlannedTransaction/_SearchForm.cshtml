@@ -1,0 +1,194 @@
+﻿@model PlannedTransactionSearchVM
+
+<form asp-controller="PlannedTransaction"
+      asp-action="Index"
+      method="get">
+
+    <div class="container">
+
+        <div class="row mb-3">
+
+            <label class="col-4 col-form-label">
+
+                年度
+
+            </label>
+
+            <div class="col-3">
+
+                <input asp-for="Kaikeind"
+                       type="number"
+                       class="form-control"
+                       placeholder="xxxx年度" />
+
+            </div>
+
+        </div>
+
+
+        <div class="row mb-3">
+
+            <label class="col-4 col-form-label">
+
+                伝票番号
+
+            </label>
+
+            <div class="col-3">
+
+                <input asp-for="DenpyonoFrom"
+                       type="number"
+                       class="form-control" />
+
+            </div>
+
+            -
+
+            <div class="col-3">
+
+                <input asp-for="DenpyonoTo"
+                       type="number"
+                       class="form-control" />
+
+            </div>
+
+        </div>
+
+
+        <div class="row mb-3">
+
+            <label class="col-4 col-form-label">
+
+                伝票日付
+
+            </label>
+
+            <div class="col-3">
+
+                <input asp-for="DenpyodtFrom"
+                       type="date"
+                       class="form-control" />
+
+            </div>
+
+            -
+
+            <div class="col-3">
+
+                <input asp-for="DenpyodtTo"
+                       type="date"
+                       class="form-control" />
+
+            </div>
+
+        </div>
+
+
+        <div class="row mb-3">
+
+            <label class="col-4 col-form-label">
+
+                申請日
+
+            </label>
+
+            <div class="col-3">
+
+                <input asp-for="UketukedtFrom"
+                       type="date"
+                       class="form-control" />
+
+            </div>
+
+            -
+
+            <div class="col-3">
+
+                <input asp-for="UketukedtTo"
+                       type="date"
+                       class="form-control" />
+
+            </div>
+
+        </div>
+
+
+        <div class="row mb-3 align-items-center">
+
+            <label class="col-4 col-form-label">
+
+                出納方法
+
+            </label>
+
+            <div class="col-2">
+
+                <div class="form-check mt-2">
+
+                    <input asp-for="Suitofuri"
+                           class="form-check-input"
+                           type="checkbox"
+                           id="suitofuri" />
+
+                    <label class="form-check-label"
+                           for="suitofuri">
+
+                        振込
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-2">
+
+                <div class="form-check mt-2">
+
+                    <input asp-for="Genkin"
+                           class="form-check-input"
+                           type="checkbox"
+                           id="genkin" />
+
+                    <label class="form-check-label"
+                           for="genkin">
+
+                        現金
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-2 text-end">
+
+                <button type="submit"
+                        class="btn btn-primary">
+
+                    探索
+
+                </button>
+
+            </div>
+
+
+            <div class="col-2 text-center">
+
+                <a asp-controller="PlannedTransactionRegistration"
+                   asp-action="Index"
+                   class="btn btn-primary">
+
+                    登録
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</form>

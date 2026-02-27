@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectInternship.Models;
+using ProjectInternship.Domain.Entities; 
 using System.Diagnostics;
 using ProjectInternship.ViewModels;
 

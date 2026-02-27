@@ -1,4 +1,72 @@
-﻿<h2 class="text-center align-content-around mb-5">予定伝票明細</h2>
-<form action="/" method="post">
+﻿@model PlannedTransactionDetailVM
+<script src="~/js/planned-transaction-detail.js"></script>
+<h2 class="text-center align-content-around mb-5">予定伝票明細</h2>
+<form action="/PlannedTransactionDetail/Index" method="post" id="mainForm">
+	<div class="row mb-3 align-items-center">
+		<div class="col-2">
+			<label class="col-form-label">年月日</label>
+		</div>
+		<div class="col-2">
+			<input class="form-control" type ="date" asp-for="Idodt" />
+		</div>
+	</div>
+	<div class="row mb-3 align-items-center">
+		<div class="col-2">
+			<label class="col-form-label">出発地</label>
+		</div>
+		<div class="col-2">
+			<input class="form-control" asp-for="ShuppatsuPlc" />
+		</div>
+	</div>
+	<div class="row mb-3 align-items-center">
+		<div class="col-2">
+			<label class="col-form-label">目的地</label>
+		</div>
+		<div class="col-2">
+			<input class="form-control" asp-for="MokutekiPlc" />
+		</div>
+	</div>
+	<div class="row mb-3 align-items-center">
+		<div class="col-2">
+			<label class="col-form-label">経路</label>
+		</div>
+		<div class="col-2">
+			<input class="form-control" asp-for="Keiro" />
+		</div>
+	</div>
+	<div class="row mb-3 align-items-center">
+		<div class="col-2">
+			<label class="col-form-label" >金額</label>
+		</div>
+		<div class="col-2">
+			<input class="form-control" asp-for="Kingaku" />
+		</div>
+	</div>
+	<div class="row mb-3 align-items-center">
+		<div class="col-2">
+			<label class="col-form-label">削除</label>
+		</div>
+		<div class="col-2">
+			<input asp-for="isCheckedToDelete"
+				   class="form-check-input"
+				   type="checkbox"
+				   disabled="@(Model.isCreated != true)" />
+			<input type="hidden" asp-for="Denpyono" />
+			<input type="hidden" asp-for="Gyono" />
+		</div>
+		<div class="col-8 text-end">
 
+			<button type="button"
+					onclick="saveToLocalstorage()"
+					class="btn btn-primary me-2">
+				登録
+			</button>
+
+			<button type="button"
+					onclick="history.back()"
+					class="btn btn-secondary">
+				終了
+			</button>
+
+	</div>
 </form>

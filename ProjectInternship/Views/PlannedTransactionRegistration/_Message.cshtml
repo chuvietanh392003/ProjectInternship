@@ -1,0 +1,15 @@
+﻿@if (TempData["Success"] != null)
+{
+    <script>
+        alert('@TempData["Success"]');
+        window.location.href = '@Url.Action("Index", "PlannedTransaction")';
+    </script>
+}
+
+@if (TempData["DeleteSuccessful"] != null)
+{
+    <script>
+        alert('@TempData["DeleteSuccessful"]');
+        window.location.href = '@Url.Action("Index", "PlannedTransaction")';
+    </script>
+}

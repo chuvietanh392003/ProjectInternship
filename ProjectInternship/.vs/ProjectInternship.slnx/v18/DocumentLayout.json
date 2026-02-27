@@ -3,96 +3,144 @@
   "WorkspaceRootPath": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\yoteidenpyotouroku\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\yoteidenpyotouroku\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransactionregistration\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransactionregistration\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\models\\transactiondetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:models\\transactiondetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\wwwroot\\js\\planned-transaction-registration.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:wwwroot\\js\\planned-transaction-registration.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\models\\esydenpyo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:models\\esydenpyo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\wwwroot\\js\\planned-transaction-detail.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:wwwroot\\js\\planned-transaction-detail.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\data\\ydenpyocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:data\\ydenpyocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\yoteidenpyotourokucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\yoteidenpyotourokucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\plannedtransactionregistrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\plannedtransactionregistrationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\plannedtransactiondetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\plannedtransactiondetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\esydenpyocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\esydenpyocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransactiondetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransactiondetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\esydenpyo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\esydenpyo\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\department\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\department\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\viewmodels\\yoteidenpyotourokuvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:viewmodels\\yoteidenpyotourokuvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\services\\plannedtransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:services\\plannedtransactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\wwwroot\\js\\planned-transaction-search.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:wwwroot\\js\\planned-transaction-search.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\plannedtransactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\plannedtransactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\services\\plannedtransactionregistrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:services\\plannedtransactionregistrationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\viewmodels\\resultvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:viewmodels\\resultvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\viewmodels\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:viewmodels\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransaction\\_searchform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransaction\\_searchform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransaction\\_resulttable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransaction\\_resulttable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransaction\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransaction\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\domain\\entities\\plannedtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:domain\\entities\\plannedtransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransactionregistration\\_message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransactionregistration\\_message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransactionregistration\\_departmentmodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransactionregistration\\_departmentmodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\controllers\\bumoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:controllers\\bumoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransactionregistration\\_detailtable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransactionregistration\\_detailtable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\viewmodels\\plannedtransactiondetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:viewmodels\\plannedtransactiondetailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransactionregistration\\_headerform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransactionregistration\\_headerform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\models\\bumon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:models\\bumon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\viewmodels\\plannedtransactionsearchvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:viewmodels\\plannedtransactionsearchvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\viewmodels\\esydenpyosearchvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:viewmodels\\esydenpyosearchvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\viewmodels\\departmentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:viewmodels\\departmentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\viewmodels\\bumonvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:viewmodels\\bumonvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:domain\\entities\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\plannedtransactiondetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\plannedtransactiondetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\data\\plannedtransactiondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:data\\plannedtransactiondbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\bumon\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\bumon\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\viewmodels\\plannedtransactionregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:viewmodels\\plannedtransactionregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0D3B676-763C-4D1E-F199-5FD9A4956B7F}|ProjectInternship.csproj|c:\\users\\chuvietanh\\dotnet\\projectinternship\\projectinternship\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -114,170 +162,389 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "YoteiDenpyoTourokuController.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\YoteiDenpyoTourokuController.cs",
-              "RelativeDocumentMoniker": "Controllers\\YoteiDenpyoTourokuController.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\YoteiDenpyoTourokuController.cs",
-              "RelativeToolTip": "Controllers\\YoteiDenpyoTourokuController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAD4v2oAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "planned-transaction-registration.js",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\js\\planned-transaction-registration.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\planned-transaction-registration.js",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\js\\planned-transaction-registration.js",
+              "RelativeToolTip": "wwwroot\\js\\planned-transaction-registration.js",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAkwEEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-27T01:41:51.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "planned-transaction-detail.js",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\js\\planned-transaction-detail.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\planned-transaction-detail.js",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\js\\planned-transaction-detail.js",
+              "RelativeToolTip": "wwwroot\\js\\planned-transaction-detail.js",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-27T04:11:07.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlannedTransactionRegistrationController.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\PlannedTransactionRegistrationController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PlannedTransactionRegistrationController.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\PlannedTransactionRegistrationController.cs",
+              "RelativeToolTip": "Controllers\\PlannedTransactionRegistrationController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T03:39:00.482Z",
+              "WhenOpened": "2026-02-25T09:07:25.324Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\YoteiDenpyoTouroku\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\YoteiDenpyoTouroku\\Index.cshtml",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\YoteiDenpyoTouroku\\Index.cshtml",
-              "RelativeToolTip": "Views\\YoteiDenpyoTouroku\\Index.cshtml",
-              "ViewState": "AgIAABsBAAAAAAAAAAAIwCgBAAASAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlannedTransactionRegistration\\Index.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\Index.cshtml",
+              "RelativeToolTip": "Views\\PlannedTransactionRegistration\\Index.cshtml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAtwEUAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-12T07:58:29.472Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TransactionDetail.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\TransactionDetail.cs",
-              "RelativeDocumentMoniker": "Models\\TransactionDetail.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\TransactionDetail.cs",
-              "RelativeToolTip": "Models\\TransactionDetail.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T02:43:13.745Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "YdenpyoContext.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Data\\YdenpyoContext.cs",
-              "RelativeDocumentMoniker": "Data\\YdenpyoContext.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Data\\YdenpyoContext.cs",
-              "RelativeToolTip": "Data\\YdenpyoContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T04:11:56.897Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EsYdenpyo.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\EsYdenpyo.cs",
-              "RelativeDocumentMoniker": "Models\\EsYdenpyo.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\EsYdenpyo.cs",
-              "RelativeToolTip": "Models\\EsYdenpyo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T06:19:27.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "PlannedTransactionDetailController.cs",
               "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\PlannedTransactionDetailController.cs",
               "RelativeDocumentMoniker": "Controllers\\PlannedTransactionDetailController.cs",
               "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\PlannedTransactionDetailController.cs",
               "RelativeToolTip": "Controllers\\PlannedTransactionDetailController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-24T07:34:19.922Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "EsYdenpyoController.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\EsYdenpyoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EsYdenpyoController.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\EsYdenpyoController.cs",
-              "RelativeToolTip": "Controllers\\EsYdenpyoController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAYwDMAAABoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:34:39.065Z",
+              "DocumentIndex": 8,
+              "Title": "planned-transaction-search.js",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\js\\planned-transaction-search.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\planned-transaction-search.js",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\js\\planned-transaction-search.js",
+              "RelativeToolTip": "wwwroot\\js\\planned-transaction-search.js",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAA4AAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-27T02:53:15.566Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
+              "Title": "PlannedTransactionController.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\PlannedTransactionController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PlannedTransactionController.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\PlannedTransactionController.cs",
+              "RelativeToolTip": "Controllers\\PlannedTransactionController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T08:25:58.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PlannedTransactionRegistrationService.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Services\\PlannedTransactionRegistrationService.cs",
+              "RelativeDocumentMoniker": "Services\\PlannedTransactionRegistrationService.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Services\\PlannedTransactionRegistrationService.cs",
+              "RelativeToolTip": "Services\\PlannedTransactionRegistrationService.cs",
+              "ViewState": "AgIAAIUAAAAAAAAAAAAnwIMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T10:13:56.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ResultVM.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\ResultVM.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ResultVM.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\ResultVM.cs",
+              "RelativeToolTip": "ViewModels\\ResultVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-27T03:17:01.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\ErrorViewModel.cs",
+              "RelativeToolTip": "ViewModels\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T02:56:13.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_SearchForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransaction\\_SearchForm.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlannedTransaction\\_SearchForm.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransaction\\_SearchForm.cshtml",
+              "RelativeToolTip": "Views\\PlannedTransaction\\_SearchForm.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAtwGAAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-27T02:47:36.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_ResultTable.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransaction\\_ResultTable.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlannedTransaction\\_ResultTable.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransaction\\_ResultTable.cshtml",
+              "RelativeToolTip": "Views\\PlannedTransaction\\_ResultTable.cshtml",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAowGIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-27T02:48:23.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\EsYdenpyo\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\EsYdenpyo\\Index.cshtml",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\EsYdenpyo\\Index.cshtml",
-              "RelativeToolTip": "Views\\EsYdenpyo\\Index.cshtml",
-              "ViewState": "AgIAAIEAAAAAAAAAAAAAAIgAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransaction\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlannedTransaction\\Index.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransaction\\Index.cshtml",
+              "RelativeToolTip": "Views\\PlannedTransaction\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-02-12T04:11:18.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "YoteiDenpyoTourokuVM.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\YoteiDenpyoTourokuVM.cs",
-              "RelativeDocumentMoniker": "ViewModels\\YoteiDenpyoTourokuVM.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\YoteiDenpyoTourokuVM.cs",
-              "RelativeToolTip": "ViewModels\\YoteiDenpyoTourokuVM.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAlwCgAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 16,
+              "Title": "PlannedTransaction.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Domain\\Entities\\PlannedTransaction.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\PlannedTransaction.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Domain\\Entities\\PlannedTransaction.cs",
+              "RelativeToolTip": "Domain\\Entities\\PlannedTransaction.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAawCAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T09:24:49.801Z",
+              "WhenOpened": "2026-02-23T06:19:27.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAA3wAcAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T07:34:51.145Z",
+              "DocumentIndex": 18,
+              "Title": "_DepartmentModal.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\_DepartmentModal.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlannedTransactionRegistration\\_DepartmentModal.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\_DepartmentModal.cshtml",
+              "RelativeToolTip": "Views\\PlannedTransactionRegistration\\_DepartmentModal.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-27T02:13:40.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BumonController.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\BumonController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BumonController.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\BumonController.cs",
-              "RelativeToolTip": "Controllers\\BumonController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwA4AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 17,
+              "Title": "_Message.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\_Message.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlannedTransactionRegistration\\_Message.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\_Message.cshtml",
+              "RelativeToolTip": "Views\\PlannedTransactionRegistration\\_Message.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-27T02:14:03.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DepartmentController.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-12T06:32:22.906Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PlannedTransactionDetailVM.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\PlannedTransactionDetailVM.cs",
-              "RelativeDocumentMoniker": "ViewModels\\PlannedTransactionDetailVM.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\PlannedTransactionDetailVM.cs",
-              "RelativeToolTip": "ViewModels\\PlannedTransactionDetailVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwAEAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T02:32:07.414Z"
+              "WhenOpened": "2026-02-25T08:25:59.396Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 21,
+              "Title": "_DetailTable.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\_DetailTable.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlannedTransactionRegistration\\_DetailTable.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\_DetailTable.cshtml",
+              "RelativeToolTip": "Views\\PlannedTransactionRegistration\\_DetailTable.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-27T02:13:15.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "_HeaderForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\_HeaderForm.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlannedTransactionRegistration\\_HeaderForm.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionRegistration\\_HeaderForm.cshtml",
+              "RelativeToolTip": "Views\\PlannedTransactionRegistration\\_HeaderForm.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-27T02:12:44.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-02-27T01:41:29.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAA8AAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T01:50:47.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "PlannedTransactionSearchVM.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\PlannedTransactionSearchVM.cs",
+              "RelativeDocumentMoniker": "ViewModels\\PlannedTransactionSearchVM.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\PlannedTransactionSearchVM.cs",
+              "RelativeToolTip": "ViewModels\\PlannedTransactionSearchVM.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T06:37:41.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "DepartmentVM.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\DepartmentVM.cs",
+              "RelativeDocumentMoniker": "ViewModels\\DepartmentVM.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\DepartmentVM.cs",
+              "RelativeToolTip": "ViewModels\\DepartmentVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T06:27:33.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Domain\\Entities\\Department.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Department.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Domain\\Entities\\Department.cs",
+              "RelativeToolTip": "Domain\\Entities\\Department.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwBMAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T05:32:22.224Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "PlannedTransactionDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Data\\PlannedTransactionDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\PlannedTransactionDbContext.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Data\\PlannedTransactionDbContext.cs",
+              "RelativeToolTip": "Data\\PlannedTransactionDbContext.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBIAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T04:11:56.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-23T03:41:02.314Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-23T06:42:34.267Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "PlannedTransactionRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\PlannedTransactionRegistration.cs",
+              "RelativeDocumentMoniker": "ViewModels\\PlannedTransactionRegistration.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\PlannedTransactionRegistration.cs",
+              "RelativeToolTip": "ViewModels\\PlannedTransactionRegistration.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAIA5wC0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T08:20:51.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "Error.cshtml",
               "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
@@ -289,55 +556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Bumon.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\Bumon.cs",
-              "RelativeDocumentMoniker": "Models\\Bumon.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\Bumon.cs",
-              "RelativeToolTip": "Models\\Bumon.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T05:32:22.224Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "Models\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-12T02:56:13.82Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "EsYdenpyoSearchVM.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\EsYdenpyoSearchVM.cs",
-              "RelativeDocumentMoniker": "ViewModels\\EsYdenpyoSearchVM.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\EsYdenpyoSearchVM.cs",
-              "RelativeToolTip": "ViewModels\\EsYdenpyoSearchVM.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T06:37:41.595Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BumonVM.cs",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\BumonVM.cs",
-              "RelativeDocumentMoniker": "ViewModels\\BumonVM.cs",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\ViewModels\\BumonVM.cs",
-              "RelativeToolTip": "ViewModels\\BumonVM.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwA0AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T06:27:33.125Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 33,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
@@ -349,19 +568,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionDetail\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\PlannedTransactionDetail\\Index.cshtml",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionDetail\\Index.cshtml",
-              "RelativeToolTip": "Views\\PlannedTransactionDetail\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-24T07:24:14.472Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 34,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -373,43 +580,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAABuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-23T03:41:02.314Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Bumon\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Bumon\\Index.cshtml",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Bumon\\Index.cshtml",
-              "RelativeToolTip": "Views\\Bumon\\Index.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADkAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-24T05:52:01.041Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-23T06:42:34.267Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 35,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
@@ -421,7 +592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 36,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
@@ -433,7 +604,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 37,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -442,6 +613,108 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-12T02:59:38.691Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "eddb7fc0-4d22-4372-b77c-7826936441cc",
+        "Display": 1,
+        "X": 445,
+        "Y": 74,
+        "Width": 1051,
+        "Height": 731,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Department\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Department\\Index.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\Department\\Index.cshtml",
+              "RelativeToolTip": "Views\\Department\\Index.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAcAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-24T05:52:01.041Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "64f88e5a-76c6-4459-8cfa-c0bffcf7709c",
+        "Display": 1,
+        "X": 346,
+        "Y": 30,
+        "Width": 1051,
+        "Height": 629,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlannedTransactionService.cs",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Services\\PlannedTransactionService.cs",
+              "RelativeDocumentMoniker": "Services\\PlannedTransactionService.cs",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Services\\PlannedTransactionService.cs",
+              "RelativeToolTip": "Services\\PlannedTransactionService.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAYwF8AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-26T09:28:07.593Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "ce41d287-0273-4847-b6b7-e20c9ff49c25",
+        "Display": 1,
+        "X": 449,
+        "Y": 161,
+        "Width": 1051,
+        "Height": 410,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionDetail\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\PlannedTransactionDetail\\Index.cshtml",
+              "ToolTip": "C:\\Users\\chuvietanh\\dotnet\\ProjectInternship\\ProjectInternship\\Views\\PlannedTransactionDetail\\Index.cshtml",
+              "RelativeToolTip": "Views\\PlannedTransactionDetail\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-24T07:24:14.472Z",
+              "EditorCaption": ""
             }
           ]
         }

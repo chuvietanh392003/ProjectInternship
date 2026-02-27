@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using ProjectInternship.Models;
+using ProjectInternship.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjectInternship.ViewModels
 {
-    public class YoteiDenpyoTourokuVM
+    public class PlannedTransactionRegistration
     {
         [Required]
-        public long? Kaikeind { get; set; }
+        public decimal Kaikeind { get; set; }
 
-        public long? Denpyono { get; set; }
+        public decimal? Denpyono { get; set; }
 
         public DateTime? Denpyodt { get; set; }
 
@@ -43,7 +43,7 @@ namespace ProjectInternship.ViewModels
 
         public decimal? TotalKingaku { get; set; }
 
-        public List<TransactionDetail>? Results { get; set; }
+        public List<PlannedTransactionDetail>? Results { get; set; }
     }
 
 }

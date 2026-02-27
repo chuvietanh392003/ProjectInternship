@@ -1,0 +1,21 @@
+﻿@model PlannedTransactionSearchVM
+
+@{
+    ViewData["Title"] = "予定伝票一覧";
+}
+
+<h2 class="text-center mb-5">予定伝票一覧</h2>
+
+<partial name="_SearchForm" model="Model" />
+
+<div id="resultContainer">
+    <partial name="_ResultTable" model="Model" />
+</div>
+
+@section Scripts {
+
+    <script src="~/js/planned-transaction-search.js"></script>
+
+    <partial name="_ValidationScriptsPartial" />
+
+}

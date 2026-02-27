@@ -1,0 +1,99 @@
+﻿@model PlannedTransactionSearchVM
+
+<table class="table table-hover">
+
+    <thead>
+        <tr>
+            <th>行</th>
+            <th>伝票番号</th>
+            <th>起票部門</th>
+            <th>伝票日付</th>
+            <th>申請日</th>
+            <th>出納方法</th>
+            <th>出張目的</th>
+            <th>金額</th>
+        </tr>
+    </thead>
+
+    <tbody id="resultBody">
+
+        @if (Model.Results != null && Model.Results.Any())
+        {
+            @for (int i = 0; i < Model.Results.Count; i++)
+            {
+                var item = Model.Results[i];
+
+                <tr class="planned-row"
+                    data-url="@Url.Action(
+                                            "Index",
+                                            "PlannedTransactionRegistration",
+                                            new
+                                            {
+                                               Kaikeind = item.Kaikeind,
+                                               Denpyono = item.Denpyono,
+                                               Denpyodt = item.Denpyodt.HasValue ? item.Denpyodt.Value.ToString("yyyy-MM-dd") : null,
+                                               Suitokb = item.Suitokb,
+                                               Shiharaidt = item.Shiharaidt.HasValue ? item.Shiharaidt.Value.ToString("yyyy-MM-dd") : null,
+                                               Uketukedt = item.Uketukedt.HasValue ? item.Uketukedt.Value.ToString("yyyy-MM-dd") : null,
+                                               BumoncdYkanr = item.BumoncdYkanr,
+                                               BumoncdName = item.Bumon != null ? item.Bumon.BumonName : null,
+                                               Biko = item.Biko,
+                                               isCreated = true
+                                            })">
+
+            <td>@(i + 1)</td>
+
+                    <td>@item.Denpyono</td>
+
+                    <td>
+                        @item.Bumon?.BumonName
+                    </td>
+
+                    <td>
+                        @item.Denpyodt?.ToString("yyyy-MM-dd")
+                    </td>
+
+                    <td>
+                        @item.Uketukedt?.ToString("yyyy-MM-dd")
+                    </td>
+
+                    <td>
+                        @(item.Suitokb == "振込" ? "振込" : "現金")
+                    </td>
+
+                    <td>
+                        @item.Biko
+                    </td>
+
+                    <td>
+                        @item.Kingaku
+                    </td>
+
+                </tr>
+                }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8" class="text-center text-muted">
+                    データがありません。
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+
+<div class="row mb-3">
+
+    <label class="col-10 text-center fw-bold">
+        交通費計
+    </label>
+
+    <label class="col-2 text-center fw-bold">
+        @Model.TotalKingaku
+    </label>
+
+</div>

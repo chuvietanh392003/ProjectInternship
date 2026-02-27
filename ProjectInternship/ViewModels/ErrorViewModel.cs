@@ -1,4 +1,4 @@
-namespace ProjectInternship.Models
+namespace ProjectInternship.ViewModels
 {
     public class ErrorViewModel
     {

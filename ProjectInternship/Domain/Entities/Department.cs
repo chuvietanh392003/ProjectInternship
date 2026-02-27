@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Serialization;
 
-namespace ProjectInternship.Models
+namespace ProjectInternship.Domain.Entities
 {
     [Table("BUMON", Schema = "SYSTEM")]
-    public class Bumon
+    public class Department
     {
 
         [Key]
@@ -17,6 +17,6 @@ namespace ProjectInternship.Models
         [Column("BUMONNM")]
         public string? BumonName { get; set; }
 
-        public ICollection<EsYdenpyo>? EsYdenpyos { get; set; }
+        public ICollection<PlannedTransaction>? PlannedTransactions { get; set; }
     }
 }

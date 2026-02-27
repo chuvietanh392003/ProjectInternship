@@ -1,4 +1,4 @@
-﻿@model YoteiDenpyoTourokuVM
+﻿@model PlannedTransactionRegistration
 @{
     ViewData["Title"] = "予定伝票入力";
 }
@@ -6,79 +6,15 @@
     var i = 1;
 }
 
-@if (TempData["Success"] != null)
-{
-    <script>
-        alert('@TempData["Success"]');
-        window.location.href = '@Url.Action("Index", "EsYdenpyo")';
-    </script>
-}
+<partial name="_Message"/>
+<script src="~/js/planned-transaction-registration.js">
 
-@if (TempData["DeleteSuccessful"] != null)
-{
-    <script>
-        alert('@TempData["DeleteSuccessful"]');
-        window.location.href = '@Url.Action("Index", "EsYdenpyo")';
-    </script>
-}
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-    <script>
-        document.getElementById("openBumonModal").addEventListener("click", function () {
-
-            fetch('@Url.Action("Index", "Bumon")')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("bumonModalBody").innerHTML = data;
-
-                    var modal = new bootstrap.Modal(document.getElementById('bumonModal'));
-                    modal.show();
-                });
-        });
-    </script>
-}
-
-<script>
-        function selectBumon() {
-        const selected = document.querySelector('input[name="selectedBumon"]:checked');
-
-        if (!selected) {
-            alert("部門を選択してください");
-            return;
-        }
-
-        const code = selected.value;
-
-        document.getElementById("BumoncdYkanr").value = code;
-
-        const modalEl = document.getElementById('bumonModal');
-        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-        modal.hide();
-    }
-
-        function closeModel(){
-        const modalEl = document.getElementById('bumonModal');
-        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-        modal.hide();
-    }
-
-        function searchBumon(e) {
-            e.preventDefault();
-
-            const formData = new FormData(e.target);
-        fetch('/Bumon/Index?' + new URLSearchParams(formData))
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("bumonModalBody").innerHTML = data;
-            });
-    }
 </script>
-
 <h2 class="text-center mb-5">予定伝票入力</h2>
 
-<form asp-controller="YoteiDenpyoTouroku"
+<form asp-controller="PlannedTransactionRegistration"
       asp-action="Index"
+       id="mainForm"
       method="post">
 
     @Html.AntiForgeryToken()
@@ -243,21 +179,54 @@
         </tr>
     </thead>
 
-    <tbody>
-    @foreach (var item in Model.Results)
-    {
-        <tr>
-            <td>@i</td>
-            <td>@item.Idodt</td>
-            <td>@item.ShuppatsuPlc</td>
-            <td>@item.MokutekiPlc</td>
-            <td>@item.Keiro</td>
-            <td>@item.Kingaku</td>
-        </tr>
+    <tbody id="detailBody">
 
-    i++;
-    }
+@foreach (var item in Model.Results)
+{
+
+<tr
+
+data-denpyono="@item.Denpyono"
+data-gyono="@item.Gyono"
+
+style="cursor:pointer"
+
+onclick="location.href='@Url.Action(
+"Index",
+"PlannedTransactionDetail",
+new {
+
+Denpyono=item.Denpyono,
+Gyono=item.Gyono,
+Idodt=item.Idodt.Value.ToString("yyyy-MM-dd"),
+ShuppatsuPlc=item.ShuppatsuPlc,
+MokutekiPlc=item.MokutekiPlc,
+Keiro=item.Keiro,
+Kingaku=item.Kingaku,
+isCreated=true
+
+})'">
+
+<td>@i</td>
+
+<td>@item.Idodt?.ToString("yyyy-MM-dd")</td>
+
+<td>@item.ShuppatsuPlc</td>
+
+<td>@item.MokutekiPlc</td>
+
+<td>@item.Keiro</td>
+
+<td class="kingaku">@item.Kingaku</td>
+
+</tr>
+
+i++;
+
+}
+
 </tbody>
+
             <tfoot>
                 <tr>
                     <th>
