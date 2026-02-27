@@ -25,11 +25,13 @@
             document.querySelector('[name="Keiro"]').value,
 
         Kingaku:
-            document.querySelector('[name="Kingaku"]').value
+            document.querySelector('[name="Kingaku"]').value,
+
+        isCheckedToDelete:
+           document.querySelector('[name="isCheckedToDelete"]').checked
 
     };
 
-    // 👇 KEY dynamic
     const key =
         `PlannedTransactionDetail_${Denpyono}_${Gyono}`;
 

@@ -1,4 +1,4 @@
-﻿@model PlannedTransactionRegistration
+﻿@model PlannedTransactionRegistrationVM
 @{
     ViewData["Title"] = "予定伝票入力";
 }
@@ -149,7 +149,13 @@
         <div class="row mb-3 align-items-center">
             <label class="col-2 col-form-label">（備考）</label>
             <div class="col-9 text-end">
-                <a class="btn btn-primary" href="/PlannedTransactionDetail">明細追加</a>
+             <a class="btn btn-primary"
+               asp-controller="PlannedTransactionDetail"
+               asp-action="Index"
+               asp-route-Denpyono="@Model.Denpyono"
+               asp-route-Gyono="@(Model.Results?.Count() + 1 ?? 1)">
+               明細追加
+            </a>
             </div>  
         </div>
 <table class="table">
@@ -185,7 +191,6 @@
 {
 
 <tr
-
 data-denpyono="@item.Denpyono"
 data-gyono="@item.Gyono"
 
@@ -225,7 +230,7 @@ i++;
 
 }
 
-</tbody>
+</tbody class = "auto-row-number">
 
             <tfoot>
                 <tr>

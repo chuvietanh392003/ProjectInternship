@@ -62,8 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function updateDetailTableFromLocalStorage() {
-
-    let decimal? total
     const currentDenpyono =
         document.getElementById("Denpyono")?.value;
 
@@ -105,7 +103,6 @@ function updateDetailTableFromLocalStorage() {
         const data =
             JSON.parse(
                 localStorage.getItem(storageKey));
-        console.log(currentDenpyono)
         if (data.Denpyono != currentDenpyono)
             continue;
 
@@ -133,9 +130,13 @@ function updateDetailTableFromLocalStorage() {
 
             row.children[5].innerText =
                 data.Kingaku;
-
+            if (data.isCheckedToDelete) {
+                row.classList.add("bg-dark", "text-white");
+            }
+            else {
+                row.classList.remove("bg-dark", "text-white");
+            }
         }
-
         // ===== INSERT =====
 
         else {
@@ -151,7 +152,7 @@ function updateDetailTableFromLocalStorage() {
 
             newRow.innerHTML = `
 
-<td>*</td>
+<td></td>
 
 <td>${data.Idodt ?? ""}</td>
 

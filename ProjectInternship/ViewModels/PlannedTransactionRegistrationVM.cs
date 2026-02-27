@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProjectInternship.ViewModels
 {
-    public class PlannedTransactionRegistration
+    public class PlannedTransactionRegistrationVM
     {
         [Required]
         public decimal Kaikeind { get; set; }

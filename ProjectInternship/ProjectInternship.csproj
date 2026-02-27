@@ -21,8 +21,4 @@
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.26.100" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-  </ItemGroup>
-
 </Project>

@@ -18,6 +18,7 @@ namespace ProjectInternship.Controllers
         [HttpPost]
         public IActionResult Index(PlannedTransactionDetailVM model)
         {
+
             return View(model);
         }
     }

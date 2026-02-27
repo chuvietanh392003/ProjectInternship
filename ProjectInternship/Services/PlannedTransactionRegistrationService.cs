@@ -16,10 +16,15 @@ public class PlannedTransactionRegistrationService
     }
 
     public async Task<decimal?> RegisterAsync(
-        PlannedTransactionRegistration model)
+        PlannedTransactionRegistrationVM model)
     {
         var maxNo =
             await _context.PlannedTransactions
+                .Select(x => (int?)x.Denpyono)
+                .MaxAsync() ?? 0;
+
+        var maxGyono =
+            await _context.TransactionDetails
                 .Select(x => (int?)x.Denpyono)
                 .MaxAsync() ?? 0;
 
@@ -67,7 +72,7 @@ public class PlannedTransactionRegistrationService
 
     private async Task SaveDetails(
         decimal? denpyono,
-        PlannedTransactionRegistration model)
+        PlannedTransactionRegistrationVM model)
     {
         if (model.Results == null) return;
 
@@ -136,7 +141,7 @@ public class PlannedTransactionRegistrationService
 
 
     public async Task LoadDetails(
-        PlannedTransactionRegistration model)
+        PlannedTransactionRegistrationVM model)
     {
         model.Results =
             await _context.TransactionDetails

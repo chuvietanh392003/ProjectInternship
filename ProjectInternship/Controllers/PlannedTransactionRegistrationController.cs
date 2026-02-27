@@ -20,7 +20,7 @@ public class PlannedTransactionRegistrationController
     [HttpGet]
     [HttpPost]
     public async Task<IActionResult> Index(
-        PlannedTransactionRegistration model,
+        PlannedTransactionRegistrationVM model,
         string actionType)
     {
         switch (actionType)
