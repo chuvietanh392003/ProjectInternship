@@ -28,7 +28,8 @@ public class PlannedTransactionRegistrationService
                 .Select(x => (int?)x.Denpyono)
                 .MaxAsync() ?? 0;
 
-        var header =
+        var 
+            =
             await _context.PlannedTransactions
             .FirstOrDefaultAsync(x =>
                 x.Denpyono == model.Denpyono);

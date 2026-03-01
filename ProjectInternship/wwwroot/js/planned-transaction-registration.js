@@ -1,183 +1,139 @@
-﻿function closeModel() {
-    const modalEl = document.getElementById('bumonModal');
-    const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-    modal.hide();
-}
-function selectBumon() {
-    const selected = document.querySelector('input[name="selectedBumon"]:checked');
+﻿(function () {
 
-    if (!selected) {
-        alert("部門を選択してください");
-        return;
-    }
+    document.addEventListener(
+        "DOMContentLoaded",
+        renderDetailTable
+    );
 
-    const code = selected.value;
-
-    document.getElementById("BumoncdYkanr").value = code;
-    closeModel();
-}
-
-function searchBumon(e) {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-    fetch('/Department/Index?' + new URLSearchParams(formData))
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("bumonModalBody").innerHTML = data;
-        });
-}
-
-function initDepartmentModal() {
-
-    const btn = document.getElementById("openBumonModal");
-
-    if (!btn) return;
-
-    btn.addEventListener("click", function () {
-
-        fetch("/Department/Index")
-            .then(response => response.text())
-            .then(data => {
-
-                document.getElementById("bumonModalBody").innerHTML = data;
-
-                const modalElement =
-                    document.getElementById("bumonModal");
-
-                const modal =
-                    new bootstrap.Modal(modalElement);
-
-                modal.show();
-            });
-
-    });
-
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    initDepartmentModal();
-
-});
-
-function updateDetailTableFromLocalStorage() {
-    const currentDenpyono =
-        document.getElementById("Denpyono")?.value;
-
-    const tbody =
-        document.getElementById("detailBody");
-
-    if (!tbody) return;
-
-    const rows =
-        tbody.querySelectorAll("tr");
-
-    // map existing rows
-    const existing = {};
-
-    rows.forEach(row => {
+    function renderDetailTable() {
 
         const denpyono =
-            row.dataset.denpyono;
+            document.querySelector(
+                '[name="Denpyono"]'
+            )?.value;
 
-        const gyono =
-            row.dataset.gyono;
+        const tbody =
+            document.getElementById(
+                "detailBody"
+            );
 
-        const key =
-            `${denpyono}_${gyono}`;
+        const totalCell =
+            document.getElementById(
+                "totalKingaku"
+            );
 
-        existing[key] = row;
-    });
+        if (!denpyono || !tbody)
+            return;
 
-    // loop localStorage
-    for (let i = 0; i < localStorage.length; i++) {
+        tbody.innerHTML = "";
 
-        const storageKey =
-            localStorage.key(i);
+        //----------------------------------
+        // get details from localStorage
+        //----------------------------------
 
-        if (!storageKey.startsWith(
-            "PlannedTransactionDetail_"))
-            continue;
+        const details = Object.keys(localStorage)
 
-        const data =
-            JSON.parse(
-                localStorage.getItem(storageKey));
-        if (data.Denpyono != currentDenpyono)
-            continue;
+            .filter(key =>
+                key.startsWith(
+                    `PlannedTransactionDetail_${denpyono}_`
+                ))
 
-        const key =
-            `${data.Denpyono}_${data.Gyono}`;
+            .map(key =>
+                JSON.parse(
+                    localStorage.getItem(key)
+                ))
 
-        // ===== UPDATE =====
+            .sort(
+                (a, b) =>
+                    Number(a.Gyono) -
+                    Number(b.Gyono)
+            );
 
-        if (existing[key]) {
+        //----------------------------------
+        // render table
+        //----------------------------------
 
-            const row =
-                existing[key];
+        let total = 0;
 
-            row.children[1].innerText =
-                data.Idodt;
+        details.forEach((item, index) => {
 
-            row.children[2].innerText =
-                data.ShuppatsuPlc;
-
-            row.children[3].innerText =
-                data.MokutekiPlc;
-
-            row.children[4].innerText =
-                data.Keiro;
-
-            row.children[5].innerText =
-                data.Kingaku;
-            if (data.isCheckedToDelete) {
-                console.log(1)
-                row.classList.add("bg-dark", "text-white");
-            }
-            else {
-                row.classList.remove("bg-dark", "text-white");
-            }
-        }
-        // ===== INSERT =====
-
-        else {
-
-            const newRow =
+            const tr =
                 document.createElement("tr");
 
-            newRow.dataset.denpyono =
-                data.Denpyono;
+            tr.className =
+                "detail-row";
 
-            newRow.dataset.gyono =
-                data.Gyono;
+            if (item.isCheckedToDelete) {
+                console.log("isCheckedToDelete" + item.Gyono + item.Denpyono);
+                tr.classList.add("deleted-row");
+                tr.style.background = "black";
+            }
+                
 
-            newRow.innerHTML = `
+            //----------------------------------
+            // click edit
+            //----------------------------------
 
-<td></td>
+            tr.onclick = () => {
 
-<td>${data.Idodt ?? ""}</td>
+                const params =
+                    new URLSearchParams(item);
 
-<td>${data.ShuppatsuPlc ?? ""}</td>
+                params.set("isCreated", "true");
+                params.set("isCheckedToDelete", "false");
 
-<td>${data.MokutekiPlc ?? ""}</td>
+                location.href =
+                    "/PlannedTransactionDetail/Index?"
+                + params.toString()
+                //+ "isCreated=true"
 
-<td>${data.Keiro ?? ""}</td>
+            };
 
-<td>${data.Kingaku ?? ""}</td>
+            //----------------------------------
+            // html
+            //----------------------------------
+
+            tr.innerHTML = `
+
+<td>
+${index + 1}
+</td>
+
+<td>${item.Idodt ?? ""}</td>
+
+<td>${item.ShuppatsuPlc ?? ""}</td>
+
+<td>${item.MokutekiPlc ?? ""}</td>
+
+<td>${item.Keiro ?? ""}</td>
+
+<td>
+${Number(item.Kingaku || 0).toLocaleString()}
+</td>
 
 `;
 
-            tbody.appendChild(newRow);
-        }
+            tbody.appendChild(tr);
+
+            //----------------------------------
+            // total
+            //----------------------------------
+
+            if (!item.isCheckedToDelete)
+                total +=
+                    Number(item.Kingaku || 0);
+
+        });
+
+        //----------------------------------
+        // update total
+        //----------------------------------
+
+        if (totalCell)
+            totalCell.innerText =
+                total.toLocaleString();
+
     }
-}
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        updateDetailTableFromLocalStorage();
-
-    }
-);
+})();
 

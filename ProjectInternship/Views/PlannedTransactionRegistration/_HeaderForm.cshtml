@@ -1,1 +1,249 @@
-﻿
+﻿@model PlannedTransactionRegistrationVM
+
+<!-- ===== 伝票番号 ===== -->
+
+<div class="row mb-3 align-items-center">
+
+    <label class="col-2">
+
+        伝票番号
+
+    </label>
+
+    <div class="col-2">
+
+        <input asp-for="Denpyono"
+               readonly
+               class="form-control" />
+
+    </div>
+
+
+    <div class="col-8 text-end">
+
+        <button type="submit"
+                name="actionType"
+                value="register"
+                class="btn btn-primary me-2">
+
+            登録
+
+        </button>
+
+
+        <button type="submit"
+                name="actionType"
+                value="delete"
+                class="btn btn-danger me-2"
+                @(Model.isCreated ? "" : "disabled")
+                onclick="return confirm('Delete this record?')">
+
+            削除
+
+        </button>
+
+
+        <button type="submit"
+                name="actionType"
+                value="exit"
+                class="btn btn-secondary">
+
+            終了
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ===== 伝票日付 ===== -->
+
+<div class="row mb-3 align-items-center">
+
+    <label class="col-2">
+
+        伝票日付
+
+    </label>
+
+    <div class="col-2">
+
+        <input asp-for="Denpyodt"
+               type="date"
+               readonly
+               class="form-control" />
+
+    </div>
+
+
+    <label class="col-2 text-center">
+
+        出納方法
+
+    </label>
+
+    <div class="col-2">
+
+        <select asp-for="Suitokb"
+                class="form-select">
+
+            <option hidden>
+
+                -- Select --
+
+            </option>
+
+            <option value="現金">
+
+                現金
+
+            </option>
+
+            <option value="振込">
+
+                振込
+
+            </option>
+
+        </select>
+
+        <span asp-validation-for="Suitokb"
+              class="text-danger"></span>
+
+    </div>
+
+
+    <label class="col-2 text-center">
+
+        支払予定日
+
+    </label>
+
+    <div class="col-2">
+
+        <input asp-for="Shiharaidt"
+               type="date"
+               class="form-control" />
+
+        <span asp-validation-for="Shiharaidt"
+              class="text-danger"></span>
+
+    </div>
+
+</div>
+
+
+
+<!-- ===== 年度 ===== -->
+
+<div class="row mb-3 align-items-center">
+
+    <label class="col-2">
+
+        年度
+
+    </label>
+
+    <div class="col-2">
+
+        <input asp-for="Kaikeind"
+               type="number"
+               class="form-control"
+               placeholder="xxxx年度" />
+
+        <span asp-validation-for="Kaikeind"
+              class="text-danger"></span>
+
+    </div>
+
+</div>
+
+
+
+<!-- ===== 申請日 ===== -->
+
+<div class="row mb-3 align-items-center">
+
+    <label class="col-2">
+
+        申請日
+
+    </label>
+
+    <div class="col-2">
+
+        <input asp-for="Uketukedt"
+               type="date"
+               class="form-control" />
+
+        <span asp-validation-for="Uketukedt"
+              class="text-danger"></span>
+
+    </div>
+
+</div>
+
+
+
+<!-- ===== 部門 ===== -->
+
+<div class="row mb-3 align-items-center">
+
+    <label class="col-2">
+
+        起票部門
+
+    </label>
+
+    <div class="col-2">
+
+        <input asp-for="BumoncdYkanr"
+               id="BumoncdYkanr"
+               class="form-control" />
+
+        <span asp-validation-for="BumoncdYkanr"
+              class="text-danger"></span>
+
+    </div>
+
+    <div class="col-2">
+
+        <button type="button"
+                id="openBumonModal"
+                class="btn btn-primary">
+
+            が
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ===== 出張目的 ===== -->
+
+<div class="row mb-3">
+
+    <label class="col-2">
+
+        出張目的
+
+    </label>
+
+    <div class="col-4">
+
+<textarea asp-for="Biko"
+          class="form-control">
+
+</textarea>
+
+        <span asp-validation-for="Biko"
+              class="text-danger"></span>
+
+    </div>
+
+</div>

@@ -1,1 +1,235 @@
-﻿
+﻿@model PlannedTransactionRegistrationVM
+
+@{
+    var rowNo = 1;
+    var nextGyono =
+        ((Model?.Results != null)
+            ? Model.Results.Count
+            : 0) + 1;
+}
+
+<script>
+
+    document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+     const data =
+     JSON.parse(
+     localStorage.getItem(
+     "plannedDetails")
+     ) || [];
+
+     let total = 0;
+
+     data.forEach(x=>{
+
+       if(!x.isCheckedToDelete)
+         total += Number(
+           x.Kingaku || 0);
+
+     });
+
+     document.getElementById(
+     "totalKingaku")
+     .innerText =
+     total.toLocaleString();
+
+    });
+
+</script>
+
+
+<!-- ===== 明細追加 ===== -->
+
+<div class="row mb-3 align-items-center">
+<div class="row mb-3 align-items-center">
+
+    <label class="col-2 col-form-label">
+
+        （備考）
+
+    </label>
+
+    <div class="col text-end">
+
+        <a class="btn btn-primary"
+           asp-controller="PlannedTransactionDetail"
+           asp-action="Index"
+           asp-route-Denpyono="@Model.Denpyono"
+           asp-route-Gyono="@nextGyono">
+
+            明細追加
+
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<!-- ===== Detail Table ===== -->
+
+<table class="table align-middle">
+
+    <thead>
+
+        <tr>
+
+            <th colspan="6" class="text-center">
+
+                交通費
+
+            </th>
+
+        </tr>
+
+        <tr>
+
+            <th>行</th>
+
+            <th>年月日</th>
+
+            <th>出発地</th>
+
+            <th>目的地</th>
+
+            <th>経路</th>
+
+            <th>金額</th>
+
+        </tr>
+
+    </thead>
+
+
+
+    <tbody id="detailBody">
+
+        @if (Model?.Results != null)
+        {
+            foreach (var item in Model.Results)
+            {
+
+                var detailUrl =
+                Url.Action(
+                                "Index",
+                                "PlannedTransactionDetail",
+                new
+                {
+                    Denpyono = item.Denpyono,
+                    Gyono = item.Gyono,
+                    Idodt = item.Idodt?.ToString("yyyy-MM-dd"),
+                    ShuppatsuPlc = item.ShuppatsuPlc,
+                    MokutekiPlc = item.MokutekiPlc,
+                    Keiro = item.Keiro,
+                    Kingaku = item.Kingaku,
+                    isCreated = true
+                });
+
+                <tr class="detail-row"
+                    data-denpyono="@item.Denpyono"
+                    data-gyono="@item.Gyono"
+                    onclick="location.href='@detailUrl'">
+
+                    <td>
+
+                        @rowNo
+
+                    </td>
+
+                    <td>
+
+                        @item.Idodt?.ToString("yyyy-MM-dd")
+
+                    </td>
+
+                    <td>
+
+                        @item.ShuppatsuPlc
+
+                    </td>
+
+                    <td>
+
+                        @item.MokutekiPlc
+
+                    </td>
+
+                    <td>
+
+                        @item.Keiro
+
+                    </td>
+
+                    <td>
+
+                        @(item.Kingaku?.ToString("N0"))
+
+
+                    </td>
+
+                </tr>
+
+                rowNo++;
+
+            }
+        }
+        else
+        {
+
+            <tr>
+
+                <td colspan="6"
+                    class="text-center text-muted py-4">
+
+                    明細データがありません
+
+                </td>
+
+            </tr>
+
+        }
+
+    </tbody>
+
+
+
+    <tfoot class="table-light">
+
+        <tr>
+
+            <td colspan="4"></td>
+
+            <td class="fw-bold">
+
+                交通費計
+
+            </td>
+
+            <td class="fw-bold">
+
+                @(Model?.TotalKingaku?.ToString("N0"))
+
+            </td>
+
+        </tr>
+
+    </tfoot>
+
+</table>
+
+
+
+<style>
+
+        .detail-row {
+            cursor: pointer;
+        }
+
+        .detail-row:hover {
+            background-color: #f8f9fa;
+        }
+
+</style>

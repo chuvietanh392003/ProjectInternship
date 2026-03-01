@@ -1,274 +1,40 @@
 ﻿@model PlannedTransactionRegistrationVM
+
 @{
     ViewData["Title"] = "予定伝票入力";
 }
-@{
-    var i = 1;
-}
 
-<partial name="_Message"/>
-<script src="~/js/planned-transaction-registration.js">
+<partial name="_Message" />
 
-</script>
-<h2 class="text-center mb-5">予定伝票入力</h2>
+<h2 class="text-center mb-5">
+    予定伝票入力
+</h2>
 
 <form asp-controller="PlannedTransactionRegistration"
       asp-action="Index"
-       id="mainForm"
-      method="post">
+      method="post"
+      id="mainForm">
 
     @Html.AntiForgeryToken()
 
     <div class="container">
 
-        <!-- ===== 伝票番号 + Buttons ===== -->
-        <div class="row mb-3 align-items-center">
+        <partial name="_HeaderForm"
+                 model="Model" />
 
-            <label class="col-2 col-form-label">伝票番号</label>
-
-            <div class="col-2">
-                <input asp-for="Denpyono"
-                       type="number"
-                       readonly
-                       class="form-control">
-            </div>
-          
-
-            <div class="col-8 text-end">
-
-                <button type="submit"
-                        name="actionType"
-                        value="register"
-                        class="btn btn-primary me-2">
-                    登録
-                </button>
-
-                <button type="submit"
-                        name="actionType"
-                        value="delete"
-                        class="btn btn-danger me-2"
-                        @(Model.isCreated ? "" : "disabled")
-                        onclick="return confirm('Delete this record?')">
-                    削除
-                </button>
-
-                <button type="submit"
-                        name="actionType"
-                        value="exit"
-                        class="btn btn-secondary">
-                    終了
-                </button>
-
-            </div>
-        </div>
-
-        <!-- ===== 伝票日付 ===== -->
-        <div class="row mb-3 align-items-center">
-
-            <label class="col-2 col-form-label">伝票日付</label>
-
-            <div class="col-2">
-                <input asp-for="Denpyodt"
-                       type="date"
-                       readonly
-                       class="form-control">
-            </div>
-
-            <label class="col-2 col-form-label text-center">出納方法</label>
-
-            <div class="col-2">
-                <select asp-for="Suitokb" class="form-select">
-                    <option value="" hidden>-- Select option --</option>
-                    <option value="現金">現金</option>
-                    <option value="振込">振込</option>
-                </select>
-                <span asp-validation-for="Suitokb" class="text-danger"></span>
-            </div>
-
-            <label class="col-2 col-form-label text-center">支払予定日</label>
-
-            <div class="col-2">
-                <input asp-for="Shiharaidt"
-                       type="date"
-                       class="form-control">
-                <span asp-validation-for="Shiharaidt" class="text-danger"></span>
-            </div>
-
-        </div>
-
-        <!-- ===== 年度 ===== -->
-        <div class="row mb-3 align-items-center">
-            <label class="col-2 col-form-label">年度</label>
-            <div class="col-2">
-                <input asp-for="Kaikeind"
-                       type="number"
-                       class="form-control"
-                       placeholder="xxxx年度">
-                <span asp-validation-for="Kaikeind" class="text-danger"></span>
-            </div>
-        </div>
-
-        <!-- ===== 申請日 ===== -->
-        <div class="row mb-3 align-items-center">
-            <label class="col-2 col-form-label">申請日</label>
-            <div class="col-2">
-                <input asp-for="Uketukedt"
-                       type="date"
-                       class="form-control">
-                <span asp-validation-for="Uketukedt" class="text-danger"></span>
-            </div>
-        </div>
-
-        <!-- ===== 起票部門 ===== -->
-        <div class="row mb-3 align-items-center">
-            <label class="col-2 col-form-label">起票部門</label>
-            <div class="col-2">
-                <input asp-for="BumoncdYkanr"
-                       type="text"
-                       id="BumoncdYkanr"
-                       class="form-control">
-                <span asp-validation-for="BumoncdYkanr" class="text-danger"></span>
-            </div>
-            <div class="col-2 text-start">
-                <button type="button" class="btn btn-primary" id="openBumonModal">が</button>
-            </div>
-        </div>
-
-        <!-- ===== 出張目的 ===== -->
-        <div class="row mb-3 align-items-center">
-            <label class="col-2 col-form-label">出張目的</label>
-            <div class="col-2">
-                <textarea asp-for="Biko" type="text" class="form-control">
-                    出張目的   
-                </textarea>
-                <span asp-validation-for="Biko" class="text-danger"></span>
-            </div>
-        </div>
-
-        <!-- ===== 備考 ===== -->
-        <div class="row mb-3 align-items-center">
-            <label class="col-2 col-form-label">（備考）</label>
-            <div class="col-9 text-end">
-             <a class="btn btn-primary"
-               asp-controller="PlannedTransactionDetail"
-               asp-action="Index"
-               asp-route-Denpyono="@Model.Denpyono"
-               asp-route-Gyono="@(Model.Results?.Count() + 1 ?? 1)">
-               明細追加
-            </a>
-            </div>  
-        </div>
-<table class="table">
-    <thead>
-        <tr>
-            <th colspan="6" class="text-center">交通費</th>
-        </tr>
-        <tr>
-            <th>
-                行
-            </th>
-            <th>
-                年月日
-            </th>
-            <th>
-                出発地
-            </th>
-            <th>
-                目的地
-            </th>
-            <th>
-                経路
-            </th>
-            <th>
-                金額
-            </th>
-        </tr>
-    </thead>
-
-    <tbody id="detailBody">
-
-@foreach (var item in Model.Results)
-{
-
-<tr
-data-denpyono="@item.Denpyono"
-data-gyono="@item.Gyono"
-
-style="cursor:pointer"
-
-onclick="location.href='@Url.Action(
-"Index",
-"PlannedTransactionDetail",
-new {
-
-Denpyono=item.Denpyono,
-Gyono=item.Gyono,
-Idodt=item.Idodt.Value.ToString("yyyy-MM-dd"),
-ShuppatsuPlc=item.ShuppatsuPlc,
-MokutekiPlc=item.MokutekiPlc,
-Keiro=item.Keiro,
-Kingaku=item.Kingaku,
-isCreated=true
-
-})'">
-
-<td>@i</td>
-
-<td>@item.Idodt?.ToString("yyyy-MM-dd")</td>
-
-<td>@item.ShuppatsuPlc</td>
-
-<td>@item.MokutekiPlc</td>
-
-<td>@item.Keiro</td>
-
-<td class="kingaku">@item.Kingaku</td>
-
-</tr>
-
-i++;
-
-}
-
-</tbody class = "auto-row-number">
-
-            <tfoot>
-                <tr>
-                    <th>
-                        
-                    </th>
-                    <th>
-                       
-                    </th>
-                    <th>
-                        
-                    </th>
-                    <th>
-                       
-                    </th>
-                    <th>
-                        交通費計
-                    </th>
-                    <th>
-                        @Model.TotalKingaku
-                    </th>
-                </tr>
-            </tfoot>
-</table>
+        <partial name="_DetailTable"
+                 model="Model" />
 
     </div>
+
 </form>
 
+<partial name="_DepartmentModal" />
 
-<div class="modal fade" id="bumonModal" tabindex="-1">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">部門一覧</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body" id="bumonModalBody">
-            </div>
-        </div>
-    </div>
-</div>
+@section Scripts {
+
+    <script src="~/js/department-modal.js"></script>
+
+    <script src="~/js/planned-transaction-registration.js"></script>
+
+}
