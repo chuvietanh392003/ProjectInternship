@@ -11,6 +11,8 @@ namespace ProjectInternship.ViewModels
 
         public decimal? Denpyono { get; set; }
 
+        public decimal? NextGyono {  get; set;}
+
         public DateTime? Denpyodt { get; set; }
 
         [Required]

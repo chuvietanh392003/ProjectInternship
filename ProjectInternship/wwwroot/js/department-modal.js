@@ -36,7 +36,6 @@
 
         const formData =
             new FormData(e.target);
-
         fetch('/Department/Index?' +
             new URLSearchParams(formData))
 

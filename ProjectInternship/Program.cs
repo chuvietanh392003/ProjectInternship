@@ -6,9 +6,9 @@ using ProjectInternship.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<PlannedTransactionDbContext>(options =>
-//options.UseOracle(
-//    builder.Configuration.GetConnectionString("OracleDb")));
-options.UseInMemoryDatabase("TestDB"));
+options.UseOracle(
+    builder.Configuration.GetConnectionString("OracleDb")));
+//options.UseInMemoryDatabase("TestDB"));
 
 
 // Add services to the container.
@@ -16,6 +16,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<DepartmentService>();
 builder.Services.AddScoped<PlannedTransactionService>();
 builder.Services.AddScoped<PlannedTransactionRegistrationService>();
+builder.Services.AddScoped<PlanTransactionDetailService>();
 
 
 var app = builder.Build();

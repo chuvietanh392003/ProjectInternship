@@ -64,9 +64,7 @@
                 "detail-row";
 
             if (item.isCheckedToDelete) {
-                console.log("isCheckedToDelete" + item.Gyono + item.Denpyono);
                 tr.classList.add("deleted-row");
-                tr.style.background = "black";
             }
                 
 
@@ -118,10 +116,7 @@ ${Number(item.Kingaku || 0).toLocaleString()}
             //----------------------------------
             // total
             //----------------------------------
-
-            if (!item.isCheckedToDelete)
-                total +=
-                    Number(item.Kingaku || 0);
+             total += Number(item.Kingaku || 0);
 
         });
 

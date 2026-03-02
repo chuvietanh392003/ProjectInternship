@@ -8,11 +8,19 @@ namespace ProjectInternship.Services;
 public class PlannedTransactionRegistrationService
 {
     private readonly PlannedTransactionDbContext _context;
+    private readonly PlanTransactionDetailService _detailService;
 
-    public PlannedTransactionRegistrationService(
+    public PlannedTransactionRegistrationService(PlanTransactionDetailService detailService,
         PlannedTransactionDbContext context)
     {
         _context = context;
+        _detailService = detailService;
+    }
+
+    public async Task<bool> IsExist(decimal? denpyono)
+    {
+        return await _context.PlannedTransactions
+            .AnyAsync(x => x.Denpyono == denpyono);
     }
 
     public async Task<decimal?> RegisterAsync(
@@ -23,12 +31,7 @@ public class PlannedTransactionRegistrationService
                 .Select(x => (int?)x.Denpyono)
                 .MaxAsync() ?? 0;
 
-        var maxGyono =
-            await _context.TransactionDetails
-                .Select(x => (int?)x.Denpyono)
-                .MaxAsync() ?? 0;
-
-        var 
+        var header
             =
             await _context.PlannedTransactions
             .FirstOrDefaultAsync(x =>
@@ -72,10 +75,12 @@ public class PlannedTransactionRegistrationService
 
 
     private async Task SaveDetails(
-        decimal? denpyono,
-        PlannedTransactionRegistrationVM model)
+    decimal? denpyono,
+    PlannedTransactionRegistrationVM model)
     {
+        Console.WriteLine("tig");
         if (model.Results == null) return;
+        Console.WriteLine(model.Results);
 
         foreach (var detail in model.Results)
         {
@@ -85,6 +90,7 @@ public class PlannedTransactionRegistrationService
                     x.Denpyono == denpyono &&
                     x.Gyono == detail.Gyono);
 
+            // ===== UPDATE ONLY =====
             if (exist != null)
             {
                 exist.Idodt = detail.Idodt;
@@ -97,6 +103,7 @@ public class PlannedTransactionRegistrationService
             }
             else
             {
+                // nếu chưa có thì ADD luôn
                 _context.TransactionDetails.Add(
                     new PlannedTransactionDetail
                     {
@@ -104,10 +111,8 @@ public class PlannedTransactionRegistrationService
                         Gyono = detail.Gyono,
 
                         Idodt = detail.Idodt,
-                        ShuppatsuPlc =
-                            detail.ShuppatsuPlc,
-                        MokutekiPlc =
-                            detail.MokutekiPlc,
+                        ShuppatsuPlc = detail.ShuppatsuPlc,
+                        MokutekiPlc = detail.MokutekiPlc,
                         Keiro = detail.Keiro,
                         Kingaku = detail.Kingaku,
 
@@ -154,5 +159,15 @@ public class PlannedTransactionRegistrationService
             model.Results
             .Where(x => x.Kingaku.HasValue)
             .Sum(x => x.Kingaku.Value);
+    }
+    public async Task<decimal?> GetNextGyonoAsync(decimal? denpyono)
+    {
+        var maxGyono =
+            await _context.TransactionDetails
+            .Where(x => x.Denpyono == denpyono)
+            .Select(x => x.Gyono)
+            .MaxAsync();
+
+        return (maxGyono ?? 0) + 1;
     }
 }

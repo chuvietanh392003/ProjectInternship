@@ -1,12 +1,22 @@
 ﻿function saveToLocalstorage() {
 
+    // Key (Denpyono v Gyono)
     const Denpyono =
+
         document.querySelector(
-            '[name="Denpyono"]').value;
+            '[name="Denpyono"]'
+        ).value;
 
     const Gyono =
+
         document.querySelector(
-            '[name="Gyono"]').value;
+            '[name="Gyono"]'
+        ).value;
+
+
+    // =======================
+    // DATA
+    // =======================
 
     const data = {
 
@@ -16,126 +26,68 @@
 
         Idodt:
             document.querySelector(
-                '[name="Idodt"]').value,
+                '[name="Idodt"]'
+            ).value,
 
         ShuppatsuPlc:
             document.querySelector(
-                '[name="ShuppatsuPlc"]').value,
+                '[name="ShuppatsuPlc"]'
+            ).value,
 
         MokutekiPlc:
             document.querySelector(
-                '[name="MokutekiPlc"]').value,
+                '[name="MokutekiPlc"]'
+            ).value,
 
         Keiro:
             document.querySelector(
-                '[name="Keiro"]').value,
+                '[name="Keiro"]'
+            ).value,
 
         Kingaku:
             document.querySelector(
-                '[name="Kingaku"]').value,
+                '[name="Kingaku"]'
+            ).value,
 
         isCheckedToDelete:
+
             document.querySelector(
                 '[name="isCheckedToDelete"]'
             )?.checked ?? false
+
     };
 
-    //----------------------------------
-    // lấy toàn bộ detail cùng Denpyono
-    //----------------------------------
 
-    let details = [];
+    // =======================
+    // KEY
+    // =======================
 
-    Object.keys(localStorage)
-        .forEach(key => {
+    const key =
 
-            if (
-                key.startsWith(
-                    `PlannedTransactionDetail_${Denpyono}_`
-                )
-            ) {
+        `PlannedTransactionDetail_${Denpyono}_${Gyono}`;
 
-                details.push(
+    console.log("SAVE KEY :", key);
 
-                    JSON.parse(
-                        localStorage.getItem(key)
-                    )
 
-                );
-            }
-
-        });
-
-    //----------------------------------
+    // =======================
     // UPDATE OR INSERT
-    //----------------------------------
+    // =======================
 
-    const index =
-        details.findIndex(x =>
-            x.Gyono == Gyono);
+    // localStorage.setItem()
 
-    if (index >= 0)
+    // tự overwrite nếu tồn tại
 
-        details[index] = data;
+    // tự insert nếu chưa có
 
-    else
+    localStorage.setItem(
 
-        details.push(data);
+        key,
 
+        JSON.stringify(data)
 
-    //----------------------------------
-    // REORDER 行 (Gyono)
-    //----------------------------------
+    );
 
-    // bỏ item delete nếu muốn skip numbering
-    const activeRows =
-        details
-            .filter(x => !x.isCheckedToDelete)
-
-            .sort((a, b) =>
-                (a.Gyono - b.Gyono)
-            );
-
-    activeRows.forEach((x, i) => {
-
-        x.Gyono = i + 1;
-
-    });
-
-    //----------------------------------
-    // clear old keys
-    //----------------------------------
-
-    Object.keys(localStorage)
-        .forEach(key => {
-
-            if (
-                key.startsWith(
-                    `PlannedTransactionDetail_${Denpyono}_`
-                )
-            ) {
-
-                localStorage.removeItem(key);
-
-            }
-
-        });
-
-    //----------------------------------
-    // save lại
-    //----------------------------------
-
-    details.forEach(item => {
-
-        const key =
-            `PlannedTransactionDetail_${Denpyono}_${item.Gyono}`;
-
-        localStorage.setItem(
-            key,
-            JSON.stringify(item)
-        );
-
-    });
 
     alert("保存しました");
+
 }

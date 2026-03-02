@@ -32,9 +32,17 @@ public class PlannedTransactionRegistrationController
 
                 var id =
                     await _service.RegisterAsync(model);
+                if (await _service.IsExist(model.Denpyono))
+                {
+                    TempData["Success"] =
+                        $"Update successful RecordId = {id}";
+                }
+                else
+                {
+                    TempData["Success"] =
+                        $"Registration successful RecordId = {id}";
+                }
 
-                TempData["Success"] =
-                    $"Registration successful RecordId = {id}";
 
                 return RedirectToAction("Index");
 
@@ -57,8 +65,8 @@ public class PlannedTransactionRegistrationController
                     "PlannedTransaction");
         }
 
-        await _service.LoadDetails(model);
-
+        Console.WriteLine(model.Results?.Count);
+        model.NextGyono = await _service.GetNextGyonoAsync(model.Denpyono) ;
         return View(model);
     }
 }

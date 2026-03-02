@@ -2,47 +2,126 @@
 
 @{
     var rowNo = 1;
-    var nextGyono =
-        ((Model?.Results != null)
-            ? Model.Results.Count
-            : 0) + 1;
 }
+
+
+<!-- ===========================
+ DB DATA → JS ARRAY
+=========================== -->
+
+<script>
+
+    const serverDetails = [
+
+    @if (Model?.Results != null)
+    {
+            foreach (var item in Model.Results)
+            {
+                    <text>
+                    {
+                        Denpyono: "@item.Denpyono",
+                        Gyono: @item.Gyono,
+                        Idodt: "@(item.Idodt?.ToString("yyyy-MM-dd"))",
+                        ShuppatsuPlc: "@Html.Raw(item.ShuppatsuPlc)",
+                        MokutekiPlc: "@Html.Raw(item.MokutekiPlc)",
+                        Keiro: "@Html.Raw(item.Keiro)",
+                        Kingaku: "@item.Kingaku",
+                        isCheckedToDelete:false
+                    },
+                    </text>
+            }
+    }
+
+    ];
+
+    console.log(serverDetails);
+
+</script>
+
+
+
+<!-- ===========================
+ LOAD SERVER → LOCALSTORAGE
+=========================== -->
 
 <script>
 
     document.addEventListener(
+
     "DOMContentLoaded",
+
     function(){
 
-     const data =
-     JSON.parse(
-     localStorage.getItem(
-     "plannedDetails")
-     ) || [];
+    const denpyono =
 
-     let total = 0;
+    document.querySelector(
 
-     data.forEach(x=>{
+    '[name="Denpyono"]'
 
-       if(!x.isCheckedToDelete)
-         total += Number(
-           x.Kingaku || 0);
+    )?.value;
 
-     });
+    if(!denpyono) return;
 
-     document.getElementById(
-     "totalKingaku")
-     .innerText =
-     total.toLocaleString();
+
+
+    // =========================
+    // CHECK FIRST TIME ONLY
+    // =========================
+
+    const existed =
+
+    Object.keys(localStorage)
+
+    .some(key =>
+
+    key.startsWith(
+
+    `PlannedTransactionDetail_${denpyono}_`
+
+    )
+
+    );
+
+    // nếu đã có rồi → STOP
+
+    if(existed){
+
+    console.log("already synced");
+
+    return;
+
+    }
+
+
+
+    // =========================
+    // SAVE DB DATA
+    // =========================
+    serverDetails.forEach(item=>{
+
+    const key =
+
+    `PlannedTransactionDetail_${item.Denpyono}_${item.Gyono}`;
+
+    localStorage.setItem(
+
+    key,
+
+    JSON.stringify(item)
+
+    );
+
+    });
 
     });
 
 </script>
 
 
+
+
 <!-- ===== 明細追加 ===== -->
 
-<div class="row mb-3 align-items-center">
 <div class="row mb-3 align-items-center">
 
     <label class="col-2 col-form-label">
@@ -57,7 +136,7 @@
            asp-controller="PlannedTransactionDetail"
            asp-action="Index"
            asp-route-Denpyono="@Model.Denpyono"
-           asp-route-Gyono="@nextGyono">
+           asp-route-Gyono="@Model.NextGyono">
 
             明細追加
 
@@ -69,7 +148,11 @@
 
 
 
-<!-- ===== Detail Table ===== -->
+
+
+<!-- ===========================
+ DETAIL TABLE
+=========================== -->
 
 <table class="table align-middle">
 
@@ -77,7 +160,8 @@
 
         <tr>
 
-            <th colspan="6" class="text-center">
+            <th colspan="6"
+                class="text-center">
 
                 交通費
 
@@ -107,25 +191,45 @@
 
     <tbody id="detailBody">
 
-        @if (Model?.Results != null)
+        @if (Model?.Results != null &&
+                Model.Results.Any())
         {
+
             foreach (var item in Model.Results)
             {
 
                 var detailUrl =
+
                 Url.Action(
-                                "Index",
-                                "PlannedTransactionDetail",
+
+                "Index",
+
+                "PlannedTransactionDetail",
+
                 new
                 {
+
                     Denpyono = item.Denpyono,
+
                     Gyono = item.Gyono,
-                    Idodt = item.Idodt?.ToString("yyyy-MM-dd"),
-                    ShuppatsuPlc = item.ShuppatsuPlc,
-                    MokutekiPlc = item.MokutekiPlc,
-                    Keiro = item.Keiro,
-                    Kingaku = item.Kingaku,
+
+                    Idodt =
+                item.Idodt?.ToString("yyyy-MM-dd"),
+
+                    ShuppatsuPlc =
+                item.ShuppatsuPlc,
+
+                    MokutekiPlc =
+                item.MokutekiPlc,
+
+                    Keiro =
+                item.Keiro,
+
+                    Kingaku =
+                item.Kingaku,
+
                     isCreated = true
+
                 });
 
                 <tr class="detail-row"
@@ -167,7 +271,6 @@
 
                         @(item.Kingaku?.ToString("N0"))
 
-
                     </td>
 
                 </tr>
@@ -175,6 +278,7 @@
                 rowNo++;
 
             }
+
         }
         else
         {
@@ -196,7 +300,8 @@
 
 
 
-    <tfoot class="table-light">
+
+    <tfoot>
 
         <tr>
 
@@ -208,7 +313,8 @@
 
             </td>
 
-            <td class="fw-bold">
+            <td id="totalKingaku"
+                class="fw-bold">
 
                 @(Model?.TotalKingaku?.ToString("N0"))
 
@@ -222,11 +328,18 @@
 
 
 
+
+
 <style>
 
-        .detail-row {
-            cursor: pointer;
-        }
+    .detail-row {
+        cursor: pointer;
+    }
+
+    .table tbody tr.deleted-row> td{
+        background-color: darkgray !important;
+        color: white !important;
+    }
 
         .detail-row:hover {
             background-color: #f8f9fa;
