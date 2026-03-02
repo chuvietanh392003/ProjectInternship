@@ -2,6 +2,8 @@
 using ProjectInternship.Data;
 using ProjectInternship.Domain.Entities;
 using ProjectInternship.ViewModels;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectInternship.Services;
 
@@ -26,6 +28,51 @@ public class PlannedTransactionRegistrationService
     public async Task<decimal?> RegisterAsync(
         PlannedTransactionRegistrationVM model)
     {
+        //foreach (var item in model.Results)
+        //{
+        //    if (item.isCheckedToDelete == true)
+        //    {
+        //        await _detailService.DeleteAsync(item.Denpyono, item.Gyono);
+        //    }
+        //    else
+        //    {
+        //        if (await _detailService.IsExistAsync(item.Denpyono, item.Gyono))
+        //        {
+        //            var existItemPlannedTransactionDetail = new PlannedTransactionDetail
+        //            {
+        //                Denpyono = item.Denpyono,
+        //                Gyono = item.Gyono,
+        //                Idodt = item.Idodt,
+        //                ShuppatsuPlc = item.ShuppatsuPlc,
+        //                MokutekiPlc = item.MokutekiPlc,
+        //                Keiro = item.Keiro,
+        //                Kingaku = item.Kingaku,
+        //                UpdateOpeId = "SYSTEM",
+        //                UpdatePgmPrm = "Admin",
+        //                UpdateDate = DateTime.Now
+        //            };
+        //            await _detailService.UpdateAsync(existItemPlannedTransactionDetail);
+        //        }
+        //        else
+        //        {
+        //            var newItemPlannedTransactionDetail = new PlannedTransactionDetail
+        //            {
+        //                Denpyono = item.Denpyono,
+        //                Gyono = item.Gyono,
+        //                Idodt = item.Idodt,
+        //                ShuppatsuPlc = item.ShuppatsuPlc,
+        //                MokutekiPlc = item.MokutekiPlc,
+        //                Keiro = item.Keiro,
+        //                Kingaku = item.Kingaku,
+        //                InsertOpeId = "SYSTEM",
+        //                InsertPgmId = "Admin",
+        //                InsertDate = DateTime.Now
+        //            };
+
+        //            await _detailService.InsertAsync(newItemPlannedTransactionDetail);
+        //        }
+        //    }
+        //}
         var maxNo =
             await _context.PlannedTransactions
                 .Select(x => (int?)x.Denpyono)
@@ -78,7 +125,6 @@ public class PlannedTransactionRegistrationService
     decimal? denpyono,
     PlannedTransactionRegistrationVM model)
     {
-        Console.WriteLine("tig");
         if (model.Results == null) return;
         Console.WriteLine(model.Results);
 
@@ -103,7 +149,7 @@ public class PlannedTransactionRegistrationService
             }
             else
             {
-                // nếu chưa có thì ADD luôn
+                // nếu chưa có  ADD 
                 _context.TransactionDetails.Add(
                     new PlannedTransactionDetail
                     {
@@ -147,19 +193,24 @@ public class PlannedTransactionRegistrationService
 
 
     public async Task LoadDetails(
-        PlannedTransactionRegistrationVM model)
+    PlannedTransactionRegistrationVM model)
     {
         model.Results =
             await _context.TransactionDetails
             .Where(x =>
                 x.Denpyono == model.Denpyono)
-            .ToListAsync();
 
-        model.TotalKingaku =
-            model.Results
-            .Where(x => x.Kingaku.HasValue)
-            .Sum(x => x.Kingaku.Value);
+            .Select(x => new PlannedTransactionDetailVM
+            {
+                Denpyono = x.Denpyono,
+                Gyono = x.Gyono,
+                Kingaku = x.Kingaku,
+                isCheckedToDelete = false
+            })
+
+            .ToListAsync();
     }
+
     public async Task<decimal?> GetNextGyonoAsync(decimal? denpyono)
     {
         var maxGyono =

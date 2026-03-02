@@ -1,15 +1,26 @@
 ﻿@if (TempData["Success"] != null)
 {
     <script>
-        alert('@TempData["Success"]');
-        window.location.href = '@Url.Action("Index", "PlannedTransaction")';
-    </script>
-}
 
-@if (TempData["DeleteSuccessful"] != null)
-{
-    <script>
-        alert('@TempData["DeleteSuccessful"]');
-        window.location.href = '@Url.Action("Index", "PlannedTransaction")';
+        alert('@TempData["Success"]');
+
+        Object.keys(localStorage)
+        .forEach(key => {
+
+            if (key.startsWith(
+                "PlannedTransactionDetail_"))
+            {
+                localStorage.removeItem(key);
+            }
+
+        });
+
+        setTimeout(() => {
+
+        window.location.href =
+        '@Url.Action("Index", "PlannedTransaction")';
+
+        },100);
+
     </script>
 }

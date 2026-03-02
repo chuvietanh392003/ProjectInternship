@@ -45,7 +45,7 @@ namespace ProjectInternship.ViewModels
 
         public decimal? TotalKingaku { get; set; }
 
-        public List<PlannedTransactionDetail>? Results { get; set; }
+        public List<PlannedTransactionDetailVM>? Results { get; set; }
     }
 
 }

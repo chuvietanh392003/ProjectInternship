@@ -31,6 +31,17 @@ public class PlanTransactionDetailService
             .ToListAsync();
     }
 
+    // Check exist
+    public async Task<bool> IsExistAsync(
+        decimal? denpyono,
+        decimal? gyono)
+    {
+        return await _context.TransactionDetails
+            .AnyAsync(x =>
+                x.Denpyono == denpyono
+                &&
+                x.Gyono == gyono);
+    }
 
 
     // =============================

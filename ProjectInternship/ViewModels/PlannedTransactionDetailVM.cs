@@ -20,5 +20,27 @@ namespace ProjectInternship.ViewModels
         public bool isCreated { get; set; } = false;
         public bool isCheckedToDelete { get; set; } = false;
 
+        [StringLength(30)]
+        public string? InsertOpeId { get; set; }
+
+        [StringLength(20)]
+        public string? InsertPgmId { get; set; }
+
+        [StringLength(20)]
+        public string? InsertPgmPrm { get; set; }
+
+        public DateTime? InsertDate { get; set; }
+
+        [StringLength(30)]
+        public string? UpdateOpeId { get; set; }
+
+        [StringLength(20)]
+        public string? UpdatePgmId { get; set; }
+
+        [StringLength(20)]
+        public string? UpdatePgmPrm { get; set; }
+
+        public DateTime? UpdateDate { get; set; }
+
     }
 }

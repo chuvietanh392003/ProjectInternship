@@ -4,42 +4,6 @@
     var rowNo = 1;
 }
 
-
-<!-- ===========================
- DB DATA → JS ARRAY
-=========================== -->
-
-<script>
-
-    const serverDetails = [
-
-    @if (Model?.Results != null)
-    {
-            foreach (var item in Model.Results)
-            {
-                    <text>
-                    {
-                        Denpyono: "@item.Denpyono",
-                        Gyono: @item.Gyono,
-                        Idodt: "@(item.Idodt?.ToString("yyyy-MM-dd"))",
-                        ShuppatsuPlc: "@Html.Raw(item.ShuppatsuPlc)",
-                        MokutekiPlc: "@Html.Raw(item.MokutekiPlc)",
-                        Keiro: "@Html.Raw(item.Keiro)",
-                        Kingaku: "@item.Kingaku",
-                        isCheckedToDelete:false
-                    },
-                    </text>
-            }
-    }
-
-    ];
-
-    console.log(serverDetails);
-
-</script>
-
-
-
 <!-- ===========================
  LOAD SERVER → LOCALSTORAGE
 =========================== -->
@@ -182,7 +146,6 @@
             <th>経路</th>
 
             <th>金額</th>
-
         </tr>
 
     </thead>
@@ -228,7 +191,9 @@
                     Kingaku =
                 item.Kingaku,
 
-                    isCreated = true
+                    isCreated = true,
+
+                    isCheckedToDelete = false
 
                 });
 

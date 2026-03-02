@@ -23,10 +23,12 @@ public class PlannedTransactionRegistrationController
         PlannedTransactionRegistrationVM model,
         string actionType)
     {
+        if(model.Results != null)
+        Console.WriteLine(model.Results.Count);
+
         switch (actionType)
         {
             case "register":
-
                 if (!ModelState.IsValid)
                     return View(model);
 
@@ -36,6 +38,7 @@ public class PlannedTransactionRegistrationController
                 {
                     TempData["Success"] =
                         $"Update successful RecordId = {id}";
+
                 }
                 else
                 {
@@ -70,3 +73,4 @@ public class PlannedTransactionRegistrationController
         return View(model);
     }
 }
+

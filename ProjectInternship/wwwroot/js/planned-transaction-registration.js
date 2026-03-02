@@ -132,3 +132,101 @@ ${Number(item.Kingaku || 0).toLocaleString()}
 
 })();
 
+function prepareResultsBeforeSubmit() {
+
+    const form =
+        document.getElementById("mainForm");
+
+    const denpyono =
+        document.querySelector(
+            '[name="Denpyono"]'
+        )?.value;
+
+    if (!denpyono) return;
+
+    //--------------------------------
+    // remove old
+    //--------------------------------
+
+    form
+        .querySelectorAll(".detail-hidden")
+        .forEach(x => x.remove());
+
+    //--------------------------------
+    // localStorage → hidden
+    //--------------------------------
+
+    let index = 0;
+
+    Object.keys(localStorage)
+
+        .filter(key =>
+            key.startsWith(
+                `PlannedTransactionDetail_${denpyono}_`
+            ))
+
+        .forEach(key => {
+
+            const item =
+                JSON.parse(
+                    localStorage.getItem(key));
+
+            addHidden(form,
+                `Results[${index}].Denpyono`,
+                item.Denpyono);
+
+            addHidden(form,
+                `Results[${index}].Gyono`,
+                item.Gyono);
+
+            addHidden(form,
+                `Results[${index}].Idodt`,
+                item.Idodt);
+
+            addHidden(form,
+                `Results[${index}].ShuppatsuPlc`,
+                item.ShuppatsuPlc);
+
+            addHidden(form,
+                `Results[${index}].MokutekiPlc`,
+                item.MokutekiPlc);
+
+            addHidden(form,
+                `Results[${index}].Keiro`,
+                item.Keiro);
+
+            addHidden(form,
+                `Results[${index}].Kingaku`,
+                item.Kingaku);
+
+            addHidden(form,
+                `Results[${index}].isCheckedToDelete`,
+                item.isCheckedToDelete);
+
+            index++;
+
+        });
+
+}
+
+
+function addHidden(
+    form,
+    name,
+    value) {
+
+    const input =
+        document.createElement("input");
+
+    input.type = "hidden";
+
+    input.name = name;
+
+    input.value =
+        value ?? "";
+
+    input.className =
+        "detail-hidden";
+
+    form.appendChild(input);
+}
