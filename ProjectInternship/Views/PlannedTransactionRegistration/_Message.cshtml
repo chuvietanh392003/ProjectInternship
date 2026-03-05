@@ -2,7 +2,7 @@
 {
     <script>
 
-        alert('@TempData["Success"]');
+        alert('@Html.Raw(TempData["Success"])');
 
         Object.keys(localStorage)
         .forEach(key => {

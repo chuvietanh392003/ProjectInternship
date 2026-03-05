@@ -171,25 +171,6 @@ public class PlannedTransactionDetailService
 
         await _context.SaveChangesAsync();
     }
-
-
-    // =============================
-    // DELETE ALL DETAILS
-    // =============================
-
-    public async Task DeleteAllAsync(
-        decimal? denpyono)
-    {
-        var list = await _context.TransactionDetails
-            .Where(x => x.Denpyono == denpyono)
-            .ToListAsync();
-
-        if (!list.Any()) return;
-
-        _context.TransactionDetails.RemoveRange(list);
-
-        await _context.SaveChangesAsync();
-    }
 }
 
    

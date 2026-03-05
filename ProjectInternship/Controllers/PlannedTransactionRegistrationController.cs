@@ -47,9 +47,9 @@ public class PlannedTransactionRegistrationController
                 var result = await _service.RegisterAsync(model);
 
                 if (existed)
-                    TempData["Success"] = $"Update successful RecordId = {result.id}";
+                    TempData["Success"] = $"レコードID = {result.id}の更新が成功しました。";
                 else
-                    TempData["Success"] = $"Registration successful RecordId = {result.id}";
+                    TempData["Success"] = $"レコードID = {result.id}の登録が成功しました。";
 
                 return RedirectToAction("Index");
 
@@ -59,7 +59,7 @@ public class PlannedTransactionRegistrationController
                 await _service.DeleteAsync(model.Denpyono);
 
                 TempData["Success"] =
-                    $"Delete successful! RecordId = {model.Denpyono}";
+                    $"レコードID = {model.Denpyono}の削除が成功しました。";
 
                 return RedirectToAction("Index");
 

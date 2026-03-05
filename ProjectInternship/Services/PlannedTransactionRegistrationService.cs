@@ -86,10 +86,10 @@ public class PlannedTransactionRegistrationService
         var header = await _context.PlannedTransactions
             .FirstOrDefaultAsync(x =>
                 x.Denpyono == model.Denpyono);
-        bool isUpdate = header != null;
-        if (isUpdate)
-        {
 
+        bool isUpdate = header != null;
+        if (!isUpdate)
+        {
             header = new PlannedTransaction
             {
                 Denpyono = model.Denpyono,
@@ -120,7 +120,7 @@ public class PlannedTransactionRegistrationService
         header.UpdatePgmId = "PlannedTransactionRegistration";
 
         await _context.SaveChangesAsync();
-    
+
         // =========================
         // HANDLE DETAILS
         // =========================
@@ -190,7 +190,9 @@ public class PlannedTransactionRegistrationService
 
 
 
-
+    // =========================
+    // Delete data by denpyono
+    // =========================
 
     public async Task DeleteAsync(decimal? denpyono)
     {
@@ -214,8 +216,9 @@ public class PlannedTransactionRegistrationService
 
         await _context.SaveChangesAsync();
     }
-
-
+    // ================================================================
+    // Get data from Meisai table by denpyono and set to model.Results
+    // ================================================================
     public async Task LoadDetails(
     PlannedTransactionRegistrationVM model)
     {
