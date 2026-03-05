@@ -18,14 +18,21 @@
                 'input[name="selectedBumon"]:checked');
 
         if (!selected) {
-
             alert("部門を選択してください");
             return;
         }
 
-        document.getElementById(
-            "BumoncdYkanr").value =
-            selected.value;
+        const code = selected.value;
+        const name = selected.dataset.name; // lấy từ data-name
+
+        const codeInput = document.getElementById("BumoncdYkanr");
+        const nameInput = document.getElementById("BumoncdName");
+
+        codeInput.value = code;
+        nameInput.value = name;
+
+        // Nếu bạn vẫn dùng event input để load name từ server
+        codeInput.dispatchEvent(new Event('input'));
 
         closeModel();
     };

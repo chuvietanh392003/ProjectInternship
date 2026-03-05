@@ -25,7 +25,6 @@ namespace ProjectInternship.Domain.Entities
         [ForeignKey("BumoncdYkanr")]
         public Department? Bumon { get; set; }
 
-
         [Column("BIKO")]
         public string? Biko { get; set; }
 

@@ -7,7 +7,7 @@ namespace ProjectInternship.ViewModels
     public class PlannedTransactionRegistrationVM
     {
         [Required]
-        public decimal Kaikeind { get; set; }
+        public decimal? Kaikeind { get; set; }
 
         public decimal? Denpyono { get; set; }
 
@@ -25,13 +25,14 @@ namespace ProjectInternship.ViewModels
         public DateTime? Uketukedt { get; set; }
 
         [Required]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "Input value is 0-9")]
         public String? BumoncdYkanr{  get; set; }
         public String? BumoncdName { get; set; }
 
         [Required]
         public String? Biko { get; set; }
 
-        public Boolean isCreated { get; set; }
+        public Boolean IsCreated { get; set; }
 
         public DateTime UketukeDT { get; set; }
 

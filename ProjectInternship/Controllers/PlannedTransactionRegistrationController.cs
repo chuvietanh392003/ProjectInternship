@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProjectInternship.Services;
 using ProjectInternship.ViewModels;
 
@@ -7,56 +8,58 @@ namespace ProjectInternship.Controllers;
 public class PlannedTransactionRegistrationController
     : Controller
 {
-    private readonly
-        PlannedTransactionRegistrationService
-        _service;
+    private readonly PlannedTransactionRegistrationService _service;
+    private readonly DepartmentService _departmentService;
 
     public PlannedTransactionRegistrationController(
-        PlannedTransactionRegistrationService service)
+        PlannedTransactionRegistrationService service, DepartmentService departmentService)
     {
         _service = service;
+        _departmentService = departmentService;
     }
 
     [HttpGet]
+    public async Task<IActionResult> Index(decimal? Denpyono, bool?IsCreated)  {
+        if (Denpyono == null)
+        {
+            var newRegistrationModal = await _service.CreateNewAsync();
+            return View(newRegistrationModal);
+        }
+        var registrationModal = await _service.GetHeaderDataAsync(Denpyono, IsCreated);
+        await _service.LoadDetails(registrationModal);
+        return View(registrationModal);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Index(
-        PlannedTransactionRegistrationVM model,
-        string actionType)
+    PlannedTransactionRegistrationVM model,
+    string actionType)
     {
-        if(model.Results != null)
-        Console.WriteLine(model.Results.Count);
-
         switch (actionType)
         {
             case "register":
+
                 if (!ModelState.IsValid)
                     return View(model);
 
-                var id =
-                    await _service.RegisterAsync(model);
-                if (await _service.IsExist(model.Denpyono))
-                {
-                    TempData["Success"] =
-                        $"Update successful RecordId = {id}";
+                var existed = await _service.IsExist(model.Denpyono);
 
-                }
+                var result = await _service.RegisterAsync(model);
+
+                if (existed)
+                    TempData["Success"] = $"Update successful RecordId = {result.id}";
                 else
-                {
-                    TempData["Success"] =
-                        $"Registration successful RecordId = {id}";
-                }
-
+                    TempData["Success"] = $"Registration successful RecordId = {result.id}";
 
                 return RedirectToAction("Index");
 
 
             case "delete":
 
-                await _service
-                    .DeleteAsync(model.Denpyono);
+                await _service.DeleteAsync(model.Denpyono);
 
-                TempData["DeleteSuccessful"] =
-                    "Delete successful!";
+                TempData["Success"] =
+                    $"Delete successful! RecordId = {model.Denpyono}";
 
                 return RedirectToAction("Index");
 
@@ -66,11 +69,21 @@ public class PlannedTransactionRegistrationController
                 return RedirectToAction(
                     "Index",
                     "PlannedTransaction");
+
         }
 
-        Console.WriteLine(model.Results?.Count);
-        model.NextGyono = await _service.GetNextGyonoAsync(model.Denpyono) ;
         return View(model);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetDepartmentName(string? code)
+    {
+        if (string.IsNullOrWhiteSpace(code))
+            return Json(null);
+
+        var name = await _departmentService.GetDepartmentNameFromCode(code);
+
+        return Json(name);
     }
 }
 

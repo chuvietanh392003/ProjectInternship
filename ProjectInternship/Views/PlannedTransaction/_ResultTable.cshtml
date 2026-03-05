@@ -1,9 +1,9 @@
 ﻿@model PlannedTransactionSearchVM
 
-<table class="table table-hover">
+<table class="table table-hover table-bordered ">
 
     <thead>
-        <tr>
+        <tr class="text-center table-secondary">
             <th>行</th>
             <th>伝票番号</th>
             <th>起票部門</th>
@@ -11,11 +11,11 @@
             <th>申請日</th>
             <th>出納方法</th>
             <th>出張目的</th>
-            <th>金額</th>
+            <th class="text-center">金額</th>
         </tr>
     </thead>
 
-    <tbody id="resultBody">
+    <tbody id="resultBody" class="text-center" >
 
         @if (Model.Results != null && Model.Results.Any())
         {
@@ -29,16 +29,8 @@
                                             "PlannedTransactionRegistration",
                                             new
                                             {
-                                               Kaikeind = item.Kaikeind,
                                                Denpyono = item.Denpyono,
-                                               Denpyodt = item.Denpyodt.HasValue ? item.Denpyodt.Value.ToString("yyyy-MM-dd") : null,
-                                               Suitokb = item.Suitokb,
-                                               Shiharaidt = item.Shiharaidt.HasValue ? item.Shiharaidt.Value.ToString("yyyy-MM-dd") : null,
-                                               Uketukedt = item.Uketukedt.HasValue ? item.Uketukedt.Value.ToString("yyyy-MM-dd") : null,
-                                               BumoncdYkanr = item.BumoncdYkanr,
-                                               BumoncdName = item.Bumon != null ? item.Bumon.BumonName : null,
-                                               Biko = item.Biko,
-                                               isCreated = true,
+                                               IsCreated = true,
                                             })">
 
             <td>@(i + 1)</td>
@@ -66,11 +58,11 @@
                     </td>
 
                     <td>
-                        @item.Kingaku
+                        @item.Kingaku?.ToString("N0")
                     </td>
 
                 </tr>
-                }
+                }   
         }
         else
         {
@@ -82,18 +74,16 @@
         }
 
     </tbody>
-
 </table>
+<div class="row mb-3 align-items-center">
 
+    <label class="col-11 col-form-label text-end fw-bold pe-5">
 
-<div class="row mb-3">
-
-    <label class="col-10 text-end fw-bold">
         交通費計
+
     </label>
 
-    <label class="col-2 text-center fw-bold">
-        @Model.TotalKingaku
-    </label>
-
+    <label class="col-1 col-form-label text-start fw-bold">
+        @Model.TotalKingaku?.ToString("N0")
+    </label>        
 </div>

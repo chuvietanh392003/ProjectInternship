@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ProjectInternship.Data;
 using ProjectInternship.ViewModels;
 
@@ -14,8 +15,8 @@ public class PlannedTransactionService
         _context = context;
     }
 
-    public async Task<ResultVM<PlannedTransactionSearchVM>>
-     SearchAsync(PlannedTransactionSearchVM model)
+    public async Task<PlannedTransactionSearchVM>
+SearchAsync(PlannedTransactionSearchVM model)
     {
         var query = _context.PlannedTransactions
             .AsNoTracking()
@@ -23,67 +24,64 @@ public class PlannedTransactionService
             .AsQueryable();
 
         if (model.Kaikeind.HasValue)
-        {
             query = query.Where(x =>
                 x.Kaikeind == model.Kaikeind);
-        }
-        if(model.DenpyonoFrom > model.DenpyonoTo)
-        {
-            return ResultVM<PlannedTransactionSearchVM>.Fail("伝票番号が無効です");
-        }
+
         if (model.DenpyonoFrom.HasValue)
-        {
             query = query.Where(x =>
                 x.Denpyono >= model.DenpyonoFrom);
-        }
 
         if (model.DenpyonoTo.HasValue)
-        {
             query = query.Where(x =>
                 x.Denpyono <= model.DenpyonoTo);
-        }
 
         if (model.UketukedtFrom.HasValue)
-        {
             query = query.Where(x =>
                 x.Uketukedt >= model.UketukedtFrom);
-        }
 
         if (model.UketukedtTo.HasValue)
         {
+            var toDate = model.UketukedtTo.Value.Date.AddDays(1);
             query = query.Where(x =>
-                x.Uketukedt <= model.UketukedtTo);
+                x.Uketukedt <= toDate);
         }
+            
 
         if (model.DenpyodtFrom.HasValue)
-        {
             query = query.Where(x =>
                 x.Denpyodt >= model.DenpyodtFrom);
-        }
 
         if (model.DenpyodtTo.HasValue)
         {
+            var toDate = model.DenpyodtTo.Value.Date.AddDays(1);
             query = query.Where(x =>
-                x.Denpyodt <= model.DenpyodtTo);
+                x.Denpyodt <= toDate);
         }
+            
 
         // suitokb filter
-        if (!string.IsNullOrEmpty(model.Suitofuri)
-            && !string.IsNullOrEmpty(model.Genkin))
+        if (model.Suitofuri == ("false")
+            && model.Genkin == ("false"))
         {
             query = query.Where(x =>
                 x.Suitokb == "振込"
                 || x.Suitokb == "現金");
         }
-        else if (!string.IsNullOrEmpty(model.Suitofuri))
+        else if (model.Genkin == ("false"))
         {
             query = query.Where(x =>
                 x.Suitokb == "振込");
         }
-        else if (!string.IsNullOrEmpty(model.Genkin))
+        else if (model.Suitofuri == ("false"))
         {
             query = query.Where(x =>
                 x.Suitokb == "現金");
+        }
+        else
+        {
+            query = query.Where(x =>
+                x.Suitokb == "振込"
+                || x.Suitokb == "現金");
         }
 
         model.Results = await query.ToListAsync();
@@ -93,6 +91,6 @@ public class PlannedTransactionService
                 .Where(x => x.Kingaku.HasValue)
                 .Sum(x => x.Kingaku.Value);
 
-        return ResultVM<PlannedTransactionSearchVM>.Successful(model); 
+        return model; 
     }
 }

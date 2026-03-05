@@ -13,6 +13,19 @@ namespace ProjectInternship.Services
             _context = context;
         }
 
+
+        public async Task<string?> GetDepartmentNameFromCode(string? code)
+        {
+            if (string.IsNullOrWhiteSpace(code))
+                return null;
+
+            return await _context.Departments
+                .AsNoTracking()
+                .Where(x => x.BumonCD == code)
+                .Select(x => x.BumonName)
+                .FirstOrDefaultAsync();
+        }
+
         public async Task<List<DepartmentVM>> SearchAsync(DepartmentVM model)
         {
             var query = _context.Departments

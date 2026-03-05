@@ -1,0 +1,195 @@
+﻿using Microsoft.EntityFrameworkCore;
+using ProjectInternship.Data;
+using ProjectInternship.Domain.Entities;
+using ProjectInternship.ViewModels;
+
+namespace ProjectInternship.Services;
+
+public class PlannedTransactionDetailService
+{
+    private readonly PlannedTransactionDbContext _context;
+
+    public PlannedTransactionDetailService(
+        PlannedTransactionDbContext context)
+    {
+        _context = context;
+    }
+
+    // =============================
+    // GET DETAILS BY DENPYONO
+    // =============================
+
+    public async Task<List<PlannedTransactionDetailVM>>
+    GetByDenpyonoAsync(decimal? denpyono)
+    {
+        return await _context.TransactionDetails
+            .Where(x => x.Denpyono == denpyono)
+            .OrderBy(x => x.Gyono)
+            .Select(x => new PlannedTransactionDetailVM
+            {
+                Denpyono = x.Denpyono,
+                Gyono = x.Gyono,
+                Idodt = x.Idodt,
+                ShuppatsuPlc = x.ShuppatsuPlc,
+                MokutekiPlc = x.MokutekiPlc,
+                Keiro = x.Keiro,
+                Kingaku = x.Kingaku,
+                IsCheckedToDelete = false,
+            })
+            .ToListAsync();
+    }
+
+
+    // =============================
+    // GET DETAIL BY GYONO
+    // =============================
+
+    public async Task<PlannedTransactionDetailVM?>
+    GetByGyonoAsync(decimal? denpyono, decimal? gyono, bool? isCreated)
+    {
+        return await _context.TransactionDetails
+            .Where(x => x.Denpyono == denpyono && x.Gyono == gyono)
+            .Select(x => new PlannedTransactionDetailVM
+            {
+                Denpyono = x.Denpyono,
+                Gyono = x.Gyono,
+                Idodt = x.Idodt,
+                ShuppatsuPlc = x.ShuppatsuPlc,
+                MokutekiPlc = x.MokutekiPlc,
+                Keiro = x.Keiro,
+                Kingaku = x.Kingaku,
+                IsCheckedToDelete = false,
+                IsCreated = isCreated
+            })
+            .FirstOrDefaultAsync();
+    }
+
+    // =============================
+    // Gen newmodel
+    // =============================
+
+    public async Task<PlannedTransactionDetailVM?>
+    GenNewModelAsync(decimal? denpyono, decimal? gyono, bool? isCreated)
+    {
+        var newDatailModel = new PlannedTransactionDetailVM
+        {
+            Denpyono = denpyono,
+            Gyono = gyono,
+            IsCreated = false
+        };
+        return newDatailModel;
+    }
+
+
+    // =============================
+    // CHECK EXIST
+    // =============================
+
+    public async Task<bool> IsExistAsync(
+        decimal? denpyono,
+        decimal? gyono)
+    {
+        return await _context.TransactionDetails
+            .AnyAsync(x =>
+                x.Denpyono == denpyono &&
+                x.Gyono == gyono);
+    }
+
+
+    // =============================
+    // INSERT
+    // =============================
+
+    public async Task InsertAsync(
+        PlannedTransactionDetailVM model)
+    {
+        var entity = new PlannedTransactionDetail
+        {
+            Denpyono = model.Denpyono,
+            Gyono = model.Gyono,
+            Idodt = model.Idodt,
+            ShuppatsuPlc = model.ShuppatsuPlc,
+            MokutekiPlc = model.MokutekiPlc,
+            Keiro = model.Keiro,
+            Kingaku = model.Kingaku,
+
+            InsertDate = DateTime.Now,
+            InsertOpeId = "SYSTEM",
+            InsertPgmPrm = "00000",
+            InsertPgmId = "TransRg"
+        };
+
+        _context.TransactionDetails.Add(entity);
+
+        await _context.SaveChangesAsync();
+    }
+
+
+    // =============================
+    // UPDATE
+    // =============================
+
+    public async Task UpdateAsync(
+        PlannedTransactionDetailVM model)
+    {
+        var exist = await _context.TransactionDetails
+            .FirstOrDefaultAsync(x =>
+                x.Denpyono == model.Denpyono &&
+                x.Gyono == model.Gyono);
+
+        if (exist == null) return;
+
+        exist.Idodt = model.Idodt;
+        exist.ShuppatsuPlc = model.ShuppatsuPlc;
+        exist.MokutekiPlc = model.MokutekiPlc;
+        exist.Keiro = model.Keiro;
+        exist.Kingaku = model.Kingaku;
+
+        exist.UpdateDate = DateTime.Now;
+        exist.UpdateOpeId = "SYSTEM";
+        exist.UpdatePgmPrm = "00000";
+        exist.UpdatePgmId = "TransRg";
+
+        await _context.SaveChangesAsync();
+    }
+
+
+    // =============================
+    // DELETE 1 DETAIL
+    // =============================
+
+    public async Task DeleteAsync(
+        decimal? denpyono,
+        decimal? gyono)
+    {
+        var item = await _context.TransactionDetails
+            .FirstOrDefaultAsync(x =>
+                x.Denpyono == denpyono &&
+                x.Gyono == gyono);
+
+        _context.TransactionDetails.Remove(item);
+
+        await _context.SaveChangesAsync();
+    }
+
+
+    // =============================
+    // DELETE ALL DETAILS
+    // =============================
+
+    public async Task DeleteAllAsync(
+        decimal? denpyono)
+    {
+        var list = await _context.TransactionDetails
+            .Where(x => x.Denpyono == denpyono)
+            .ToListAsync();
+
+        if (!list.Any()) return;
+
+        _context.TransactionDetails.RemoveRange(list);
+
+        await _context.SaveChangesAsync();
+    }
+}
+
+   

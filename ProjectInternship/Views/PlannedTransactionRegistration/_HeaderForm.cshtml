@@ -2,7 +2,7 @@
 
 <!-- ===== 伝票番号 ===== -->
 
-<div class="row mb-3 align-items-center">
+<div class="row mb-3 align-items-start">
 
     <label class="col-2">
 
@@ -10,16 +10,17 @@
 
     </label>
 
-    <div class="col-2">
+    <div class="col-2 align-items-start">
 
         <input asp-for="Denpyono"
                readonly
-               class="form-control" />
+               class=" @(Model.IsCreated == false ? "form-control bg-secondary text-white" : "form-control")"
+               value="@(Model.Denpyono?.ToString("0"))" />
 
     </div>
 
 
-    <div class="col-8 text-end">
+    <div class="col-8 text-end align-items-start">
 
         <button type="submit"
                 name="actionType"
@@ -36,9 +37,8 @@
                 name="actionType"
                 value="delete"
                 class="btn btn-danger me-2"
-                @(Model.isCreated ? "" : "disabled")
+                @(Model.IsCreated ? "" : "disabled")
                 onclick="return confirm('Delete this record?')">
-
             削除
 
         </button>
@@ -61,7 +61,7 @@
 
 <!-- ===== 伝票日付 ===== -->
 
-<div class="row mb-3 align-items-center">
+<div class="row mb-3 align-items-start">
 
     <label class="col-2">
 
@@ -74,7 +74,7 @@
         <input asp-for="Denpyodt"
                type="date"
                readonly
-               class="form-control" />
+               class=" @(Model.IsCreated == false ? "form-control bg-secondary text-white" : "form-control")" />
 
     </div>
 
@@ -90,7 +90,7 @@
         <select asp-for="Suitokb"
                 class="form-select">
 
-            <option hidden>
+            <option hidden value="">
 
                 -- Select --
 
@@ -139,7 +139,7 @@
 
 <!-- ===== 年度 ===== -->
 
-<div class="row mb-3 align-items-center">
+<div class="row mb-3 align-items-start">
 
     <label class="col-2">
 
@@ -149,10 +149,12 @@
 
     <div class="col-2">
 
-        <input asp-for="Kaikeind"
-               type="number"
-               class="form-control"
-               placeholder="xxxx年度" />
+        <select class="form-select" asp-for="Kaikeind">
+            <option value="" selected hidden disabled>　xxxx年度</option>
+            <option value="2025">-- 去年 --</option>
+            <option value="2026">-- 今年 --</option>
+            <option value="2027">-- 来年--</option>
+        </select>
 
         <span asp-validation-for="Kaikeind"
               class="text-danger"></span>
@@ -165,7 +167,7 @@
 
 <!-- ===== 申請日 ===== -->
 
-<div class="row mb-3 align-items-center">
+<div class="row mb-3 align-items-start">
 
     <label class="col-2">
 
@@ -190,7 +192,7 @@
 
 <!-- ===== 部門 ===== -->
 
-<div class="row mb-3 align-items-center">
+<div class="row mb-3 align-items-start">
 
     <label class="col-2">
 
@@ -201,12 +203,18 @@
     <div class="col-2">
 
         <input asp-for="BumoncdYkanr"
-               id="BumoncdYkanr"
                class="form-control" />
 
         <span asp-validation-for="BumoncdYkanr"
               class="text-danger"></span>
 
+    </div>
+
+    <div class="col-3 text-start">
+
+        <input asp-for="BumoncdName"
+               readonly
+               class="form-control bg-secondary text-white" />
     </div>
 
     <div class="col-2">
@@ -227,7 +235,7 @@
 
 <!-- ===== 出張目的 ===== -->
 
-<div class="row mb-3">
+<div class="row mb-3 align-items-start">
 
     <label class="col-2">
 

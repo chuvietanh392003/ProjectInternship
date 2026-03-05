@@ -2,7 +2,7 @@
 
 <form asp-controller="PlannedTransaction"
       asp-action="Index"
-      method="get">
+      method="post">
 
     <div class="container">
 
@@ -15,12 +15,12 @@
             </label>
 
             <div class="col-3">
-
-                <input asp-for="Kaikeind"
-                       type="number"
-                       class="form-control"
-                       placeholder="xxxx年度" />
-
+                <select class="form-select" asp-for="Kaikeind">
+                    <option value="" selected hidden disabled>　xxxx年度</option>
+                    <option value="2025">-- 去年 --</option>
+                    <option value="2026">-- 今年 --</option>
+                    <option value="2027">-- 来年--</option>
+                </select>
             </div>
 
         </div>
@@ -34,7 +34,7 @@
 
             </label>
 
-            <div class="col-3">
+            <div class="col-2">
 
                 <input asp-for="DenpyonoFrom"
                        type="number"
@@ -44,12 +44,17 @@
 
             -
 
-            <div class="col-3">
+            <div class="col-2">
 
                 <input asp-for="DenpyonoTo"
                        type="number"
                        class="form-control" />
 
+            </div>
+            <div class="col-2">
+
+                <span asp-validation-for="DenpyonoFrom"
+                      class="text-danger"></span>
             </div>
 
         </div>
@@ -63,7 +68,7 @@
 
             </label>
 
-            <div class="col-3">
+            <div class="col-2">
 
                 <input asp-for="DenpyodtFrom"
                        type="date"
@@ -73,12 +78,18 @@
 
             -
 
-            <div class="col-3">
+            <div class="col-2">
 
                 <input asp-for="DenpyodtTo"
                        type="date"
                        class="form-control" />
 
+            </div>
+
+            <div class="col-2">
+
+                <span asp-validation-for="DenpyodtFrom"
+                      class="text-danger"></span>
             </div>
 
         </div>
@@ -92,7 +103,7 @@
 
             </label>
 
-            <div class="col-3">
+            <div class="col-2">
 
                 <input asp-for="UketukedtFrom"
                        type="date"
@@ -102,13 +113,19 @@
 
             -
 
-            <div class="col-3">
+            <div class="col-2">
 
                 <input asp-for="UketukedtTo"
                        type="date"
                        class="form-control" />
-
             </div>
+            <div class="col-2">
+
+                <span asp-validation-for="UketukedtFrom"
+                      class="text-danger"></span>
+            </div>
+
+           
 
         </div>
 
@@ -161,21 +178,13 @@
                 </div>
 
             </div>
-
-
-            <div class="col-2 text-end">
-
-                <button type="submit"
+            <div class="col-4 text-end pe-5">
+                <button type="submit" 
                         class="btn btn-primary">
 
                     探索
 
                 </button>
-            </div>
-
-
-            <div class="col-2 text-center">
-
                 <a asp-controller="PlannedTransactionRegistration"
                    asp-action="Index"
                    class="btn btn-primary">

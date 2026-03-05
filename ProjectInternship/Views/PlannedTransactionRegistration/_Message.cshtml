@@ -6,7 +6,6 @@
 
         Object.keys(localStorage)
         .forEach(key => {
-
             if (key.startsWith(
                 "PlannedTransactionDetail_"))
             {
@@ -15,12 +14,9 @@
 
         });
 
-        setTimeout(() => {
-
         window.location.href =
         '@Url.Action("Index", "PlannedTransaction")';
 
-        },100);
-
     </script>
 }
+

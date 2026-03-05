@@ -27,7 +27,6 @@
     if(!denpyono) return;
 
 
-
     // =========================
     // CHECK FIRST TIME ONLY
     // =========================
@@ -36,15 +35,7 @@
 
     Object.keys(localStorage)
 
-    .some(key =>
-
-    key.startsWith(
-
-    `PlannedTransactionDetail_${denpyono}_`
-
-    )
-
-    );
+    .some(key => key.startsWith(`PlannedTransactionDetail_${denpyono}_`) );
 
     // nếu đã có rồi → STOP
 
@@ -61,19 +52,32 @@
     // =========================
     // SAVE DB DATA
     // =========================
-    serverDetails.forEach(item=>{
 
-    const key =
+    const serverDetails =
+        @Html.Raw(System.Text.Json.JsonSerializer.Serialize(
+            Model.Results ?? new List<PlannedTransactionDetailVM>()
+                ));
+         serverDetails.forEach((item) => {
 
-    `PlannedTransactionDetail_${item.Denpyono}_${item.Gyono}`;
+        let formattedDate = "";
 
-    localStorage.setItem(
+        if (item.Idodt) {
+            const d = new Date(item.Idodt);
+            formattedDate = d.toISOString().split("T")[0];
+        }
 
-    key,
+        const newItem = {
+            ...item,
+            Idodt: formattedDate
+        };
 
-    JSON.stringify(item)
+        const key =
+            `PlannedTransactionDetail_${item.Denpyono}_${item.Gyono}`;
 
-    );
+        localStorage.setItem(
+            key,
+            JSON.stringify(newItem)
+        );
 
     });
 
@@ -118,22 +122,19 @@
  DETAIL TABLE
 =========================== -->
 
-<table class="table align-middle">
+<table class="table table-hover table-bordered">
 
     <thead>
 
-        <tr>
+        <tr class="table-secondary">
 
-            <th colspan="6"
-                class="text-center">
-
+            <th colspan="6" class="text-center">
                 交通費
-
             </th>
 
         </tr>
 
-        <tr>
+        <tr class="table-secondary text-center">
 
             <th>行</th>
 
@@ -152,153 +153,33 @@
 
 
 
-    <tbody id="detailBody">
-
-        @if (Model?.Results != null &&
-                Model.Results.Any())
-        {
-
-            foreach (var item in Model.Results)
-            {
-
-                var detailUrl =
-
-                Url.Action(
-
-                "Index",
-
-                "PlannedTransactionDetail",
-
-                new
-                {
-
-                    Denpyono = item.Denpyono,
-
-                    Gyono = item.Gyono,
-
-                    Idodt =
-                item.Idodt?.ToString("yyyy-MM-dd"),
-
-                    ShuppatsuPlc =
-                item.ShuppatsuPlc,
-
-                    MokutekiPlc =
-                item.MokutekiPlc,
-
-                    Keiro =
-                item.Keiro,
-
-                    Kingaku =
-                item.Kingaku,
-
-                    isCreated = true,
-
-                    isCheckedToDelete = false
-
-                });
-
-                <tr class="detail-row"
-                    data-denpyono="@item.Denpyono"
-                    data-gyono="@item.Gyono"
-                    onclick="location.href='@detailUrl'">
-
-                    <td>
-
-                        @rowNo
-
-                    </td>
-
-                    <td>
-
-                        @item.Idodt?.ToString("yyyy-MM-dd")
-
-                    </td>
-
-                    <td>
-
-                        @item.ShuppatsuPlc
-
-                    </td>
-
-                    <td>
-
-                        @item.MokutekiPlc
-
-                    </td>
-
-                    <td>
-
-                        @item.Keiro
-
-                    </td>
-
-                    <td>
-
-                        @(item.Kingaku?.ToString("N0"))
-
-                    </td>
-
-                </tr>
-
-                rowNo++;
-
-            }
-
-        }
-        else
-        {
-
-            <tr>
-
-                <td colspan="6"
-                    class="text-center text-muted py-4">
-
-                    明細データがありません
-
-                </td>
-
-            </tr>
-
-        }
-
+    <tbody id="detailBody" class="text-center">
     </tbody>
-
-
-
-
     <tfoot>
-
         <tr>
-
             <td colspan="4"></td>
 
-            <td class="fw-bold">
-
+            <td class="fw-bold text-end">
                 交通費計
-
             </td>
 
             <td id="totalKingaku"
-                class="fw-bold">
-
+                class="fw-bold text-center">
                 @(Model?.TotalKingaku?.ToString("N0"))
-
             </td>
-
         </tr>
-
     </tfoot>
-
 </table>
-
-
-
 
 
 <style>
 
     .detail-row {
         cursor: pointer;
+    }
+
+    .table tfoot tr td {
+        border: none;
     }
 
     .table tbody tr.deleted-row> td{

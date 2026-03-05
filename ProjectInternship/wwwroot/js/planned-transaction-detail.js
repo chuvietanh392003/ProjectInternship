@@ -1,93 +1,57 @@
-﻿function saveToLocalstorage() {
+﻿// Check form hop le
+$("#mainForm").on("submit", function (e) {
+    const form = $(this);
+    if (!form.valid()) {
+        e.preventDefault();
+        return;
+    }
+    e.preventDefault();
+    saveToLocalstorage();
+    history.back();
+});
 
-    // Key (Denpyono v Gyono)
-    const Denpyono =
+// Thuc hien luu vao localstorage
+function saveToLocalstorage() {
+    const getValue = (name) => document.querySelector(`[name="${name}"]`)?.value ?? "";
+    const getChecked = (name) => document.querySelector(`[name="${name}"]`)?.checked ?? false;
 
-        document.querySelector(
-            '[name="Denpyono"]'
-        ).value;
+    const Denpyono = getValue("Denpyono");
+    let Gyono = getValue("Gyono");
 
-    const Gyono =
-
-        document.querySelector(
-            '[name="Gyono"]'
-        ).value;
-
-
-    // =======================
-    // DATA
-    // =======================
-
+    if (!Gyono) {
+        const maxGyono = getMaxGyono(Denpyono)
+        Gyono = maxGyono ? maxGyono + 1 : 1;
+    }
     const data = {
-
         Denpyono,
-
         Gyono,
-
-        Idodt:
-            document.querySelector(
-                '[name="Idodt"]'
-            ).value,
-
-        ShuppatsuPlc:
-            document.querySelector(
-                '[name="ShuppatsuPlc"]'
-            ).value,
-
-        MokutekiPlc:
-            document.querySelector(
-                '[name="MokutekiPlc"]'
-            ).value,
-
-        Keiro:
-            document.querySelector(
-                '[name="Keiro"]'
-            ).value,
-
-        Kingaku:
-            document.querySelector(
-                '[name="Kingaku"]'
-            ).value,
-
-        isCheckedToDelete:
-
-            document.querySelector(
-                '[name="isCheckedToDelete"]'
-            )?.checked ?? false
-
+        Idodt: getValue("Idodt"),
+        ShuppatsuPlc: getValue("ShuppatsuPlc"),
+        MokutekiPlc: getValue("MokutekiPlc"),
+        Keiro: getValue("Keiro"),
+        Kingaku: getValue("Kingaku"),
+        isCheckedToDelete: getChecked("IsCheckedToDelete")
     };
 
+    const key = `PlannedTransactionDetail_${Denpyono}_${Gyono}`;
+    localStorage.setItem(key, JSON.stringify(data));
+}
+// Tim maxGyono dua vao Denpyono
+function getMaxGyono(denpyono) {
+    let max = 0;
 
-    // =======================
-    // KEY
-    // =======================
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
 
-    const key =
+        if (!key.startsWith("PlannedTransactionDetail_")) continue;
 
-        `PlannedTransactionDetail_${Denpyono}_${Gyono}`;
+        const [, d, g] = key.split("_");
 
-    console.log("SAVE KEY :", key);
+        if (d == denpyono) {
+            const gyono = Number(g);
+            if (gyono > max) max = gyono;
+        }
+    }
 
-
-    // =======================
-    // UPDATE OR INSERT
-    // =======================
-
-    // localStorage.setItem()
-
-    // tự overwrite nếu tồn tại
-
-    // tự insert nếu chưa có
-
-    localStorage.setItem(
-
-        key,
-
-        JSON.stringify(data)
-
-    );
-
-
-    alert("保存しました");
-
+    return max;
 }

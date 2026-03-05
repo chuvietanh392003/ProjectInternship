@@ -10,14 +10,18 @@ namespace ProjectInternship.Services;
 public class PlannedTransactionRegistrationService
 {
     private readonly PlannedTransactionDbContext _context;
-    private readonly PlanTransactionDetailService _detailService;
+    private readonly PlannedTransactionDetailService _detailService;
 
-    public PlannedTransactionRegistrationService(PlanTransactionDetailService detailService,
+    public PlannedTransactionRegistrationService(PlannedTransactionDetailService detailService,
         PlannedTransactionDbContext context)
     {
         _context = context;
         _detailService = detailService;
     }
+
+    // =============================
+    // CHECK EXIST HEADER
+    // =============================
 
     public async Task<bool> IsExist(decimal? denpyono)
     {
@@ -25,80 +29,82 @@ public class PlannedTransactionRegistrationService
             .AnyAsync(x => x.Denpyono == denpyono);
     }
 
-    public async Task<decimal?> RegisterAsync(
-        PlannedTransactionRegistrationVM model)
+    // =============================
+    // CREATE NEW HEADER MODEL
+    // =============================
+
+    public async Task<PlannedTransactionRegistrationVM> CreateNewAsync()
     {
-        //foreach (var item in model.Results)
-        //{
-        //    if (item.isCheckedToDelete == true)
-        //    {
-        //        await _detailService.DeleteAsync(item.Denpyono, item.Gyono);
-        //    }
-        //    else
-        //    {
-        //        if (await _detailService.IsExistAsync(item.Denpyono, item.Gyono))
-        //        {
-        //            var existItemPlannedTransactionDetail = new PlannedTransactionDetail
-        //            {
-        //                Denpyono = item.Denpyono,
-        //                Gyono = item.Gyono,
-        //                Idodt = item.Idodt,
-        //                ShuppatsuPlc = item.ShuppatsuPlc,
-        //                MokutekiPlc = item.MokutekiPlc,
-        //                Keiro = item.Keiro,
-        //                Kingaku = item.Kingaku,
-        //                UpdateOpeId = "SYSTEM",
-        //                UpdatePgmPrm = "Admin",
-        //                UpdateDate = DateTime.Now
-        //            };
-        //            await _detailService.UpdateAsync(existItemPlannedTransactionDetail);
-        //        }
-        //        else
-        //        {
-        //            var newItemPlannedTransactionDetail = new PlannedTransactionDetail
-        //            {
-        //                Denpyono = item.Denpyono,
-        //                Gyono = item.Gyono,
-        //                Idodt = item.Idodt,
-        //                ShuppatsuPlc = item.ShuppatsuPlc,
-        //                MokutekiPlc = item.MokutekiPlc,
-        //                Keiro = item.Keiro,
-        //                Kingaku = item.Kingaku,
-        //                InsertOpeId = "SYSTEM",
-        //                InsertPgmId = "Admin",
-        //                InsertDate = DateTime.Now
-        //            };
+        var maxNo = await _context.PlannedTransactions
+            .Select(x => (int?)x.Denpyono)
+            .MaxAsync() ?? 0;
 
-        //            await _detailService.InsertAsync(newItemPlannedTransactionDetail);
-        //        }
-        //    }
-        //}
-        var maxNo =
-            await _context.PlannedTransactions
-                .Select(x => (int?)x.Denpyono)
-                .MaxAsync() ?? 0;
+        return new PlannedTransactionRegistrationVM
+        {
+            Denpyono = maxNo + 1,
+            Denpyodt = DateTime.Now,
+            IsCreated = false
+        };
+    }
 
-        var header
-            =
-            await _context.PlannedTransactions
+    // =============================
+    // GET HEADER DATA
+    // =============================
+
+    public async Task<PlannedTransactionRegistrationVM?> GetHeaderDataAsync(decimal? denpyono, bool? isCreated)
+    {
+        if (denpyono == null) return null;
+
+        var header = await _context.PlannedTransactions
+            .Include(x => x.Bumon)
+            .FirstOrDefaultAsync(x => x.Denpyono == denpyono);
+
+        if (header == null) return null;
+
+        return new PlannedTransactionRegistrationVM
+        {
+            Denpyono = header.Denpyono,
+            Denpyodt = header.Denpyodt,
+            Suitokb = header.Suitokb,
+            Shiharaidt = header.Shiharaidt,
+            Kaikeind = header.Kaikeind,
+            Uketukedt = header.Uketukedt,
+            BumoncdYkanr = header.BumoncdYkanr,
+            BumoncdName = header.Bumon?.BumonName,
+            Biko = header.Biko,
+            IsCreated = true
+        };
+    }
+
+    public async Task<(decimal? id, bool isUpdate)> RegisterAsync(
+    PlannedTransactionRegistrationVM model)
+    {
+        // =========================
+        // GET OR CREATE HEADER
+        // =========================
+
+        var header = await _context.PlannedTransactions
             .FirstOrDefaultAsync(x =>
                 x.Denpyono == model.Denpyono);
-
-        if (header == null)
+        bool isUpdate = header != null;
+        if (isUpdate)
         {
+
             header = new PlannedTransaction
             {
-                Denpyono =
-                    model.Denpyono ?? maxNo + 1,
-
+                Denpyono = model.Denpyono,
                 InsertDate = DateTime.Now,
                 InsertOpeId = "SYSTEM",
-                InsertPgmId =
-                "PlannedTransactionRegistration"
+                InsertPgmPrm = "00000",
+                InsertPgmId = "PlannedTransactionRegistration"
             };
 
             _context.PlannedTransactions.Add(header);
         }
+
+        // =========================
+        // UPDATE HEADER
+        // =========================
 
         header.Kaikeind = model.Kaikeind;
         header.Denpyodt = DateTime.Now;
@@ -110,63 +116,80 @@ public class PlannedTransactionRegistrationService
 
         header.UpdateDate = DateTime.Now;
         header.UpdateOpeId = "SYSTEM";
-        header.UpdatePgmId =
-            "PlannedTransactionRegistration";
+        header.UpdatePgmPrm = "00000";
+        header.UpdatePgmId = "PlannedTransactionRegistration";
 
-        await SaveDetails(header.Denpyono, model);
+        await _context.SaveChangesAsync();
+    
+        // =========================
+        // HANDLE DETAILS
+        // =========================
+
+        if (model.Results != null)
+        {
+            foreach (var item in model.Results)
+            {
+                var exists =
+                    await _detailService
+                        .IsExistAsync(item.Denpyono, item.Gyono);
+
+                if (item.IsCheckedToDelete)
+                {
+                    if (exists)
+                    {
+                        await _detailService
+                            .DeleteAsync(item.Denpyono, item.Gyono);
+                    }
+
+                    continue;
+                }
+
+                if (exists)
+                {
+                    var updateEntity = new PlannedTransactionDetailVM
+                    {
+                        Denpyono = item.Denpyono,
+                        Gyono = item.Gyono,
+                        Idodt = item.Idodt,
+                        ShuppatsuPlc = item.ShuppatsuPlc,
+                        MokutekiPlc = item.MokutekiPlc,
+                        Keiro = item.Keiro,
+                        Kingaku = item.Kingaku,
+                        UpdateOpeId = "SYSTEM",
+                        UpdatePgmPrm = "Admin",
+                        UpdateDate = DateTime.Now
+                    };
+
+                    await _detailService.UpdateAsync(updateEntity);
+                }
+                else
+                {
+                    var insertEntity = new PlannedTransactionDetailVM
+                    {
+                        Denpyono = item.Denpyono,
+                        Gyono = item.Gyono,
+                        Idodt = item.Idodt,
+                        ShuppatsuPlc = item.ShuppatsuPlc,
+                        MokutekiPlc = item.MokutekiPlc,
+                        Keiro = item.Keiro,
+                        Kingaku = item.Kingaku,
+                        InsertOpeId = "SYSTEM",
+                        InsertPgmId = "Admin",
+                        InsertDate = DateTime.Now
+                    };
+
+                    await _detailService.InsertAsync(insertEntity);
+                }
+            }
+        }
 
         await _context.SaveChangesAsync();
 
-        return header.Denpyono;
+        return (header.Denpyono, isUpdate);
     }
 
 
-    private async Task SaveDetails(
-    decimal? denpyono,
-    PlannedTransactionRegistrationVM model)
-    {
-        if (model.Results == null) return;
-        Console.WriteLine(model.Results);
 
-        foreach (var detail in model.Results)
-        {
-            var exist =
-                await _context.TransactionDetails
-                .FirstOrDefaultAsync(x =>
-                    x.Denpyono == denpyono &&
-                    x.Gyono == detail.Gyono);
-
-            // ===== UPDATE ONLY =====
-            if (exist != null)
-            {
-                exist.Idodt = detail.Idodt;
-                exist.ShuppatsuPlc = detail.ShuppatsuPlc;
-                exist.MokutekiPlc = detail.MokutekiPlc;
-                exist.Keiro = detail.Keiro;
-                exist.Kingaku = detail.Kingaku;
-
-                exist.UpdateDate = DateTime.Now;
-            }
-            else
-            {
-                // nếu chưa có  ADD 
-                _context.TransactionDetails.Add(
-                    new PlannedTransactionDetail
-                    {
-                        Denpyono = denpyono,
-                        Gyono = detail.Gyono,
-
-                        Idodt = detail.Idodt,
-                        ShuppatsuPlc = detail.ShuppatsuPlc,
-                        MokutekiPlc = detail.MokutekiPlc,
-                        Keiro = detail.Keiro,
-                        Kingaku = detail.Kingaku,
-
-                        InsertDate = DateTime.Now
-                    });
-            }
-        }
-    }
 
 
     public async Task DeleteAsync(decimal? denpyono)
@@ -185,6 +208,7 @@ public class PlannedTransactionRegistrationService
 
         _context.TransactionDetails
             .RemoveRange(details);
+        await _context.SaveChangesAsync();
 
         _context.PlannedTransactions.Remove(header);
 
@@ -205,20 +229,13 @@ public class PlannedTransactionRegistrationService
                 Denpyono = x.Denpyono,
                 Gyono = x.Gyono,
                 Kingaku = x.Kingaku,
-                isCheckedToDelete = false
+                Idodt = x.Idodt,
+                ShuppatsuPlc = x.ShuppatsuPlc,
+                MokutekiPlc = x.MokutekiPlc,
+                Keiro = x.Keiro,
+                IsCheckedToDelete = false
             })
 
             .ToListAsync();
-    }
-
-    public async Task<decimal?> GetNextGyonoAsync(decimal? denpyono)
-    {
-        var maxGyono =
-            await _context.TransactionDetails
-            .Where(x => x.Denpyono == denpyono)
-            .Select(x => x.Gyono)
-            .MaxAsync();
-
-        return (maxGyono ?? 0) + 1;
     }
 }

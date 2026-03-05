@@ -14,17 +14,21 @@ public class PlannedTransactionController : Controller
         _service = service;
     }
 
+    [HttpGet]
+    public IActionResult Index()
+    {
+        return View(new PlannedTransactionSearchVM());
+    }
+
+    [HttpPost]
     public async Task<IActionResult> Index(
         PlannedTransactionSearchVM model)
     {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
         var result = await _service.SearchAsync(model);
-        if (result.Success == true)
-        {
-            return View(result.Data);
-        }
-        else
-        {
-            return View(result.ErrorMessage);
-        }
+        return View(model);
     }
 }

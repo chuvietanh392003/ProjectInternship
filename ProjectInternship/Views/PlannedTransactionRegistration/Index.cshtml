@@ -36,5 +36,40 @@
     <script src="~/js/department-modal.js"></script>
 
     <script src="~/js/planned-transaction-registration.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
 
+                console.log("JS Loaded");
+
+                const codeInput = document.getElementById("BumoncdYkanr");
+                const nameInput = document.getElementById("BumoncdName");
+
+                if (!codeInput) {
+                    console.log("Không tìm thấy BumoncdYkanr");
+                    return;
+                }
+                console.log(codeInput.value)
+                codeInput.addEventListener("input", function () {
+
+                    const code = codeInput.value;
+
+                    if (!code) {
+                        nameInput.value = "";
+                        return;
+                    }
+
+                    console.log(1)
+
+                    fetch('@Url.Action("GetDepartmentName", "PlannedTransactionRegistration")?code=' + code)
+                        .then(response => response.json())
+                        .then(data => {
+                            nameInput.value = data ?? "";
+                        })
+                        .catch(error => {
+                            nameInput.value = "";
+                        });
+                });
+
+            });
+    </script>
 }
