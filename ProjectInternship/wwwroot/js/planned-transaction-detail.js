@@ -30,7 +30,7 @@ function saveToLocalstorage() {
         MokutekiPlc: getValue("MokutekiPlc"),
         Keiro: getValue("Keiro"),
         Kingaku: getValue("Kingaku"),
-        isCheckedToDelete: getChecked("IsCheckedToDelete")
+        IsCheckedToDelete: getChecked("IsCheckedToDelete")
     };
 
     const key = `PlannedTransactionDetail_${Denpyono}_${Gyono}`;

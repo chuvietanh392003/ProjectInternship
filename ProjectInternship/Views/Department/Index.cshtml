@@ -31,7 +31,7 @@
     </form>
     
     <table class="table table-bordered table-hover table-striped align-middle">
-        <thead class="table-light text-center">
+        <thead class="table-success text-center">
             <tr>
                 <th style="width: 80px;">選択</th>
                 <th style="width: 150px;">部門コード</th>
@@ -44,7 +44,7 @@
             {
                 foreach (var item in Model.Results)
                 {
-                    <tr>
+                    <tr onclick="selectRow(this)">
                         
                         <td class="text-center">
                             <input type="radio"

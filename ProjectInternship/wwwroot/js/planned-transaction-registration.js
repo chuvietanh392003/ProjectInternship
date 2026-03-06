@@ -37,7 +37,7 @@
 
             tr.className = "detail-row";
 
-            if (item.isCheckedToDelete) {
+            if (item.IsCheckedToDelete) {
                 tr.classList.add("deleted-row");
             }
 
@@ -46,7 +46,7 @@
                 const params = new URLSearchParams(item);
 
                 params.set("IsCreated", "true");
-                params.set("isCheckedToDelete", "false");
+                params.set("IsCheckedToDelete", "false");
 
                 location.href =
                     "/PlannedTransactionDetail/Index?" +
@@ -105,8 +105,7 @@ function prepareResultsBeforeSubmit() {
             addHidden(form, `Results[${index}].MokutekiPlc`, item.MokutekiPlc);
             addHidden(form, `Results[${index}].Keiro`, item.Keiro);
             addHidden(form, `Results[${index}].Kingaku`, item.Kingaku);
-            addHidden(form, `Results[${index}].isCheckedToDelete`, item.isCheckedToDelete);
-
+            addHidden(form, `Results[${index}].IsCheckedToDelete`, item.IsCheckedToDelete);
             index++;
         });
 }
@@ -122,4 +121,17 @@ function addHidden(form, name, value) {
     input.className = "detail-hidden";
 
     form.appendChild(input);
+}
+function clearKeyStorage() {
+    const denpyono = document
+        .querySelector('[name="Denpyono"]')
+        ?.value;
+
+    Object.keys(localStorage)
+        .forEach(key => {
+            if (key.startsWith(
+                "PlannedTransactionDetail_" + denpyono)) {
+                localStorage.removeItem(key);
+            }
+        });
 }

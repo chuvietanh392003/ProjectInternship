@@ -11,12 +11,11 @@
     </label>
 
     <div class="col-2 align-items-start">
-
+        <input type="hidden" asp-for="Denpyono" />
         <input asp-for="Denpyono"
                readonly
-               class=" @(Model.IsCreated == false ? "form-control bg-secondary text-white" : "form-control")"
-               value="@(Model.Denpyono?.ToString("0"))" />
-
+               class=" @(Model.IsCreated == false ? "form-control bg-secondary text-secondary" : "form-control")"
+               value= "@(Model.Denpyono?.ToString("0"))">
     </div>
 
 
@@ -47,6 +46,7 @@
         <button type="submit"
                 name="actionType"
                 value="exit"
+                onclick="@(Model.IsCreated ? ""  : "clearKeyStorage()") "
                 class="btn btn-secondary">
 
             終了
@@ -74,8 +74,7 @@
         <input asp-for="Denpyodt"
                type="date"
                readonly
-               class=" @(Model.IsCreated == false ? "form-control bg-secondary text-white" : "form-control")" />
-
+               class=" @(Model.IsCreated == false ? "form-control bg-secondary text-secondary" : "form-control")" />
     </div>
 
 
@@ -92,7 +91,7 @@
 
             <option hidden value="">
 
-                -- Select --
+                -- 選択 --
 
             </option>
 
@@ -151,9 +150,9 @@
 
         <select class="form-select" asp-for="Kaikeind">
             <option value="" selected hidden disabled>　xxxx年度</option>
-            <option value="2025">-- 去年 --</option>
+            <option value="2025">-- 5去年 --</option>
             <option value="2026">-- 今年 --</option>
-            <option value="2027">-- 来年--</option>
+            <option value="2027">-- 5来年--</option>
         </select>
 
         <span asp-validation-for="Kaikeind"

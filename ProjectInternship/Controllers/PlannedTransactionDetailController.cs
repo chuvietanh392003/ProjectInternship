@@ -16,7 +16,7 @@ namespace ProjectInternship.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Index(decimal? Denpyono, decimal? Gyono, DateTime?  Idodt, string? ShuppatsuPlc, string?  MokutekiPlc, string?  Keiro, decimal? Kingaku, bool  isCheckedToDelete, bool? IsCreated)
+        public async Task<IActionResult> Index(decimal? Denpyono, decimal? Gyono, DateTime?  Idodt, string? ShuppatsuPlc, string?  MokutekiPlc, string?  Keiro, decimal? Kingaku, bool  IsCheckedToDelete, bool? IsCreated)
         {
             var model = new PlannedTransactionDetailVM
             {
@@ -27,7 +27,7 @@ namespace ProjectInternship.Controllers
                 MokutekiPlc = MokutekiPlc,
                 Keiro = Keiro,
                 Kingaku = Kingaku,
-                IsCheckedToDelete = isCheckedToDelete,
+                IsCheckedToDelete = IsCheckedToDelete,
                 IsCreated = IsCreated
             };
             return View(model);

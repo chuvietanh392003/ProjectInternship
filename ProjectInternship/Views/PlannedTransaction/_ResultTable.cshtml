@@ -1,80 +1,82 @@
 ﻿@model PlannedTransactionSearchVM
 
-<table class="table table-hover table-bordered ">
+<div class="table-responsive" style="max-height:300px; overflow-y:auto;">
+    <table class="table table-hover table-bordered ">
 
-    <thead>
-        <tr class="text-center table-secondary">
-            <th>行</th>
-            <th>伝票番号</th>
-            <th>起票部門</th>
-            <th>伝票日付</th>
-            <th>申請日</th>
-            <th>出納方法</th>
-            <th>出張目的</th>
-            <th class="text-center">金額</th>
-        </tr>
-    </thead>
-
-    <tbody id="resultBody" class="text-center" >
-
-        @if (Model.Results != null && Model.Results.Any())
-        {
-            @for (int i = 0; i < Model.Results.Count; i++)
-            {
-                var item = Model.Results[i];
-
-                <tr class="planned-row"
-                    data-url="@Url.Action(
-                                            "Index",
-                                            "PlannedTransactionRegistration",
-                                            new
-                                            {
-                                               Denpyono = item.Denpyono,
-                                               IsCreated = true,
-                                            })">
-
-            <td>@(i + 1)</td>
-
-                    <td>@item.Denpyono</td>
-
-                    <td>
-                        @item.Bumon?.BumonName
-                    </td>
-
-                    <td>
-                        @item.Denpyodt?.ToString("yyyy-MM-dd")
-                    </td>
-
-                    <td>
-                        @item.Uketukedt?.ToString("yyyy-MM-dd")
-                    </td>
-
-                    <td>
-                        @(item.Suitokb == "振込" ? "振込" : "現金")
-                    </td>
-
-                    <td>
-                        @item.Biko
-                    </td>
-
-                    <td>
-                        @item.Kingaku?.ToString("N0")
-                    </td>
-
-                </tr>
-                }   
-        }
-        else
-        {
-            <tr>
-                <td colspan="8" class="text-center text-muted">
-                    データがありません。
-                </td>
+        <thead>
+            <tr class="text-center table-secondary" style="position:sticky; top:0; background:#dee2e6; z-index:10;">
+                <th>行</th>
+                <th>伝票番号</th>
+                <th>起票部門</th>
+                <th>伝票日付</th>
+                <th>申請日</th>
+                <th>出納方法</th>
+                <th>出張目的</th>
+                <th class="text-center">金額</th>
             </tr>
-        }
+        </thead>
 
-    </tbody>
-</table>
+        <tbody id="resultBody" class="text-center">
+
+            @if (Model.Results != null && Model.Results.Any())
+            {
+                @for (int i = 0; i < Model.Results.Count; i++)
+                {
+                    var item = Model.Results[i];
+
+                    <tr class="planned-row"
+                        data-url="@Url.Action(
+                                                                    "Index",
+                                                                    "PlannedTransactionRegistration",
+                                                                    new
+                                                                    {
+                                                                        Denpyono = item.Denpyono,
+                                                                        IsCreated = true,
+                                                                    })">
+
+                <td>@(i + 1)</td>
+
+                        <td>@item.Denpyono</td>
+
+                        <td>
+                            @item.Bumon?.BumonName
+                        </td>
+
+                        <td>
+                            @item.Denpyodt?.ToString("yyyy-MM-dd")
+                        </td>
+
+                        <td>
+                            @item.Uketukedt?.ToString("yyyy-MM-dd")
+                        </td>
+
+                        <td>
+                            @(item.Suitokb == "振込" ? "振込" : "現金")
+                        </td>
+
+                        <td>
+                            @item.Biko
+                        </td>
+
+                        <td>
+                            @item.Kingaku?.ToString("N0")
+                        </td>
+
+                    </tr>
+                        }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="8" class="text-center text-muted">
+                        データがありません。
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
 <div class="row mb-3 align-items-center">
 
     <label class="col-11 col-form-label text-end fw-bold pe-5">

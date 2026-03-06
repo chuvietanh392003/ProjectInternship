@@ -1,92 +1,7 @@
 ﻿@model PlannedTransactionRegistrationVM
-
-@{
-    var rowNo = 1;
-}
-
 <!-- ===========================
  LOAD SERVER → LOCALSTORAGE
 =========================== -->
-
-<script>
-
-    document.addEventListener(
-
-    "DOMContentLoaded",
-
-    function(){
-
-    const denpyono =
-
-    document.querySelector(
-
-    '[name="Denpyono"]'
-
-    )?.value;
-
-    if(!denpyono) return;
-
-
-    // =========================
-    // CHECK FIRST TIME ONLY
-    // =========================
-
-    const existed =
-
-    Object.keys(localStorage)
-
-    .some(key => key.startsWith(`PlannedTransactionDetail_${denpyono}_`) );
-
-    // nếu đã có rồi → STOP
-
-    if(existed){
-
-    console.log("already synced");
-
-    return;
-
-    }
-
-
-
-    // =========================
-    // SAVE DB DATA
-    // =========================
-
-    const serverDetails =
-        @Html.Raw(System.Text.Json.JsonSerializer.Serialize(
-            Model.Results ?? new List<PlannedTransactionDetailVM>()
-                ));
-         serverDetails.forEach((item) => {
-
-        let formattedDate = "";
-
-        if (item.Idodt) {
-            const d = new Date(item.Idodt);
-            formattedDate = d.toISOString().split("T")[0];
-        }
-
-        const newItem = {
-            ...item,
-            Idodt: formattedDate
-        };
-
-        const key =
-            `PlannedTransactionDetail_${item.Denpyono}_${item.Gyono}`;
-
-        localStorage.setItem(
-            key,
-            JSON.stringify(newItem)
-        );
-
-    });
-
-    });
-
-</script>
-
-
-
 
 <!-- ===== 明細追加 ===== -->
 
@@ -122,58 +37,59 @@
  DETAIL TABLE
 =========================== -->
 
-<table class="table table-hover table-bordered">
+<div class="table-responsive" style="max-height:200px; overflow-y:auto;">
+    <table class="table table-hover table-bordered">
 
-    <thead>
+        <thead>
 
-        <tr class="table-secondary">
+            <tr class="table-secondary">
 
-            <th colspan="6" class="text-center">
-                交通費
-            </th>
+                <th colspan="6" class="text-center">
+                    交通費
+                </th>
 
-        </tr>
+            </tr>
 
-        <tr class="table-secondary text-center">
+            <tr class="table-secondary text-center">
 
-            <th>行</th>
+                <th>行</th>
 
-            <th>年月日</th>
+                <th>年月日</th>
 
-            <th>出発地</th>
+                <th>出発地</th>
 
-            <th>目的地</th>
+                <th>目的地</th>
 
-            <th>経路</th>
+                <th>経路</th>
 
-            <th>金額</th>
-        </tr>
+                <th>金額</th>
+            </tr>
 
-    </thead>
+        </thead>
 
 
 
-    <tbody id="detailBody" class="text-center">
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="4"></td>
+        <tbody id="detailBody" class="text-center">
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
 
-            <td class="fw-bold text-end">
-                交通費計
-            </td>
+                <td class="fw-bold text-end">
+                    交通費計
+                </td>
 
-            <td id="totalKingaku"
-                class="fw-bold text-center">
-                @(Model?.TotalKingaku?.ToString("N0"))
-            </td>
-        </tr>
-    </tfoot>
-</table>
+                <td id="totalKingaku"
+                    class="fw-bold text-center">
+                    @(Model?.TotalKingaku?.ToString("N0"))
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
 
 
 <style>
-
     .detail-row {
         cursor: pointer;
     }
@@ -192,3 +108,55 @@
         }
 
 </style>
+
+<!-- ===========================
+ LOAD SERVER → LOCALSTORAGE
+=========================== -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const denpyono = document.querySelector('[name="Denpyono"]')?.value;
+        if (!denpyono) return;
+
+        // =========================
+        // CHECK FIRST TIME ONLY
+        // =========================
+        const existed = Object.keys(localStorage).some(key =>
+            key.startsWith(`PlannedTransactionDetail_${denpyono}_`)
+        );
+
+        if (existed) return;
+
+        // =========================
+        // SAVE DB DATA
+        // =========================
+        const serverDetails =
+            @Html.Raw(System.Text.Json.JsonSerializer.Serialize(
+                Model.Results ?? new List<PlannedTransactionDetailVM>()
+                        ));
+
+        serverDetails.forEach(item => {
+
+            let formattedDate = "";
+
+            if (item.Idodt) {
+                const d = new Date(item.Idodt);
+                formattedDate = d.toISOString().split("T")[0];
+            }
+
+            const newItem = {
+                ...item,
+                Idodt: formattedDate
+            };
+
+            const key = `PlannedTransactionDetail_${item.Denpyono}_${item.Gyono}`;
+
+            localStorage.setItem(
+                key,
+                JSON.stringify(newItem)
+            );
+        });
+
+    });
+</script>

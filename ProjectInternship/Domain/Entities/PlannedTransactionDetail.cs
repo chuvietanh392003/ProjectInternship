@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectInternship.Domain.Entities;
 
-[Table("KOTSUHI_MEISAI")]
+[Table("ES_YDENPYOD")]
 
 [PrimaryKey(nameof(Denpyono), nameof(Gyono))]
 public class PlannedTransactionDetail

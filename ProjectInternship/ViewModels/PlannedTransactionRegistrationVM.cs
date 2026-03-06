@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using ProjectInternship.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
@@ -6,7 +7,7 @@ namespace ProjectInternship.ViewModels
 {
     public class PlannedTransactionRegistrationVM
     {
-        [Required]
+        [Required(ErrorMessage = "年度は必須です。")]
         public decimal? Kaikeind { get; set; }
 
         public decimal? Denpyono { get; set; }
@@ -15,38 +16,27 @@ namespace ProjectInternship.ViewModels
 
         public DateTime? Denpyodt { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "出納方法は必須です。")]
         public String? Suitokb { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "支払予定日は必須です。")]
         public DateTime? Shiharaidt { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "申請日は必須です。")]
         public DateTime? Uketukedt { get; set; }
 
-        [Required]
-        [RegularExpression("^[0-9]+$", ErrorMessage = "Input value is 0-9")]
+        [Required(ErrorMessage = "起票部門は必須です。")]
+        [RegularExpression("^[0-9]+$", ErrorMessage = "部門コードは数字のみ入力してください。")]
         public String? BumoncdYkanr{  get; set; }
         public String? BumoncdName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "出張目的は必須です。")]
         public String? Biko { get; set; }
 
         public Boolean IsCreated { get; set; }
-
-        public DateTime UketukeDT { get; set; }
-
-        public String? ShuppatsuPLC{ get; set;}
-
-        public String? MokutekiPLC { get; set; }
-
-        public  String? Keiro { get; set; }
-
-        public long? Kingaku { get; set; }
 
         public decimal? TotalKingaku { get; set; }
 
         public List<PlannedTransactionDetailVM>? Results { get; set; }
     }
-
 }

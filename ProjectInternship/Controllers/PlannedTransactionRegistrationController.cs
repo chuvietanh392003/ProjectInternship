@@ -38,12 +38,19 @@ public class PlannedTransactionRegistrationController
         switch (actionType)
         {
             case "register":
-
+                Console.WriteLine("br1");
+                foreach (var state in ModelState)
+                {
+                    foreach (var error in state.Value.Errors)
+                    {
+                        Console.WriteLine($"{state.Key} : {error.ErrorMessage}");
+                    }
+                }
                 if (!ModelState.IsValid)
                     return View(model);
-
+                Console.WriteLine(1);
                 var existed = await _service.IsExist(model.Denpyono);
-
+                Console.WriteLine("br2");
                 var result = await _service.RegisterAsync(model);
 
                 if (existed)

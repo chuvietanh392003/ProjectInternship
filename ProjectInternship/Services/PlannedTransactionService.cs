@@ -41,7 +41,7 @@ SearchAsync(PlannedTransactionSearchVM model)
 
         if (model.UketukedtTo.HasValue)
         {
-            var toDate = model.UketukedtTo.Value.Date.AddDays(1);
+            var toDate = model.UketukedtTo.Value.Date;
             query = query.Where(x =>
                 x.Uketukedt <= toDate);
         }

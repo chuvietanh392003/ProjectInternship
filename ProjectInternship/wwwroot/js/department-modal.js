@@ -93,3 +93,10 @@
         initDepartmentModal);
 
 })();
+
+function selectRow(row) {
+    const radio = row.querySelector('input[type="radio"]');
+    if (radio) {
+        radio.checked = true;
+    }
+}

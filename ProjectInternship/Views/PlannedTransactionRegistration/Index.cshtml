@@ -39,16 +39,13 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
-                console.log("JS Loaded");
-
                 const codeInput = document.getElementById("BumoncdYkanr");
                 const nameInput = document.getElementById("BumoncdName");
 
                 if (!codeInput) {
-                    console.log("Không tìm thấy BumoncdYkanr");
                     return;
                 }
-                console.log(codeInput.value)
+
                 codeInput.addEventListener("input", function () {
 
                     const code = codeInput.value;
@@ -57,8 +54,6 @@
                         nameInput.value = "";
                         return;
                     }
-
-                    console.log(1)
 
                     fetch('@Url.Action("GetDepartmentName", "PlannedTransactionRegistration")?code=' + code)
                         .then(response => response.json())

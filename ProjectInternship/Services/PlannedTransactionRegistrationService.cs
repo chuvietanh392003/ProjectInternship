@@ -82,14 +82,13 @@ public class PlannedTransactionRegistrationService
         // =========================
         // GET OR CREATE HEADER
         // =========================
-
         var header = await _context.PlannedTransactions
             .FirstOrDefaultAsync(x =>
                 x.Denpyono == model.Denpyono);
 
         bool isUpdate = header != null;
         if (!isUpdate)
-        {
+        {;
             header = new PlannedTransaction
             {
                 Denpyono = model.Denpyono,
@@ -105,7 +104,6 @@ public class PlannedTransactionRegistrationService
         // =========================
         // UPDATE HEADER
         // =========================
-
         header.Kaikeind = model.Kaikeind;
         header.Denpyodt = DateTime.Now;
         header.Uketukedt = model.Uketukedt;
@@ -120,7 +118,6 @@ public class PlannedTransactionRegistrationService
         header.UpdatePgmId = "PlannedTransactionRegistration";
 
         await _context.SaveChangesAsync();
-
         // =========================
         // HANDLE DETAILS
         // =========================
@@ -138,47 +135,19 @@ public class PlannedTransactionRegistrationService
                     if (exists)
                     {
                         await _detailService
-                            .DeleteAsync(item.Denpyono, item.Gyono);
-                    }
+                            .DeleteAsync(item.Denpyono, item.Gyono);                    }
 
                     continue;
                 }
 
-                if (exists)
+                else if (exists)
                 {
-                    var updateEntity = new PlannedTransactionDetailVM
-                    {
-                        Denpyono = item.Denpyono,
-                        Gyono = item.Gyono,
-                        Idodt = item.Idodt,
-                        ShuppatsuPlc = item.ShuppatsuPlc,
-                        MokutekiPlc = item.MokutekiPlc,
-                        Keiro = item.Keiro,
-                        Kingaku = item.Kingaku,
-                        UpdateOpeId = "SYSTEM",
-                        UpdatePgmPrm = "Admin",
-                        UpdateDate = DateTime.Now
-                    };
 
-                    await _detailService.UpdateAsync(updateEntity);
+                    await _detailService.UpdateAsync(item);
                 }
                 else
                 {
-                    var insertEntity = new PlannedTransactionDetailVM
-                    {
-                        Denpyono = item.Denpyono,
-                        Gyono = item.Gyono,
-                        Idodt = item.Idodt,
-                        ShuppatsuPlc = item.ShuppatsuPlc,
-                        MokutekiPlc = item.MokutekiPlc,
-                        Keiro = item.Keiro,
-                        Kingaku = item.Kingaku,
-                        InsertOpeId = "SYSTEM",
-                        InsertPgmId = "Admin",
-                        InsertDate = DateTime.Now
-                    };
-
-                    await _detailService.InsertAsync(insertEntity);
+                    await _detailService.InsertAsync(item);
                 }
             }
         }

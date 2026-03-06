@@ -89,10 +89,11 @@ public class PlannedTransactionDetailService
         decimal? denpyono,
         decimal? gyono)
     {
-        return await _context.TransactionDetails
-            .AnyAsync(x =>
+        var entity  =  await _context.TransactionDetails
+            .FirstOrDefaultAsync(x =>
                 x.Denpyono == denpyono &&
                 x.Gyono == gyono);
+        return entity != null;
     }
 
 
@@ -136,8 +137,15 @@ public class PlannedTransactionDetailService
             .FirstOrDefaultAsync(x =>
                 x.Denpyono == model.Denpyono &&
                 x.Gyono == model.Gyono);
-
         if (exist == null) return;
+        bool isChanged =
+       exist.Idodt != model.Idodt ||
+       exist.ShuppatsuPlc != model.ShuppatsuPlc ||
+       exist.MokutekiPlc != model.MokutekiPlc ||
+       exist.Keiro != model.Keiro ||
+       exist.Kingaku != model.Kingaku;
+
+        if (!isChanged) return;
 
         exist.Idodt = model.Idodt;
         exist.ShuppatsuPlc = model.ShuppatsuPlc;
@@ -153,7 +161,6 @@ public class PlannedTransactionDetailService
         await _context.SaveChangesAsync();
     }
 
-
     // =============================
     // DELETE 1 DETAIL
     // =============================
@@ -162,12 +169,12 @@ public class PlannedTransactionDetailService
         decimal? denpyono,
         decimal? gyono)
     {
-        var item = await _context.TransactionDetails
+        var exist = await _context.TransactionDetails
             .FirstOrDefaultAsync(x =>
                 x.Denpyono == denpyono &&
                 x.Gyono == gyono);
-
-        _context.TransactionDetails.Remove(item);
+        if (exist == null) return;
+        _context.TransactionDetails.Remove(exist);
 
         await _context.SaveChangesAsync();
     }

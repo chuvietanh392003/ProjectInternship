@@ -7,40 +7,19 @@ namespace ProjectInternship.ViewModels
     {
         public decimal? Denpyono {  get; set; }
         public decimal? Gyono { get; set; }
-        [Required]
+        [Required(ErrorMessage = "年月日は必須です。")]
         public DateTime? Idodt { get; set; }
-        [Required]
+        [Required(ErrorMessage = "出発地は必須です")]
         public string? ShuppatsuPlc { get; set; }
-        [Required]
+        [Required(ErrorMessage = "目的地は必須です。")]
         public string? MokutekiPlc { get; set; }
-        [Required]
+        [Required(ErrorMessage = "経路は必須です。")]
         public string? Keiro { get; set; }
-        [Required]
+        [Required(ErrorMessage = "金額は必須です。")]
         public decimal? Kingaku { get; set; }
         public bool? IsCreated { get; set; } = false;
         public bool IsCheckedToDelete { get; set; } = false;
 
-        [StringLength(30)]
-        public string? InsertOpeId { get; set; }
-
-        [StringLength(20)]
-        public string? InsertPgmId { get; set; }
-
-        [StringLength(20)]
-        public string? InsertPgmPrm { get; set; }
-
-        public DateTime? InsertDate { get; set; }
-
-        [StringLength(30)]
-        public string? UpdateOpeId { get; set; }
-
-        [StringLength(20)]
-        public string? UpdatePgmId { get; set; }
-
-        [StringLength(20)]
-        public string? UpdatePgmPrm { get; set; }
-
-        public DateTime? UpdateDate { get; set; }
         public IEnumerable<ValidationResult> Validate(
             ValidationContext validationContext)
         {
