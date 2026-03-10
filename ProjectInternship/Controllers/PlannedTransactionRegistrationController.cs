@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/// <summary>
+/// Controller responsible for handling Planned Transaction registration.
+/// It manages creating, updating, and deleting transaction records,
+/// and loads related detail and department information.
+/// Communicates with service classes to process business logic.
+/// </summary>
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjectInternship.Services;
 using ProjectInternship.ViewModels;
@@ -83,14 +89,14 @@ public class PlannedTransactionRegistrationController
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetDepartmentName(string? code)
+    public async Task<IActionResult> GetDepartmentName(string? departmentCode)
     {
-        if (string.IsNullOrWhiteSpace(code))
+        if (string.IsNullOrWhiteSpace(departmentCode))
             return Json(null);
 
-        var name = await _departmentService.GetDepartmentNameFromCode(code);
+        var departmentName = await _departmentService.GetDepartmentNameFromCode(departmentCode);
 
-        return Json(name);
+        return Json(departmentName);
     }
 }
 

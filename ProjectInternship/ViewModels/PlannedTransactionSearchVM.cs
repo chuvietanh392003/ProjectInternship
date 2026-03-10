@@ -1,4 +1,21 @@
-﻿using ProjectInternship.Domain.Entities;
+﻿/**
+ * ---------------------------------------------
+ * Class Name : PlannedTransactionSearchVM
+ * Description:
+ *     ViewModel for Planned Transaction Search
+ *     screen (予定伝票一覧).
+ *
+ *     Holds search conditions such as fiscal year,
+ *     transaction number range, date ranges,
+ *     and payment method.
+ *
+ *     Also stores search results and total amount.
+ *
+ *     Implements custom validation to ensure
+ *     "From" values are not greater than "To".
+ * ---------------------------------------------
+ */
+using ProjectInternship.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjectInternship.ViewModels

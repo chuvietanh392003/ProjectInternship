@@ -1,4 +1,8 @@
-﻿(function () {
+﻿/**
+* Render transaction detail table from localStorage using key denpyono- gyono
+*/  
+
+(function () {
 
     document.addEventListener("DOMContentLoaded", renderDetailTable);
 
@@ -74,6 +78,10 @@
 
 })();
 
+/**
+ * Convert detail data from localStorage into hidden inputs
+ * before submitting the form
+ */
 
 function prepareResultsBeforeSubmit() {
 
@@ -110,6 +118,9 @@ function prepareResultsBeforeSubmit() {
         });
 }
 
+/**
+ * Remove transaction detail data from localStorage
+ */
 
 function addHidden(form, name, value) {
 

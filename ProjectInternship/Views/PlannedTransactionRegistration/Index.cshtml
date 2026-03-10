@@ -1,4 +1,19 @@
-﻿@model PlannedTransactionRegistrationVM
+﻿@*
+-----------------------------------------------------------------------
+File Name   : PlannedTransactionRegistration.cshtml
+Screen Name : 予定伝票入力 (Planned Transaction Registration)
+
+Description :
+    Screen for registering planned transaction.
+    Includes:
+        - Header information input
+        - Detail table for transportation expenses
+        - Department selection modal
+
+Controller  : PlannedTransactionRegistrationController
+-----------------------------------------------------------------------
+*@
+@model PlannedTransactionRegistrationVM
 
 @{
     ViewData["Title"] = "予定伝票入力";
@@ -9,6 +24,8 @@
 <h2 class="text-center mb-5">
     予定伝票入力
 </h2>
+
+@* SearchForm *@
 
 <form asp-controller="PlannedTransactionRegistration"
       asp-action="Index"
@@ -36,35 +53,4 @@
     <script src="~/js/department-modal.js"></script>
 
     <script src="~/js/planned-transaction-registration.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-                const codeInput = document.getElementById("BumoncdYkanr");
-                const nameInput = document.getElementById("BumoncdName");
-
-                if (!codeInput) {
-                    return;
-                }
-
-                codeInput.addEventListener("input", function () {
-
-                    const code = codeInput.value;
-
-                    if (!code) {
-                        nameInput.value = "";
-                        return;
-                    }
-
-                    fetch('@Url.Action("GetDepartmentName", "PlannedTransactionRegistration")?code=' + code)
-                        .then(response => response.json())
-                        .then(data => {
-                            nameInput.value = data ?? "";
-                        })
-                        .catch(error => {
-                            nameInput.value = "";
-                        });
-                });
-
-            });
-    </script>
 }

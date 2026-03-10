@@ -1,4 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*
+-----------------------------------------------------------------------
+File Name   : PlannedTransactionService.cs
+Layer       : Service
+
+Description :
+    Service class responsible for handling planned transaction logic.
+
+    Includes:
+        - Searching planned transactions based on filter conditions
+        - Retrieving transaction data with department information
+        - Calculating total transaction amount
+
+Related ViewModel :
+        - PlannedTransactionSearchVM
+
+Database Context :
+        - PlannedTransactionDbContext
+-----------------------------------------------------------------------
+*/
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using ProjectInternship.Data;
 using ProjectInternship.ViewModels;
@@ -20,7 +40,7 @@ SearchAsync(PlannedTransactionSearchVM model)
     {
         var query = _context.PlannedTransactions
             .AsNoTracking()
-            .Include(x => x.Bumon)
+            .Include(x => x.Bumon).OrderBy(x => x.Denpyono)
             .AsQueryable();
 
         if (model.Kaikeind.HasValue)

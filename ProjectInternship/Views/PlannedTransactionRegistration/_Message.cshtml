@@ -1,4 +1,22 @@
-﻿@if (TempData["Success"] != null)
+﻿@*
+-----------------------------------------------------------------------
+Function Name : DisplaySuccessMessageAndClearLocalStorage
+Description   :
+    Display success message when transaction is registered successfully.
+    After displaying the message:
+        - Clear Planned Transaction detail data stored in localStorage
+        - Redirect user to Planned Transaction list screen.
+
+Process      :
+        1. Check if TempData["Success"] exists.
+        2. Show alert message with the success content.
+        3. Remove all localStorage items starting with 
+           "PlannedTransactionDetail_".
+        4. Redirect to PlannedTransaction Index screen.
+
+-----------------------------------------------------------------------
+*@
+@if (TempData["Success"] != null)
 {
     <script>
 

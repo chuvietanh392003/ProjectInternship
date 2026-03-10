@@ -1,4 +1,31 @@
-﻿@model DepartmentVM
+﻿@*
+-----------------------------------------------------------------------
+File Name   : Department.cshtml
+Screen Name : 部門一覧 (Department Selection)
+
+Summary :
+    This view displays the department search and selection screen.
+
+    Users can:
+        - Search departments by department code (部門コード)
+          or department name (部門名).
+        - View the list of departments in a table.
+        - Select a department using a radio button.
+        - Confirm the selection and return the department
+          information to the parent screen.
+
+Main Functions :
+    1. Search departments using the search form.
+    2. Display department list based on search results.
+    3. Allow user to select one department from the table.
+    4. Return selected department code and name to the main screen.
+
+Notes :
+    - This view is loaded inside a modal window.
+    - Layout is disabled because it is used as a partial modal content.
+-----------------------------------------------------------------------
+*@
+@model DepartmentVM
 @{
     Layout = null;
 }
@@ -70,10 +97,7 @@
     </table>
     <div class="row mb-3 align-items-center">
         <div class="col-3">
-            <button type="button" class="btn btn-primary"
-            onclick=  "selectBumon()">選択</button>
-        </div>
-        <div class="col-3">
+            <button type="button" class="btn btn-primary" onclick=  "selectBumon()">選択</button>
             <button type="button" onclick="closeModel()" class="btn btn-dark">戻る</button>
         </div>
     </div>

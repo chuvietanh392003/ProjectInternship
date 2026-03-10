@@ -1,4 +1,22 @@
-﻿@model PlannedTransactionSearchVM
+﻿@*
+-----------------------------------------------------------------------
+Summary :
+    Search form for planned transactions.
+
+    Users can search planned transaction records by:
+        ・Fiscal year (年度)
+        ・Transaction number range (伝票番号)
+        ・Slip date range (伝票日付)
+        ・Application date range (申請日)
+        ・Payment method (出納方法)
+
+    Functions :
+        - Submit search conditions to PlannedTransaction/Index.
+        - Navigate to PlannedTransactionRegistration screen for new record creation.
+-----------------------------------------------------------------------
+*@
+
+@model PlannedTransactionSearchVM
 
 <form asp-controller="PlannedTransaction"
       asp-action="Index"
@@ -17,9 +35,17 @@
             <div class="col-3">
                 <select class="form-select" asp-for="Kaikeind">
                     <option value="" selected hidden disabled>　xxxx年度</option>
-                    <option value="2025">-- 5去年 --</option>
-                    <option value="2026">-- 今年 --</option>
-                    <option value="2027">-- 5来年--</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
                 </select>
             </div>
 

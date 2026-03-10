@@ -1,3 +1,9 @@
+/// <summary>
+/// Controller that handles basic application pages.
+/// Provides actions for the Home page, Privacy page,
+/// and Error handling.
+/// Returns corresponding views for each request.
+/// </summary>
 using Microsoft.AspNetCore.Mvc;
 using ProjectInternship.Domain.Entities; 
 using System.Diagnostics;

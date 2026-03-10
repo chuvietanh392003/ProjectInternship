@@ -1,7 +1,17 @@
-﻿@model PlannedTransactionRegistrationVM
-<!-- ===========================
- LOAD SERVER → LOCALSTORAGE
-=========================== -->
+﻿@*
+-----------------------------------------------------------------------
+Section Name : DetailTable (明細追加)
+Description  :
+    Section for adding new detail record to the planned transaction.
+
+    - "明細追加" button navigates to PlannedTransactionDetail screen.
+    - Passes the following parameters:
+        ・Denpyono : Transaction number
+        ・Gyono    : Next detail row number
+-----------------------------------------------------------------------
+*@
+
+@model PlannedTransactionRegistrationVM
 
 <!-- ===== 明細追加 ===== -->
 
@@ -112,51 +122,11 @@
 <!-- ===========================
  LOAD SERVER → LOCALSTORAGE
 =========================== -->
-
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const denpyono = document.querySelector('[name="Denpyono"]')?.value;
-        if (!denpyono) return;
-
-        // =========================
-        // CHECK FIRST TIME ONLY
-        // =========================
-        const existed = Object.keys(localStorage).some(key =>
-            key.startsWith(`PlannedTransactionDetail_${denpyono}_`)
+    const serverDetails = @Html.Raw(
+                System.Text.Json.JsonSerializer.Serialize(
+                        Model.Results ?? new List<PlannedTransactionDetailVM>()
+                )
         );
-
-        if (existed) return;
-
-        // =========================
-        // SAVE DB DATA
-        // =========================
-        const serverDetails =
-            @Html.Raw(System.Text.Json.JsonSerializer.Serialize(
-                Model.Results ?? new List<PlannedTransactionDetailVM>()
-                        ));
-
-        serverDetails.forEach(item => {
-
-            let formattedDate = "";
-
-            if (item.Idodt) {
-                const d = new Date(item.Idodt);
-                formattedDate = d.toISOString().split("T")[0];
-            }
-
-            const newItem = {
-                ...item,
-                Idodt: formattedDate
-            };
-
-            const key = `PlannedTransactionDetail_${item.Denpyono}_${item.Gyono}`;
-
-            localStorage.setItem(
-                key,
-                JSON.stringify(newItem)
-            );
-        });
-
-    });
 </script>
+<script src="~/js/planned-transaction-registration-data-store.js"></script>

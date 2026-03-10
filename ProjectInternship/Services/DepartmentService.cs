@@ -1,4 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/**
+ * ---------------------------------------------
+ * Class Name : DepartmentService
+ * Description:
+ *     Service class for handling department
+ *     related operations.
+ *
+ *     Provides methods to:
+ *         - Retrieve department name by code.
+ *         - Search departments by code or name.
+ *
+ *     Uses Entity Framework Core to access
+ *     the Departments table.
+ * ---------------------------------------------
+ */
+using Microsoft.EntityFrameworkCore;
 using ProjectInternship.Data;
 using ProjectInternship.ViewModels;
 
@@ -18,14 +33,17 @@ namespace ProjectInternship.Services
         {
             if (string.IsNullOrWhiteSpace(code))
                 return null;
-
-            return await _context.Departments
+               return await _context.Departments
                 .AsNoTracking()
                 .Where(x => x.BumonCD == code)
                 .Select(x => x.BumonName)
                 .FirstOrDefaultAsync();
         }
-
+        /// <summary>
+        /// SearchAsync22222
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         public async Task<List<DepartmentVM>> SearchAsync(DepartmentVM model)
         {
             var query = _context.Departments

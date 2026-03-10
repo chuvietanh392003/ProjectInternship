@@ -1,4 +1,4 @@
-﻿
+﻿// DB context to connect with db
 using System;
 using System.Collections.Generic;
 using System.Linq;

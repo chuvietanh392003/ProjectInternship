@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/// <summary>
+/// Controller responsible for handling Planned Transaction search.
+/// It displays the search page and processes search requests.
+/// Uses PlannedTransactionService to retrieve transaction data
+/// based on the search conditions.
+/// </summary>
+using Microsoft.AspNetCore.Mvc;
 using ProjectInternship.Services;
 using ProjectInternship.ViewModels;
 

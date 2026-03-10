@@ -1,5 +1,18 @@
 ﻿@model PlannedTransactionRegistrationVM
 
+@*
+-----------------------------------------------------------------------
+Section Name : Voucher Number (伝票番号)
+Description  :
+    Display voucher number of the planned transaction.
+    - Transaction number is displayed in readonly textbox.
+    - Button area includes:
+        ・Register (登録)
+        ・Delete (削除)
+        ・Exit (終了)
+-----------------------------------------------------------------------
+*@
+
 <!-- ===== 伝票番号 ===== -->
 
 <div class="row mb-3 align-items-start">
@@ -150,9 +163,17 @@
 
         <select class="form-select" asp-for="Kaikeind">
             <option value="" selected hidden disabled>　xxxx年度</option>
-            <option value="2025">-- 5去年 --</option>
-            <option value="2026">-- 今年 --</option>
-            <option value="2027">-- 5来年--</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            <option value="2031">2031</option>
         </select>
 
         <span asp-validation-for="Kaikeind"

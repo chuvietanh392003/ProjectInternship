@@ -1,4 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/**
+ * ---------------------------------------------
+ * Class Name : PlannedTransactionDetailService
+ * Description:
+ *     Service class for handling Planned
+ *     Transaction Detail (予定伝票明細) operations.
+ *
+ *     Provides methods to:
+ *         - Retrieve detail records by Denpyono or Gyono
+ *         - Create new detail model
+ *         - Check existence of a detail record
+ *         - Insert, update, and delete detail records
+ *
+ *     Uses Entity Framework Core to interact
+ *     with TransactionDetails table.
+ * ---------------------------------------------
+ */
+using Microsoft.EntityFrameworkCore;
 using ProjectInternship.Data;
 using ProjectInternship.Domain.Entities;
 using ProjectInternship.ViewModels;

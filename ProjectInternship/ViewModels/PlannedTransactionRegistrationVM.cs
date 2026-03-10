@@ -1,4 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/**
+ * ---------------------------------------------
+ * Class Name : PlannedTransactionRegistrationVM
+ * Description:
+ *     ViewModel for Planned Transaction
+ *     Registration screen (予定伝票入力).
+ *
+ *     Holds header information of a planned
+ *     transaction and the list of detail records.
+ *
+ *     Includes validation for required fields
+ *     such as fiscal year, payment method,
+ *     department, dates, and business purpose.
+ * ---------------------------------------------
+ */
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using ProjectInternship.Domain.Entities;
 using System.ComponentModel.DataAnnotations;

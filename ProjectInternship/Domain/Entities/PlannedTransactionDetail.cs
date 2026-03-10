@@ -1,4 +1,28 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*
+-----------------------------------------------------------------------
+File Name   : PlannedTransactionDetail.cs
+Layer       : Domain / Entity
+Table Name  : ES_YDENPYOD
+
+Description :
+    Entity class representing planned transaction detail data.
+
+    Each record stores transportation expense information
+    related to a planned transaction.
+
+Primary Key :
+        - Denpyono : Transaction number
+        - Gyono    : Detail row number
+
+Main Columns :
+        - Idodt         : Travel date
+        - ShuppatsuPlc  : Departure place
+        - MokutekiPlc   : Destination place
+        - Keiro         : Travel route
+        - Kingaku       : Expense amount
+-----------------------------------------------------------------------
+*/
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

@@ -1,4 +1,20 @@
-﻿@model PlannedTransactionDetailVM
+﻿@*
+-----------------------------------------------------------------------
+Screen Name : PlannedTransactionDetail (予定伝票明細)
+Description :
+    Screen used to create or update planned transaction detail.
+
+    User can input the following information:
+        ・Date (年月日)
+        ・Departure place (出発地)
+        ・Destination (目的地)
+        ・Route (経路)
+        ・Amount (金額)
+
+    The screen also allows marking a record for deletion when editing.
+-----------------------------------------------------------------------
+*@
+@model PlannedTransactionDetailVM
 
 <h2 class="text-center align-content-around mb-5">予定伝票明細</h2>
 <form action="/PlannedTransactionDetail/Index" method="post" id="mainForm">

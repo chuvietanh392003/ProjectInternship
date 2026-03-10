@@ -1,4 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿/**
+ * ---------------------------------------------
+ * Class Name : PlannedTransactionDetailVM
+ * Description:
+ *     ViewModel for Planned Transaction Detail
+ *     (予定伝票明細) screen.
+ *
+ *     Holds detail information and performs
+ *     validation for transaction detail input.
+ *
+ *     Includes custom validation for:
+ *         - Required fields
+ *         - Amount must be greater than 0
+ *         - Denpyono and Gyono required in update mode
+ * ---------------------------------------------
+ */
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectInternship.ViewModels

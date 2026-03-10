@@ -1,4 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/// <summary>
+/// Controller responsible for handling Department search requests.
+/// It receives search conditions from DepartmentVM and calls
+/// DepartmentService to retrieve matching department data.
+/// The result is returned as a PartialView.
+/// </summary>
+using Microsoft.AspNetCore.Mvc;
 using ProjectInternship.Services;
 using ProjectInternship.ViewModels;
 

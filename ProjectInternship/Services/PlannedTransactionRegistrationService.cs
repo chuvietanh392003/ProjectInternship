@@ -1,4 +1,23 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/**
+ * ----------------------------------------------------
+ * Class Name : PlannedTransactionRegistrationService
+ * Description:
+ *     Service class for handling Planned Transaction
+ *     Registration (予定伝票登録).
+ *
+ *     Main functions:
+ *         - Check existence of transaction header
+ *         - Create new transaction number
+ *         - Get header data
+ *         - Register (Insert / Update) header and details
+ *         - Delete transaction by Denpyono
+ *         - Load detail list for a transaction
+ *
+ *     Uses Entity Framework Core to access
+ *     PlannedTransactions and TransactionDetails tables.
+ * ----------------------------------------------------
+ */
+using Microsoft.EntityFrameworkCore;
 using ProjectInternship.Data;
 using ProjectInternship.Domain.Entities;
 using ProjectInternship.ViewModels;

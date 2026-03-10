@@ -1,4 +1,21 @@
-﻿@model PlannedTransactionSearchVM
+﻿@*
+-----------------------------------------------------------------------
+Summary :
+    This view displays the search result list of planned transactions.
+
+    - Shows transaction records in a scrollable table.
+    - Each row is clickable and redirects to the
+      PlannedTransactionRegistration screen.
+    - Displays total transportation expense at the bottom.
+    - If there is no data, a message "データがありません" will be shown.
+
+Main Functions :
+    1. Render search results.
+    2. Navigate to detail screen when clicking a row.
+    3. Calculate and display total transportation amount.
+-----------------------------------------------------------------------
+*@
+@model PlannedTransactionSearchVM
 
 <div class="table-responsive" style="max-height:300px; overflow-y:auto;">
     <table class="table table-hover table-bordered ">

@@ -1,4 +1,33 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿/*
+-----------------------------------------------------------------------
+File Name   : PlannedTransaction.cs
+Layer       : Domain / Entity
+Table Name  : SYSTEM.ES_YDENPYO
+
+Description :
+    Entity class representing planned transaction header data.
+
+    This table stores basic information of a planned transaction,
+    including fiscal year, transaction dates, department, payment
+    method, and total amount.
+
+Primary Key :
+        - Denpyono : Transaction number
+
+Related Entities :
+        - Department (via BumoncdYkanr)
+
+Main Columns :
+        - Kaikeind      : Fiscal year
+        - Uketukedt     : Application date
+        - Denpyodt      : Transaction date
+        - BumoncdYkanr  : Department code
+        - Suitokb       : Payment method
+        - Shiharaidt    : Planned payment date
+        - Kingaku       : Total amount
+-----------------------------------------------------------------------
+*/
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjectInternship.Domain.Entities

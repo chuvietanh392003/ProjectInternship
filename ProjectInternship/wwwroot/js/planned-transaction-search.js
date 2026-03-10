@@ -1,4 +1,7 @@
-﻿document.addEventListener("click", function (e) {
+﻿/**
+ * Navigate to transaction detail screen when clicking a row
+ */
+document.addEventListener("click", function (e) {
 
     const row = e.target.closest(".planned-row");
 
